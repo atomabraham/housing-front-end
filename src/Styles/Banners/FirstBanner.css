@@ -1,0 +1,214 @@
+/*Styles de la première navBar*/
+
+/*blockLogo*/
+
+.firstBanner{
+    margin: auto;
+    width: 92%;
+    height: 60px;
+}
+
+.logoFirstBanner{
+    float: left;
+    width: 150px;
+    height: 120px;
+    cursor: pointer;
+}
+
+.buttonAccount{
+    float: right;
+    margin-top: 1%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.491);
+}
+
+/*media query*/
+
+@media (width>=1501px){
+    .buttonAccount{
+        float: right;
+        margin-top: 1%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+    }
+
+    .logoFirstBanner{
+        float: left;
+        margin-top: -2%;
+        width: 150px;
+        height: 120px;
+    }
+}
+
+@media (width<=1500px){
+    .buttonAccount{
+        float: right;
+        margin-right: 4%;
+        margin-top: 1%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+    }
+
+    .logoFirstBanner{
+        float: left;
+        margin-top: -2.3%;
+        width: 150px;
+        height: 120px;
+    }
+}
+
+@media (width<=1100px){
+    .buttonAccount{
+        float: right;
+        margin-right: 4%;
+        margin-top: 1.5%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+    }
+
+    .logoFirstBanner{
+        float: left;
+        margin-left: 3%;
+        margin-top: -2.5%;
+        width: 150px;
+        height: 120px;
+    }
+}
+
+@media (width<=1000px){
+    .buttonAccount{
+        float: right;
+        margin-right: 4%;
+        margin-top: 2%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+    }
+
+    .logoFirstBanner{
+        float: left;
+        margin-left: 3%;
+        margin-top: -2.8%;
+        width: 150px;
+        height: 120px;
+    }
+}
+
+@media (width<=900px){
+    .buttonAccount{
+        float: right;
+        margin-right: 4%;
+        margin-top: 2%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+    }
+
+    .logoFirstBanner{
+        float: left;
+        margin-left: 3%;
+        margin-top: -3.5%;
+        width: 150px;
+        height: 120px;
+    }
+}
+
+@media (width<=700px){
+    .buttonAccount{
+        float: right;
+        margin-right: 4%;
+        margin-top: 2%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+    }
+
+    .logoFirstBanner{
+        float: left;
+        margin-left: -0.5%;
+        margin-top: -4.5%;
+        width: 150px;
+        height: 120px;
+    }
+}
+
+@media (width<=600px){
+    .buttonAccount{
+        float: right;
+        margin-right: 4%;
+        margin-top: 2%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+    }
+
+    .logoFirstBanner{
+        float: left;
+        margin-left: -1%;
+        margin-top: -6%;
+        width: 150px;
+        height: 120px;
+    }
+}
+
+@media (width<=500px){
+    .buttonAccount{
+        float: right;
+        margin-right: 4%;
+        margin-top: 3%;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    .logoFirstBanner{
+        float: left;
+        margin-left: 1.1%;
+        margin-top: -6%;
+        width: 120px;
+        height: 100px;
+    }
+}
+
+@media (width<=400px){
+    .buttonAccount{
+        float: right;
+        margin-right: 4%;
+        margin-top: 3%;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    .logoFirstBanner{
+        float: left;
+        margin-left: 0.6%;
+        margin-top: -8.5%;
+        width: 120px;
+        height: 100px;
+    }
+}
+
+@media (width<=300px){
+    .buttonAccount{
+        float: right;
+        margin-right: 4%;
+        margin-top: 3%;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    .logoFirstBanner{
+        float: left;
+        margin-left: 0.6%;
+        margin-top: -11%;
+        width: 120px;
+        height: 100px;
+    }
+}
