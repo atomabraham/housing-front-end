@@ -2,6 +2,7 @@
 
 /*blockLogo*/
 
+
 .firstBanner{
     margin: auto;
     width: 92%;
@@ -24,12 +25,76 @@
     color: rgba(0, 0, 0, 0.491);
 }
 
-/*media query*/
+/*menu deroulant*/
+li{
+    list-style: none;
+}
 
-@media (width>=1501px){
+.listLinks{
+    position: absolute;
+    margin-top: 5%;
+    margin-left: 70%;
+    width: 170px;
+    text-align: left;
+    z-index: 1;
+    display: none;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
+}
+
+.linkMenu{
+    position: relative;
+    line-height: 2;
+    color: black;
+    padding: 15px;
+    text-decoration: none;
+    display: block;
+    margin-left: -23.5%;
+    font-family: montserrat;
+
+    &:hover{
+        background-color:#f6b100;
+    }
+}
+
+.contentMenu:hover .linkMenu{
+    display: block;
+}
+
+.linkMenu1{
+    &:hover{
+      border-top-left-radius: 10px;  
+      border-top-right-radius: 10px;  
+    }
+}
+
+.linkMenu2{
+    position: relative;
+    margin-top: 2%;
+}
+
+.linkMenu3{
+    position: relative;
+    border-bottom: solid 0.5px rgba(0, 0, 0, 0.317);
+    margin-top: 2%;
+}
+
+.linkMenu4{
+    position: relative;
+    margin-top: 2%;
+
+    &:hover{
+        border-bottom-left-radius: 10px;  
+        border-bottom-right-radius: 10px;  
+      }
+}
+
+/*media query*/
+@media (width>=1999px){
     .buttonAccount{
         float: right;
-        margin-top: 1%;
+        margin-top: 0%;
         width: 40px;
         height: 40px;
         cursor: pointer;
@@ -37,9 +102,52 @@
 
     .logoFirstBanner{
         float: left;
-        margin-top: -2%;
+        margin-top: -3.5%;
         width: 150px;
         height: 120px;
+    }
+
+    .listLinks{
+        position: absolute;
+        margin-top: 3.2%;
+        margin-left: 80%;
+        width: 170px;
+        text-align: left;
+        z-index: 1;
+        display: none;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
+    }
+}
+
+@media (width>=1501px){
+    .buttonAccount{
+        float: right;
+        margin-top: 0%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+    }
+
+    .logoFirstBanner{
+        float: left;
+        margin-top: -3.5%;
+        width: 150px;
+        height: 120px;
+    }
+
+    .listLinks{
+        position: absolute;
+        margin-top: 3.2%;
+        margin-left: 75%;
+        width: 170px;
+        text-align: left;
+        z-index: 1;
+        display: none;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
     }
 }
 
@@ -55,17 +163,55 @@
 
     .logoFirstBanner{
         float: left;
-        margin-top: -2.3%;
+        margin-top: -2.8%;
         width: 150px;
         height: 120px;
+    }
+
+    
+}
+
+@media (width<=1380px){
+    .listLinks{
+        position: absolute;
+        margin-top: 4.5%;
+        margin-left: 70%;
+        width: 190px;
+        text-align: left;
+        z-index: 1;
+        display: none;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
+    }
+}
+
+@media (width<=1200px){
+    .listLinks{
+        position: absolute;
+        margin-top: 5.5%;
+        margin-left: 67%;
+        width: 170px;
+        text-align: left;
+        z-index: 1;
+        display: none;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
     }
 }
 
 @media (width<=1100px){
+    .firstBanner{
+        margin: auto;
+        width: 92%;
+        height: 45px;
+    }
+
     .buttonAccount{
         float: right;
         margin-right: 4%;
-        margin-top: 1.5%;
+        margin-top: 0%;
         width: 40px;
         height: 40px;
         cursor: pointer;
@@ -74,17 +220,36 @@
     .logoFirstBanner{
         float: left;
         margin-left: 3%;
-        margin-top: -2.5%;
+        margin-top: -4.8%;
         width: 150px;
         height: 120px;
+    }
+
+    .listLinks{
+        position: absolute;
+        margin-top: 5.5%;
+        margin-left: 67%;
+        width: 170px;
+        text-align: left;
+        z-index: 1;
+        display: none;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
     }
 }
 
 @media (width<=1000px){
+    .firstBanner{
+        margin: auto;
+        width: 92%;
+        height: 50px;
+    }
+
     .buttonAccount{
         float: right;
         margin-right: 4%;
-        margin-top: 2%;
+        margin-top: 0%;
         width: 40px;
         height: 40px;
         cursor: pointer;
@@ -93,9 +258,22 @@
     .logoFirstBanner{
         float: left;
         margin-left: 3%;
-        margin-top: -2.8%;
+        margin-top: -5.5%;
         width: 150px;
         height: 120px;
+    }
+
+    .listLinks{
+        position: absolute;
+        margin-top: 5.5%;
+        margin-left: 62%;
+        width: 170px;
+        text-align: left;
+        z-index: 1;
+        display: none;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
     }
 }
 
@@ -103,7 +281,7 @@
     .buttonAccount{
         float: right;
         margin-right: 4%;
-        margin-top: 2%;
+        margin-top: 0%;
         width: 40px;
         height: 40px;
         cursor: pointer;
@@ -112,17 +290,63 @@
     .logoFirstBanner{
         float: left;
         margin-left: 3%;
-        margin-top: -3.5%;
+        margin-top: -6.5%;
         width: 150px;
         height: 120px;
+    }
+
+    .listLinks{
+        position: absolute;
+        margin-top: 6.8%;
+        margin-left: 60%;
+        width: 170px;
+        text-align: left;
+        z-index: 1;
+        display: none;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
+    }
+}
+
+@media (width<=800px){
+    .listLinks{
+        position: absolute;
+        margin-top: 6%;
+        margin-left: 55%;
+        width: 170px;
+        text-align: left;
+        z-index: 1;
+        display: none;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
+    }
+}
+
+@media (width<=750px){
+    .listLinks{
+        position: absolute;
+        margin-top: 7%;
+        margin-left: 52%;
+        width: 170px;
+        text-align: left;
+        z-index: 1;
+        display: none;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
     }
 }
 
 @media (width<=700px){
+    .firstBanner{
+    }
+
     .buttonAccount{
         float: right;
         margin-right: 4%;
-        margin-top: 2%;
+        margin-top: 0%;
         width: 40px;
         height: 40px;
         cursor: pointer;
@@ -131,9 +355,36 @@
     .logoFirstBanner{
         float: left;
         margin-left: -0.5%;
-        margin-top: -4.5%;
+        margin-top: -7.5%;
         width: 150px;
         height: 120px;
+    }
+    .listLinks{
+            position: absolute;
+            margin-top: 7.5%;
+            margin-left: 50%;
+            width: 170px;
+            text-align: left;
+            z-index: 1;
+            display: none;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
+    }
+}
+
+@media (width<=650px){
+    .listLinks{
+            position: absolute;
+            margin-top: 7.5%;
+            margin-left: 47%;
+            width: 170px;
+            text-align: left;
+            z-index: 1;
+            display: none;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
     }
 }
 
@@ -141,7 +392,7 @@
     .buttonAccount{
         float: right;
         margin-right: 4%;
-        margin-top: 2%;
+        margin-top: 0%;
         width: 40px;
         height: 40px;
         cursor: pointer;
@@ -150,17 +401,59 @@
     .logoFirstBanner{
         float: left;
         margin-left: -1%;
-        margin-top: -6%;
+        margin-top: -8.5%;
         width: 150px;
         height: 120px;
+    }
+
+    .listLinks{
+        position: absolute;
+        margin-top: 8%;
+        margin-left: 43%;
+        width: 170px;
+        text-align: left;
+        z-index: 1;
+        display: none;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
+}
+}
+
+@media (width<=550px){
+    .logoFirstBanner{
+        float: left;
+        margin-left: 1.1%;
+        margin-top: -7.5%;
+        width: 120px;
+        height: 100px;
+    }
+
+    .listLinks{
+            position: absolute;
+            margin-top: 9%;
+            margin-left: 39%;
+            width: 170px;
+            text-align: left;
+            z-index: 1;
+            display: none;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
     }
 }
 
 @media (width<=500px){
+    .firstBanner{
+        margin: auto;
+        width: 92%;
+        height: 45px;
+    }
+
     .buttonAccount{
         float: right;
         margin-right: 4%;
-        margin-top: 3%;
+        margin-top: 0%;
         width: 30px;
         height: 30px;
         cursor: pointer;
@@ -169,9 +462,45 @@
     .logoFirstBanner{
         float: left;
         margin-left: 1.1%;
-        margin-top: -6%;
+        margin-top: -9.2%;
         width: 120px;
         height: 100px;
+    }
+
+    .listLinks{
+        position: absolute;
+        margin-top: 8%;
+        margin-left: 38%;
+        width: 150px;
+        text-align: left;
+        z-index: 1;
+        display: none;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
+}
+}
+
+@media (width<=450px){
+
+    .listLinks{
+            position: absolute;
+            margin-top: 8%;
+            margin-left: 33%;
+            width: 150px;
+            text-align: left;
+            z-index: 1;
+            display: none;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
+    }
+
+    .linkMenu{
+        margin-left: -27%;
+        &:hover{
+            background-color:#f6b100;
+        }
     }
 }
 
@@ -179,7 +508,7 @@
     .buttonAccount{
         float: right;
         margin-right: 4%;
-        margin-top: 3%;
+        margin-top: 0%;
         width: 30px;
         height: 30px;
         cursor: pointer;
@@ -187,10 +516,141 @@
 
     .logoFirstBanner{
         float: left;
-        margin-left: 0.6%;
-        margin-top: -8.5%;
+        margin-left: -2%;
+        margin-top: -11%;
         width: 120px;
         height: 100px;
+    }
+
+    .listLinks{
+        position: absolute;
+        margin-top: 9%;
+        margin-left: 27%;
+        width: 150px;
+        text-align: left;
+        z-index: 1;
+        display: none;
+        background-color: white;
+        font-size: 15px;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
+    }
+
+    .linkMenu{
+        margin-left: -27%;
+        &:hover{
+            background-color:#f6b100;
+        }
+    }
+}
+
+@media (width<=370px){
+    .logoFirstBanner{
+        float: left;
+        margin-left: -2%;
+        margin-top: -12%;
+        width: 120px;
+        height: 100px;
+    }
+
+    .listLinks{
+        position: absolute;
+        margin-top: 10%;
+        margin-left: 24%;
+        width: 150px;
+        text-align: left;
+        z-index: 1;
+        display: none;
+        background-color: white;
+        font-size: 15px;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
+    }
+}
+
+@media (width<=350px){
+    .logoFirstBanner{
+        float: left;
+        margin-left: -2%;
+        margin-top: -13%;
+        width: 120px;
+        height: 100px;
+    }
+
+    .listLinks{
+        position: absolute;
+        margin-top: 10%;
+        margin-left: 20%;
+        width: 150px;
+        text-align: left;
+        z-index: 1;
+        display: none;
+        background-color: white;
+        font-size: 15px;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
+    }
+}
+
+@media (width<=330px){
+    .logoFirstBanner{
+        float: left;
+        margin-left: -3.5%;
+        margin-top: -14%;
+        width: 120px;
+        height: 100px;
+    }
+
+    .listLinks{
+        position: absolute;
+        margin-top: 10%;
+        margin-left: 20%;
+        width: 140px;
+        text-align: left;
+        z-index: 1;
+        display: none;
+        background-color: white;
+        font-size: 15px;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
+    }
+
+    .linkMenu{
+        margin-left: -29%;
+        &:hover{
+            background-color:#f6b100;
+        }
+    }
+}
+
+@media (width<=310px){
+    .logoFirstBanner{
+        float: left;
+        margin-left: -3.5%;
+        margin-top: -14%;
+        width: 120px;
+        height: 100px;
+    }
+
+    .listLinks{
+        position: absolute;
+        margin-top: 11%;
+        margin-left: 18%;
+        width: 140px;
+        text-align: left;
+        z-index: 1;
+        display: none;
+        background-color: white;
+        font-size: 15px;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
+    }
+
+    .linkMenu{
+        margin-left: -29%;
+        &:hover{
+            background-color:#f6b100;
+        }
     }
 }
 

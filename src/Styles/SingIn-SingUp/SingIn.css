@@ -1,0 +1,168 @@
+/*style du modal de connexion*/
+
+@keyframes rotation {
+    From{
+        transform: rotate(0deg);
+    }
+    To{
+        transform: rotate(360deg);
+    }
+}
+
+.logoSingIn{
+    display: block;
+    margin: auto;
+    margin-top: -5%;
+    width: 50%;
+    animation:rotation infinite linear 9s;
+}
+
+/*titre coonexion*/
+.connexionTitle{
+    text-align: center;
+    font-size: 150%;
+    font-weight: bold;
+    color: black;
+}
+
+    .group {
+    display: flex;
+    line-height: 28px;
+    align-items: center;
+    position: relative;
+    width: 100%;
+   }
+
+   .group2{
+    margin-top: 5%;
+   }
+   
+   .inputForm {
+    width: 100%;
+    height: 40px;
+    line-height: 28px;
+    padding: 0 1rem;
+    padding-left: 2.5rem;
+    border: 2px solid transparent;
+    border-color: rgba(0, 0, 0, 0.174);
+    border-radius: 8px;
+    outline: none;
+    background-color: #ffffff;
+    color: #0d0c22;
+    transition: .3s ease;
+   }
+   
+   .inputForm::placeholder {
+    color: #9e9ea7;
+   }
+   
+   .inputForm:focus{
+    outline: none;
+    border-color: #f6b0008d;
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+   }
+
+   .inputForm:hover{
+    outline: none;
+    border-color: #f6b0008d;
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+   }
+   
+   .icon {
+    position: absolute;
+    left: 1rem;
+    fill: #9e9ea7;
+    width: 1rem;
+    height: 1rem;
+   }
+   
+/*checkbox*/
+
+   .checkbox {
+    display: flex;
+    align-items: center;
+    margin-top: 5%;
+    font-family: Arial, sans-serif;
+  }
+  
+  .checkbox .checkbox1 {
+    display: none;
+  }
+  
+  .checkbox .checkmark {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ffffff2b;
+    box-shadow: rgba(0, 0, 0, 0.62) 0px 0px 5px inset, rgba(0, 0, 0, 0.21) 0px 0px 0px 24px inset,
+          #22cc3f 0px 0px 0px 0px inset, rgba(224, 224, 224, 0.45) 0px 1px 0px 0px;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .checkbox .checkmark::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #e3e3e3;
+    box-shadow: transparent 0px 0px 0px 2px, rgba(0, 0, 0, 0.3) 0px 6px 6px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .checkbox input:checked + .checkmark {
+    background-color: #f6b000;
+    box-shadow: rgba(0, 0, 0, 0.62) 0px 0px 5px inset, #f6b000fc 0px 0px 0px 2px inset, #f6b000 0px 0px 0px 24px inset,
+          rgba(224, 224, 224, 0.45) 0px 1px 0px 0px;
+  }
+  
+  .checkbox input:checked + .checkmark::after {
+    background-color: white;
+  }
+  
+  .checkbox .label {
+    margin-right: 10px;
+    user-select: none;
+    font-weight: 700;
+    cursor: pointer;
+  }
+   
+
+   /*bouton submit*/
+
+   .submitSignIn{
+    display: flex;
+    width: 100%;
+    border-radius: 10px;
+    margin: auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border: none;
+    justify-content: center;
+    margin-top: 5%;
+    background-color: #f6b000db;
+    color: white;
+    font-weight: bold;
+
+    &:hover{
+        background-color: #f6b100;
+    }
+   }
+
+   .createAccount{
+    display: flex;
+    justify-content: right;
+    margin-top: 2%;
+    color: black;
+   }
+   
+   
+   
+   
+   

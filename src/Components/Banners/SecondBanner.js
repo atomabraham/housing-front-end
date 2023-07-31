@@ -3,6 +3,7 @@ import React from 'react';
 import '../../Styles/Banners/SecondBanner.css'
 import { TbListSearch } from 'react-icons/tb';
 import { TbHomePlus } from 'react-icons/tb';
+import {NavClik} from './FirstBanner'
 //conposqnt qui créé la navbar du filtre de recherche
 
 function SecondBanner(){
@@ -29,17 +30,17 @@ function SecondBanner(){
                 </div>
             
                 <div className='blockSearch' id='blockSearch'>
-                    <div className='search'>
-                        <p><TbListSearch className='iconSearch' /></p>
-                        <span className='textSearch' id='textSearch'>Rechercher</span>
+                    <div className='search block1'>
+                        <p><TbListSearch className='iconSearch icon1'/></p>
+                        <span className='textSearch text1' id='textSearch'>Rechercher</span>
                     </div>
-                    <div className='search'>
-                        <p><TbHomePlus className='iconAdd' /></p>
-                        <span className='textAdd' id='textAdd'>Ajouter un bien</span>
+                    <div className='search block2'>
+                        <p><TbHomePlus className='iconSearch icon2' /></p>
+                        <span className='textSearch text2' id='textSearch'>Rechercher</span>
                     </div>
-                    <div className='search'>
-                        <p><TbListSearch className='iconSearch' /></p>
-                        <span className='textSearch' id='textSearch'>ok</span>
+                    <div className='search block3'>
+                        <p><TbListSearch className='iconSearch icon3'/></p>
+                        <span className='textSearch text3' id='textSearch'>Rechercher</span>
                     </div>
                 </div>
             </React.Fragment>
@@ -47,7 +48,7 @@ function SecondBanner(){
     }
 
     return(
-    <nav className='secondBanner' id='secondBanner'>
+    <nav className='secondBanner' id='secondBanner' onClick={NavClik}>
         <Resolution/>
         {/*<select className='language'>
             <option selected>
