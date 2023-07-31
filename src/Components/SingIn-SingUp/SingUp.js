@@ -8,14 +8,20 @@ import imageSingUp from '../../Assets/Images/600.jpg'
 //composant de l'inscription
 
 function SingUp(){
+    //récupération des données du formulaire 1
+    let email=document.getElementById('inputEmail')
+    email.addEventListener('input',function(){
+        alert('hello')
+    })
     function Form1Next(){
-        let circle1=document.getElementById('circle1')
+        /*let circle1=document.getElementById('circle1')
         let circle2=document.getElementById('circle2')
         let formSingUp1=document.getElementById('formSingUp1')
         let formSingUp2=document.getElementById('formSingUp2')
         circle2.style.backgroundColor='#f6b105'
         formSingUp1.style.display='none'
-        formSingUp2.style.display='block'
+        formSingUp2.style.display='block'*/
+        
     }
     function Form2Prev(){
         let circle1=document.getElementById('circle1')
@@ -117,12 +123,13 @@ function SingUp(){
                             <div className='blockForm1' id='blockForm1'>
                                 <p className='labelForm labelEmail' id='labelEmail'>VOTRE ADDRESSE EMAIL *</p>
                                 <input type='email' name='inputEmail' className='input inputEmail' id='inputEmail'/>
+                                <span className='error errorEmail' id='errorEmail'>Veuillez entrez une addresse valide</span>
                                 <p className='labelForm labelUserName' id='labelUserName'>VOTRE NOM D'UTILISATEUR</p>
-                                <input type='email' name='inputUserName' className='input inputUserName' id='inputUserName'/>
+                                <input type='text' name='inputUserName' className='input inputUserName' id='inputUserName'/>
                                 <p className='labelForm labelPassword' id='labelPassword'>VOTRE MOT DE PASSE *</p>
                                 <input type='email' name='inputPassword' className='input inputPassword' id='inputPassword'/>
                                 <p className='labelForm labelPasswordRepeat' id='labelPasswordRepeat'>RESSAISISSEZ VOTRE MOT DE PASSE *</p>
-                                <input type='email' name='inputPasswordRepeat' className='input inputPasswordRepeat' id='inputPasswordRepeat'/>
+                                <input type='text' name='inputPasswordRepeat' className='input inputPasswordRepeat' id='inputPasswordRepeat'/>
                                 <div className='blockButton' id='blockButton'>
                                     <button type='button' className='prevButton prevButton1' id='prevButton prevButton1'>PRECEDENT</button>
                                     <button type='button' onClick={Form1Next} className='nextButton nextButton1' id='nextButton nextButton1'>SUIVANT</button>
