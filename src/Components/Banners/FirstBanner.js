@@ -1,16 +1,19 @@
 //importation des dépendances
-
+import React from 'react';
+import { Link, Navigate } from 'react-router-dom';
 import '../../Styles/Banners/FirstBanner.css'
 import '../../Styles/SingIn-SingUp/SingIn.css'
 import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import axios from 'axios';
+import { useAuth } from '../Authentification/AuthContext';
+
 
 //importation des images
 import logo from '../../Assets/Images/logo 1.png'
 import logo2 from '../../Assets/Images/logo 3.png'
-import { Link } from 'react-router-dom';
 
 //Composant de la première navBar
 
@@ -21,6 +24,53 @@ export function NavClik(){
 }
 
 function FirstBanner(){
+
+    const { setUser, csrfToken } = useAuth();
+	const [error, setError] = React.useState(null);
+    //axios.defaults.withCredentials=true;
+
+    //methode 2 login
+    // const[credentials,setCredentials]=useState({
+    //     email: 'zeus@gmail.com',
+	// 	password: '12345GHLJBf@',
+    // })
+    // axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken;
+    // const request= (e) => {
+    //     e.preventDefault()
+    //     axios.post('http://localhost:8000/api/login',credentials)
+    //         .then(res => console.log(res))
+    //         .catch(error => console.log(error))
+    // }
+
+    // login user
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		const { email, password } = e.target.elements;
+		const body = {
+			email: email.value,
+			password: password.value,
+		};
+		//await csrfToken();
+		try {
+            // axios.post('http://localhost:8000/api/login',body)
+            // .then(res=>console.log(res))
+            // .catch(error => console.log(error))
+
+			const resp = await axios.post('http://localhost:8000/api/login', body);
+			if (resp.data.status === 200) {
+				setUser(resp.data.user);
+                alert('SUCCESS')
+				return <Navigate to="/" />;
+			}
+
+		} catch (error) {
+			if (error.response.status === 401) {
+				setError(error.response.data.message);
+                alert("ERROR")
+			}
+		}
+	};
+
     /*function resolution(){
         if (window.innerWidth <=768){
             alert("ok")
@@ -68,7 +118,7 @@ function FirstBanner(){
                                 <a className='linkMenu linkMenu3' href='#'>Mes favoris</a>
                             </li>
                             <li className='linkMenu4'>
-                                <a className='linkMenu linkMenu4' id='linkMenu4' onClick={() => { handleShow(); menu();}} href='#'>Se connecter</a>
+                                <a className='linkMenu linkMenu4' id='linkMenu4' onClick={() => { handleShow(); menu();}} href='#login'>Se connecter</a>
                             </li>
                         </ul>
                     </span>
@@ -77,29 +127,32 @@ function FirstBanner(){
         </div>
 
         {/*modal connexion*/}
-        <Modal show={show} onHide={handleClose}>
+        <Modal show={show} onHide={handleClose} id="login">
         <Modal.Header closeButton>
         </Modal.Header>
         <Modal.Body>
             <p className='connexionTitle' id='connexionTitle'>Connexion</p>
             <img src={logo2} className='logoSingIn' id='logoSingIn' alt='HOUSING'/>
-            <div class="group group1">
-                <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 2a2 2 0 0 0-2 2a2 2 0 0 0 2 2a2 2 0 0 0 2-2a2 2 0 0 0-2-2m0 7c2.67 0 8 1.33 8 4v3H4v-3c0-2.67 5.33-4 8-4m0 1.9c-2.97 0-6.1 1.46-6.1 2.1v1.1h12.2V17c0-.64-3.13-2.1-6.1-2.1Z"></path></g></svg>
-                <input placeholder="Addresse email" type="text" class="inputForm"/>
-            </div>
-            <div class="group group2">
-                <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M12 17a2 2 0 0 1-2-2c0-1.11.89-2 2-2a2 2 0 0 1 2 2a2 2 0 0 1-2 2m6 3V10H6v10h12m0-12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10c0-1.11.89-2 2-2h1V6a5 5 0 0 1 5-5a5 5 0 0 1 5 5v2h1m-6-5a3 3 0 0 0-3 3v2h6V6a3 3 0 0 0-3-3Z"/></g></svg>
-                <input placeholder="Mot de passe" type="password" class="inputForm"/>
-            </div>
-            <div className='remenber' id='remenber'>
-                <label for="checkbox1" class="checkbox">
-                    <input type="checkbox" className='checkbox1' id="checkbox1" />
-                    <span class="checkmark"></span>
-                    <span class="label">Se souvenir de moi</span>
-                </label>
-            </div>
-            <button type='submit' className='submitSignIn' id='submitSignIn'>Se connecter</button>
-            <Link to='/SignUp' onClick={handleClose} className='createAccount' id='createAccount'>Je n'ai pas encore de compte ?</Link>
+            <div>{error}</div>
+            <form method='POST' action='#' onSubmit={handleSubmit}>
+                <div className="group group1">
+                    <svg className="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 2a2 2 0 0 0-2 2a2 2 0 0 0 2 2a2 2 0 0 0 2-2a2 2 0 0 0-2-2m0 7c2.67 0 8 1.33 8 4v3H4v-3c0-2.67 5.33-4 8-4m0 1.9c-2.97 0-6.1 1.46-6.1 2.1v1.1h12.2V17c0-.64-3.13-2.1-6.1-2.1Z"></path></g></svg>
+                    <input name='email' placeholder="Addresse email" type="text" class="email inputForm"/>
+                </div>
+                <div className="group group2">
+                    <svg className="icon" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M12 17a2 2 0 0 1-2-2c0-1.11.89-2 2-2a2 2 0 0 1 2 2a2 2 0 0 1-2 2m6 3V10H6v10h12m0-12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10c0-1.11.89-2 2-2h1V6a5 5 0 0 1 5-5a5 5 0 0 1 5 5v2h1m-6-5a3 3 0 0 0-3 3v2h6V6a3 3 0 0 0-3-3Z"/></g></svg>
+                    <input name='password' placeholder="Mot de passe" type="password" class="password inputForm"/>
+                </div>
+                <div className='remenber' id='remenber'>
+                    <label for="checkbox1" class="checkbox">
+                        <input type="checkbox" className='checkbox1' id="checkbox1" />
+                        <span class="checkmark"></span>
+                        <span class="label">Se souvenir de moi</span>
+                    </label>
+                </div>
+                <button type='submit' className='submitSignIn' id='submitSignIn'>Se connecter</button>
+                <Link to='/SignUp' onClick={handleClose} className='createAccount' id='createAccount'>Je n'ai pas encore de compte ?</Link>
+            </form>
         </Modal.Body>
         </Modal>
     </nav>

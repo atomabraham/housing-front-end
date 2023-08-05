@@ -1,26 +1,141 @@
 //importation des dependances
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../../Styles/SingIn-SingUp/SingUp.css'
 import FirstBanner from '../Banners/FirstBanner'
 import Line from '../Banners/Line'
 import imageSingUp from '../../Assets/Images/600.jpg'
+import { Link, Navigate } from 'react-router-dom'
+import axios from '../Authentification/axios'
+import { useAuth } from '../Authentification/AuthContext'
+
 //composant de l'inscription
 
 function SingUp(){
-    //récupération des données du formulaire 1
-    let email=document.getElementById('inputEmail')
-    email.addEventListener('input',function(){
-        alert('hello')
-    })
+    //gestion de l'inscription d'un utilisateur
+    const { setUser } = useAuth();
+	const [nameError, setNameError] = React.useState('');
+	const [emailError, setEmailError] = React.useState('');
+	const [passwordError, setPasswordError] = React.useState('');
+
+    //enregistrement d'un utilisateur
+    const handleSubmit = async (e) => {
+		e.preventDefault();
+		const { name, email, password, password_confirmation } = e.target.elements;
+		const body = {
+			name:   name.value,
+			email: email.value,
+			password: password.value,
+			password_confirmation: password_confirmation.value,
+		};
+        try {
+			const resp = await axios.post('/register', body);
+			if (resp.status === 200) {
+				setUser(resp.data.user);
+				return <Navigate to="/" />;
+			}
+		} catch (error) {
+			if (error.response.status === 422) {
+				console.log(error.response.data.errors);
+				if (error.response.data.errors.name) {
+					setNameError(error.response.data.errors.name[0]);
+				} else {
+					setNameError('');
+				}
+				if (error.response.data.errors.email) {
+					setEmailError(error.response.data.errors.email[0]);
+				} else {
+					setEmailError('');
+				}
+				if (error.response.data.errors.password) {
+					setPasswordError(error.response.data.errors.password[0]);
+				} else {
+					setPasswordError('');
+				}
+			}
+		}
+    }
+
+   
+    
+
+    //controle des données du formulaire 1
+    let emailValid=false
+    let userNameValid=false
+    let passwordValid=false
+    let passwordRepeatValid=false
+
+    /*useEffect(()=>{
+        let email=document.getElementById('inputEmail')
+        let userName=document.getElementById('inputUserName')
+        let password=document.getElementById('inputPassword')
+        let passwordRepeat=document.getElementById('inputPasswordRepeat')
+        
+        //controle de la vailiditer de l'email
+        email.addEventListener('input',function(){
+            let emailValue=email.value
+            let errorEmail=document.getElementById('errorEmail')
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+            if(!emailValue.match(mailformat)){
+                errorEmail.innerHTML='Veuillez entrez une addresse valide'
+                errorEmail.style.color='red'
+                email.style.borderColor='red'
+            }else{
+                errorEmail.innerHTML='Votre addresse mail est valide'
+                errorEmail.style.color='#f6b105'
+                email.style.borderColor='#f6b105'
+            }
+        })
+        
+        //controle de la validité des mots de passe
+        password.addEventListener('input',function(){
+            let errorPassword=document.getElementById('errorPassword')
+            if(password.value.length<6){
+                password.style.borderColor='red'
+                errorPassword.style.color='red'
+                errorPassword.innerHTML='Votre mot de passe doit avoir au moins 6 caractère' 
+            }else{
+                password.style.borderColor='#f6b105'
+                errorPassword.style.color='#f6b105'
+                errorPassword.innerHTML='Votre mot de passe est valide'
+            }
+        })
+        passwordRepeat.addEventListener('input',function(){
+            let passwordValue=document.getElementById('inputPassword').value
+            let passwordRepeatValue=document.getElementById('inputPasswordRepeat')
+            let errorPasswordRepeat = document.getElementById("errorPasswordRepeat")
+            let errorPassword=document.getElementById('errorPassword')
+            if(passwordValue==passwordRepeatValue){
+                errorPasswordRepeat.innerHTML="Mots de passe valide"
+                errorPassword.innerHTML='Mots de passe valide'
+                passwordRepeat.style.borderColor="#f6b105"
+                password.style.borderColor='#f6b105'
+                errorPasswordRepeat.style.color="#f6b105"
+                errorPassword.style.color='#f6b105'
+            }else{
+                passwordRepeat.style.borderColor="red"
+                errorPasswordRepeat.style.color="red"
+                errorPasswordRepeat.innerHTML="Les deux mots de passes ne sont pas identiques."
+                password.style.borderColor='red'
+                errorPassword.style.color='red'
+                errorPassword.innerHTML='Les deux mots de passes ne sont pas identiques.'
+            }
+
+        })
+    })*/
+    
     function Form1Next(){
-        /*let circle1=document.getElementById('circle1')
+        let circle1=document.getElementById('circle1')
         let circle2=document.getElementById('circle2')
         let formSingUp1=document.getElementById('formSingUp1')
         let formSingUp2=document.getElementById('formSingUp2')
         circle2.style.backgroundColor='#f6b105'
         formSingUp1.style.display='none'
-        formSingUp2.style.display='block'*/
+        formSingUp2.style.display='block'
+        /*let prevButton1=document.getElementById('prevButton1')
+        if(emailValid==false&&userNameValid==false&&passwordValid==false&&passwordRepeatValid){
+            prevButton1.style.disabled="false" 
+        }*/
         
     }
     function Form2Prev(){
@@ -71,6 +186,10 @@ function SingUp(){
         formSingUp4.style.display='none'
     }
 
+    function valider(){
+
+    }
+
     return(
         <>
             <FirstBanner/>
@@ -116,23 +235,28 @@ function SingUp(){
                 <div className='blockRightSingUp' id='blockRightSingUp'>
                     <div className='secondVerticalLine' id='secondVerticalLine'>
                     </div>
-                    <form method='' className='formSingUP' id='formSingUP'>
+                    <form method='POST' action='#' onSubmit={handleSubmit} className='formSingUP' id='formSingUP'>
                         <div className='formSingUp1' id='formSingUp1'>
                             <p className='titlesForm titlesForm1' id='titlesForm1'>AUTHENTIFICATION</p>
                             <p className='titleDescriptionForm titleDescriptionForm1' id='titleDescriptionForm1'>VOS INFORMATIONS DE CONNEXION A VOTRE COMPTE</p>
                             <div className='blockForm1' id='blockForm1'>
-                                <p className='labelForm labelEmail' id='labelEmail'>VOTRE ADDRESSE EMAIL *</p>
-                                <input type='email' name='inputEmail' className='input inputEmail' id='inputEmail'/>
-                                <span className='error errorEmail' id='errorEmail'>Veuillez entrez une addresse valide</span>
-                                <p className='labelForm labelUserName' id='labelUserName'>VOTRE NOM D'UTILISATEUR</p>
-                                <input type='text' name='inputUserName' className='input inputUserName' id='inputUserName'/>
-                                <p className='labelForm labelPassword' id='labelPassword'>VOTRE MOT DE PASSE *</p>
-                                <input type='email' name='inputPassword' className='input inputPassword' id='inputPassword'/>
-                                <p className='labelForm labelPasswordRepeat' id='labelPasswordRepeat'>RESSAISISSEZ VOTRE MOT DE PASSE *</p>
-                                <input type='text' name='inputPasswordRepeat' className='input inputPasswordRepeat' id='inputPasswordRepeat'/>
+                                <div className='scrolldiv scrolldiv1' id='scrollDiv1'>
+                                    <p className='labelForm labelEmail' id='labelEmail'>VOTRE ADDRESSE EMAIL *</p>
+                                    <input type='email' name='email' className='input inputEmail email' id='inputEmail email'/>
+                                    <span className='error errorEmail' id='errorEmail'></span>
+                                    <p className='labelForm labelUserName' id='labelUserName'>VOTRE NOM D'UTILISATEUR</p>
+                                    <input type='text' name='inputUserName' className='input inputUserName' id='inputUserName'/>
+                                    <span className='error errorUserName' id='errorUserName'></span>
+                                    <p className='labelForm labelPassword' id='labelPassword'>VOTRE MOT DE PASSE *</p>
+                                    <input type='password' name='password' className='input inputPassword password' id='inputPassword'/>
+                                    <span className='error errorPassword' id='errorPassword'></span>
+                                    <p className='labelForm labelPasswordRepeat' id='labelPasswordRepeat'>RESSAISISSEZ VOTRE MOT DE PASSE *</p>
+                                    <input type='password' name='password_confirmation' className='input inputPasswordRepeat password_confirmation' id='inputPasswordRepeat password_confirmation'/>
+                                    <span className='error errorPasswordRepeat' id='errorPasswordRepeat'></span>
+                                </div>
                                 <div className='blockButton' id='blockButton'>
-                                    <button type='button' className='prevButton prevButton1' id='prevButton prevButton1'>PRECEDENT</button>
-                                    <button type='button' onClick={Form1Next} className='nextButton nextButton1' id='nextButton nextButton1'>SUIVANT</button>
+                                        <button type='button' disabled='true' className='prevButton prevButton1' id='prevButton prevButton1'>PRECEDENT</button>
+                                        <button type='button'  onClick={Form1Next} className='nextButton nextButton1' id='nextButton nextButton1'>SUIVANT</button>
                                 </div>
                             </div>
                         </div>
@@ -140,9 +264,9 @@ function SingUp(){
                             <p className='titlesForm titlesForm2' id='titlesForm2'>INFORMATIONS PERSONNELLES</p>
                             <p className='titleDescriptionForm titleDescriptionForm1' id='titleDescriptionForm1'>VEUILLEZ RENSEIGNEZ VOS INFORMATIONS PERSONNELLES</p>
                             <div className='blockForm1' id='blockForm1'>
-                                    <div className='scrolldiv1' id='scrollDiv1'>
+                                    <div className='scrolldiv scrolldiv2' id='scrollDiv2'>
                                         <p className='labelForm labelName' id='labelName'>NOM *</p>
-                                        <input type='text' name='inputName' className='input inputName' id='inputName'/>
+                                        <input type='text' name='name' className='name input inputName' id='name inputName'/>
                                         <p className='labelForm labelSecondName' id='labelSecondName'>PRENOM *</p>
                                         <input type='text' name='inputUserName' className='input inputUserName' id='inputUserName'/>
                                         <p className='labelForm labelNumberPhone' id='labelNumberPhone'>NUMERO DE TELEPHONE *</p>
@@ -181,7 +305,7 @@ function SingUp(){
                                     
                                     <div className='blockButton4' id='blockButton4'>
                                         <button type='button' onClick={Form4Prev} className='prevButton prevButton4' id='prevButton4'>PRECEDENT</button>
-                                        <button type='button' className='nextButton nextButton4' id='nextButton4'>VALIDER</button>
+                                        <button type='submit' className='nextButton nextButton4' id='nextButton4'>VALIDER</button>
                                     </div>
                             </div>
                         </div>

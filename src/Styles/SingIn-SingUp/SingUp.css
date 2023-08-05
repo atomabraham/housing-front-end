@@ -2,9 +2,11 @@
 
 .blockSingUp{
     width: 90%;
+    height: 520px;
     display: block;
     margin: auto;
-    margin-top:2%
+    margin-top:2%;
+    box-shadow: rgba(0, 0, 0, 0.402) 5px 5px 9px 3px;
 }
 
 /*title signUp*/
@@ -197,8 +199,8 @@
 .blockForm2{
 }
 
-.scrolldiv1{
-    height: 300px;
+.scrolldiv{
+    height: 310px;
     overflow: auto;
 }
 
