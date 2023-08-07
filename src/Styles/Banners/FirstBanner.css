@@ -132,6 +132,7 @@ li{
 
     .logoFirstBanner{
         float: left;
+        margin-left: -1%;
         margin-top: -3.5%;
         width: 150px;
         height: 120px;
@@ -154,7 +155,7 @@ li{
 @media (width<=1500px){
     .buttonAccount{
         float: right;
-        margin-right: 4%;
+        margin-right: 0.8%;
         margin-top: 1%;
         width: 40px;
         height: 40px;
@@ -163,19 +164,16 @@ li{
 
     .logoFirstBanner{
         float: left;
+        margin-left: -0.9%;
         margin-top: -2.8%;
         width: 150px;
         height: 120px;
     }
 
-    
-}
-
-@media (width<=1380px){
     .listLinks{
         position: absolute;
-        margin-top: 4.5%;
-        margin-left: 70%;
+        margin-top: 4%;
+        margin-left: 75%;
         width: 190px;
         text-align: left;
         z-index: 1;
@@ -190,6 +188,21 @@ li{
     .listLinks{
         position: absolute;
         margin-top: 4%;
+        margin-left: 74%;
+        width: 190px;
+        text-align: left;
+        z-index: 1;
+        display: none;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
+    }
+}
+
+@media (width<=1300px){
+    .listLinks{
+        position: absolute;
+        margin-top: 4%;
         margin-left: 71%;
         width: 190px;
         text-align: left;
@@ -198,6 +211,14 @@ li{
         background-color: white;
         border-radius: 10px;
         box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
+    }
+
+    .logoFirstBanner{
+        float: left;
+        margin-left: -1.1%;
+        margin-top: -2.8%;
+        width: 150px;
+        height: 120px;
     }
 }
 
@@ -214,6 +235,14 @@ li{
         border-radius: 10px;
         box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
     }
+
+    .logoFirstBanner{
+        float: left;
+        margin-left: -1.3%;
+        margin-top: -2.8%;
+        width: 150px;
+        height: 120px;
+    }
 }
 
 @media (width<=1100px){
@@ -225,7 +254,7 @@ li{
 
     .buttonAccount{
         float: right;
-        margin-right: 4%;
+        margin-right: 0.8%;
         margin-top: 0%;
         width: 40px;
         height: 40px;
@@ -234,7 +263,7 @@ li{
 
     .logoFirstBanner{
         float: left;
-        margin-left: 3%;
+        margin-left: -1.3%;
         margin-top: -4.8%;
         width: 150px;
         height: 120px;
@@ -263,7 +292,7 @@ li{
 
     .buttonAccount{
         float: right;
-        margin-right: 4%;
+        margin-right: 0.8%;
         margin-top: 0%;
         width: 40px;
         height: 40px;
@@ -272,7 +301,7 @@ li{
 
     .logoFirstBanner{
         float: left;
-        margin-left: 3%;
+        margin-left: -1.5%;
         margin-top: -5.5%;
         width: 150px;
         height: 120px;
@@ -295,7 +324,7 @@ li{
 @media (width<=900px){
     .buttonAccount{
         float: right;
-        margin-right: 4%;
+        margin-right: 0.8%;
         margin-top: 0%;
         width: 40px;
         height: 40px;
@@ -304,7 +333,7 @@ li{
 
     .logoFirstBanner{
         float: left;
-        margin-left: 3%;
+        margin-left: -2%;
         margin-top: -6.5%;
         width: 150px;
         height: 120px;
@@ -337,6 +366,14 @@ li{
         border-radius: 10px;
         box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
     }
+
+    .logoFirstBanner{
+        float: left;
+        margin-left: -2.5%;
+        margin-top: -6.5%;
+        width: 150px;
+        height: 120px;
+    }
 }
 
 @media (width<=750px){
@@ -352,6 +389,14 @@ li{
         border-radius: 10px;
         box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
     }
+
+    .logoFirstBanner{
+        float: left;
+        margin-left: -2.8%;
+        margin-top: -6.5%;
+        width: 150px;
+        height: 120px;
+    }
 }
 
 @media (width<=700px){
@@ -360,7 +405,7 @@ li{
 
     .buttonAccount{
         float: right;
-        margin-right: 4%;
+        margin-right: 0.8%;
         margin-top: 0%;
         width: 40px;
         height: 40px;
@@ -369,7 +414,7 @@ li{
 
     .logoFirstBanner{
         float: left;
-        margin-left: -0.5%;
+        margin-left: -2.8%;
         margin-top: -7.5%;
         width: 150px;
         height: 120px;
@@ -401,12 +446,20 @@ li{
             border-radius: 10px;
             box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
     }
+
+    .logoFirstBanner{
+        float: left;
+        margin-left: -3.3%;
+        margin-top: -8%;
+        width: 150px;
+        height: 120px;
+    }
 }
 
 @media (width<=600px){
     .buttonAccount{
         float: right;
-        margin-right: 4%;
+        margin-right: 0.8%;
         margin-top: 0%;
         width: 40px;
         height: 40px;
@@ -415,7 +468,7 @@ li{
 
     .logoFirstBanner{
         float: left;
-        margin-left: -1%;
+        margin-left: -3.5%;
         margin-top: -8.5%;
         width: 150px;
         height: 120px;
@@ -439,7 +492,7 @@ li{
 @media (width<=550px){
     .logoFirstBanner{
         float: left;
-        margin-left: 1.1%;
+        margin-left: -3%;
         margin-top: -7.5%;
         width: 120px;
         height: 100px;
@@ -469,7 +522,7 @@ li{
 
     .buttonAccount{
         float: right;
-        margin-right: 4%;
+        margin-right: 0.8%;
         margin-top: 0%;
         width: 30px;
         height: 30px;
@@ -478,7 +531,7 @@ li{
 
     .logoFirstBanner{
         float: left;
-        margin-left: 1.1%;
+        margin-left: -3%;
         margin-top: -9.2%;
         width: 120px;
         height: 100px;
@@ -519,12 +572,20 @@ li{
             background-color:#f6b100;
         }
     }
+
+    .buttonAccount{
+        margin-right: 0.5%;
+    }
+
+    .logoFirstBanner{
+        margin-left: -4.5%;
+    }
 }
 
 @media (width<=400px){
     .buttonAccount{
         float: right;
-        margin-right: 4%;
+        margin-right: 0.5%;
         margin-top: 0%;
         width: 30px;
         height: 30px;
@@ -533,7 +594,7 @@ li{
 
     .logoFirstBanner{
         float: left;
-        margin-left: -2%;
+        margin-left: -5%;
         margin-top: -11%;
         width: 120px;
         height: 100px;
@@ -564,7 +625,7 @@ li{
 @media (width<=370px){
     .logoFirstBanner{
         float: left;
-        margin-left: -2%;
+        margin-left: -5%;
         margin-top: -12%;
         width: 120px;
         height: 100px;
@@ -588,7 +649,7 @@ li{
 @media (width<=350px){
     .logoFirstBanner{
         float: left;
-        margin-left: -2%;
+        margin-left: -5%;
         margin-top: -13%;
         width: 120px;
         height: 100px;
@@ -612,7 +673,7 @@ li{
 @media (width<=330px){
     .logoFirstBanner{
         float: left;
-        margin-left: -3.5%;
+        margin-left: -6%;
         margin-top: -14%;
         width: 120px;
         height: 100px;
@@ -643,7 +704,7 @@ li{
 @media (width<=310px){
     .logoFirstBanner{
         float: left;
-        margin-left: -3.5%;
+        margin-left: -6%;
         margin-top: -14%;
         width: 120px;
         height: 100px;
@@ -675,7 +736,7 @@ li{
 @media (width<=300px){
     .buttonAccount{
         float: right;
-        margin-right: 4%;
+        margin-right: 0.8%;
         margin-top: 3%;
         width: 30px;
         height: 30px;
@@ -684,8 +745,41 @@ li{
 
     .logoFirstBanner{
         float: left;
-        margin-left: 0.6%;
-        margin-top: -11%;
+        margin-left: -6%;
+        margin-top: -13%;
+        width: 120px;
+        height: 100px;
+    }
+
+    .listLinks{
+        position: absolute;
+        margin-top: 13.5%;
+        margin-left: 25%;
+        width: 150px;
+        text-align: left;
+        z-index: 1;
+        display: none;
+        background-color: white;
+        font-size: 15px;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
+    }
+}
+
+@media (width<=380px){
+    .buttonAccount{
+        float: right;
+        margin-right: 0.8%;
+        margin-top: 3%;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    .logoFirstBanner{
+        float: left;
+        margin-left: -6.5%;
+        margin-top: -15%;
         width: 120px;
         height: 100px;
     }
