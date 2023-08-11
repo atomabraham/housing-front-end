@@ -1,6 +1,6 @@
 //importation des dépendances
 import React from 'react';
-import '../../Styles/Banners/SecondBanner.css'
+import '../../../Styles/Banners/SecondBanner.css'
 import { TbListSearch } from 'react-icons/tb';
 import { TbHomePlus } from 'react-icons/tb';
 import {NavClik} from './FirstBanner'

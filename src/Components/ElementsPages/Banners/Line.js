@@ -1,6 +1,6 @@
 //importation des dépendances
 
-import '../../Styles/Banners/Line.css'
+import '../../../Styles/Banners/Line.css'
 
 //Composant qui créé la ligne qui sépare les deux banniere
 
