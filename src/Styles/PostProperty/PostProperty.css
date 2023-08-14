@@ -1,0 +1,25 @@
+/* style BlockImagePostPorperty */
+.BlockImagePostPorperty{
+    margin-top: 2%;
+    width: 100%;
+    height: 420px;
+    background-image: url('../../Assets/Images/600.jpg');
+    
+}
+
+.ImageBlockPost{
+    width: 100%;
+    height: 520px;
+}
+
+/* background */
+.background{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.529);
+}
+
+.TextBlockImagePost1{
+    font-size: 30px;
+    color: white;
+}

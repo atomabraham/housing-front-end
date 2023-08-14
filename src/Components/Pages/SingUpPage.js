@@ -1,20 +1,18 @@
 //importation des dependances
 
 import React, { useState, useEffect } from 'react'
-import '../../../Styles/SingIn-SingUp/SingUp.css'
-import FirstBanner, { NavClik } from '../../ElementsPages/Banners/FirstBanner'
-import Line from '../../ElementsPages/Banners/Line'
-// import imageSingUp from '../../Assets/Images/600.jpg'
+import '../../Styles/SingIn-SingUp/SingUp.css'
+import FirstBanner, { CloseMenu } from '../ElementsPages/Banners/FirstBanner'
+import Line from '../ElementsPages/Banners/Line'
 import {redirect  } from 'react-router-dom'
-import axios from '../../Authentification/axios'
-import { useAuth } from '../../Authentification/AuthContext'
-import BlockSteps from '../../SingIn-SingUp/SingUP/BlockLeft/BlockSteps'
-import BlockForm1 from '../../SingIn-SingUp/SingUP/BlockForms/BlockForm1'
-import BlockForm2 from '../../SingIn-SingUp/SingUP/BlockForms/BlockForm2'
-import BlockForm3 from '../../SingIn-SingUp/SingUP/BlockForms/BlockForm3'
-import BlockForm4 from '../../SingIn-SingUp/SingUP/BlockForms/BlockForm4'
-import HaveAccount from '../../SingIn-SingUp/SingUP/HaveAcount/HaveAcount'
-import SignUpSuccess from '../../ElementsPages/SingUpToasts'
+import axios from '../Authentification/axios'
+import { useAuth } from '../Authentification/AuthContext'
+import BlockSteps from '../SingIn-SingUp/SingUP/BlockLeft/BlockSteps'
+import BlockForm1 from '../SingIn-SingUp/SingUP/BlockForms/BlockForm1'
+import BlockForm2 from '../SingIn-SingUp/SingUP/BlockForms/BlockForm2'
+import BlockForm3 from '../SingIn-SingUp/SingUP/BlockForms/BlockForm3'
+import BlockForm4 from '../SingIn-SingUp/SingUP/BlockForms/BlockForm4'
+import HaveAccount from '../SingIn-SingUp/SingUP/HaveAcount/HaveAcount'
 
 //
 
@@ -50,7 +48,7 @@ function SingUp(){
 			const resp = await axios.post('/register', body);
 			if (resp.status === 200) {
 
-                // console.log(resp.data.user);
+                console.log(resp.data.user);
                 
                 return (
                     document.location.href="http://localhost:3000/"
@@ -101,6 +99,22 @@ function SingUp(){
             }
     }
 
+    // Verifier si un utilisateur est connecter ou non au serveur
+	useEffect(() => {
+		(async () => {
+			try {
+				const resp = await axios.get('http://localhost:8000/api/user');
+				if (resp.status === 200) {
+                    window.location.href="/"
+				}
+			} catch (error) {
+				if (error.response.status === 401) {
+					
+				}
+			}
+		})();
+	}, );
+
     return(
         <>
             
@@ -108,7 +122,7 @@ function SingUp(){
             <Line/>
 
             {/* block d'inscription */}
-            <div onClick={NavClik} className='row blockSingUp' id='blockSingUp'>
+            <div onClick={CloseMenu} className='row blockSingUp' id='blockSingUp'>
                 
                 {/* block de droite */}
                 <div className='blockRightSingUp' id='blockRightSingUp'>

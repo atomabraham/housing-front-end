@@ -2,9 +2,9 @@
 import '../Styles/App.css';
 import 'bootstrap/dist/css/bootstrap.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './Pages/Home/HomePage';
-import SingUp from './Pages/SingUp/SingUpPage';
-import DashboardUsers from './Pages/Dashboard_User/DashboardUsers';
+import Home from './Pages/HomePage';
+import SingUp from './Pages/SingUpPage';
+import PostProperty from './Pages/PostProperty';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route path = "/" element = { <Home/> }></Route>
           <Route path = "/SignUp" element = { <SingUp/> }></Route>
-          <Route path = '/account' element = { <DashboardUsers/> }></Route>
+          <Route path= '/CreatePost' element = { <PostProperty/> }></Route>
         </Routes>
       </BrowserRouter>
     </div>
