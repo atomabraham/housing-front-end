@@ -3,6 +3,9 @@
     height: 1px;
     margin-top: 0%;
     background-color: rgba(0, 0, 0, 0.201);
+    z-index: 3;
+    margin-top: 4.5%;
+    position: fixed;
 }
 
 @media (width<=700px){

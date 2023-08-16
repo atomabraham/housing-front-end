@@ -1,11 +1,13 @@
 /*style de l'inscription*/
 
 .blockSingUp{
+    position: absolute;
     width: 90%;
     height: 550px;
     display: block;
     margin: auto;
-    margin-top:1%;
+    margin-top:6%;
+    margin-left:5%;
     box-shadow: rgba(0, 0, 0, 0.402) 5px 5px 9px 3px;
 }
 

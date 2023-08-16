@@ -4,10 +4,13 @@
 
 
 .firstBanner{
-    margin: auto;
-    width: 92%;
+    position: fixed;
+    width: 100%;
     height: 60px;
-    z-index: 5;
+    margin: auto;
+    z-index: 2;
+    background-color: white;
+    margin-top: 0%;
 }
 
 .logoFirstBanner{
@@ -15,16 +18,19 @@
     width: 150px;
     height: 120px;
     cursor: pointer;
+    margin-top: -3.5%;
+    margin-left: 2%;
 }
 
 .buttonAccount{
     float: right;
-    margin-top: 1%;
     width: 40px;
     height: 40px;
     cursor: pointer;
     color: rgba(0, 0, 0, 0.491);
+    margin-right: 5%;
 }
+
 
 .postProperty{
     position: absolute;
@@ -32,33 +38,33 @@
     text-decoration: none;
     color: white;
     font-weight: bold;
-    margin-left: 25%;
-    margin-top: 0.8%;
+    margin-top: -0.3%;
+    margin-left: 18%;
     background-color: #f6b100;
     padding: 0.8%;
     border-radius: 10px;
 }
 
+ 
 .iconAddPost{
 }
 
-.textPost{
+/* .textPost{
     margin-top: 1%;
     
-}
+}  */
 
 /*menu deroulant*/
-li{
+ li{
     list-style: none;
 }
 
 .listLinks{
     position: absolute;
-    margin-top: 4%;
-    margin-left: 71%;
+    margin-top: 3.5%;
+    margin-left: 77%;
     width: 200px;
     text-align: left;
-    z-index: 1;
     display: none;
     background-color: white;
     border-radius: 10px;
@@ -72,7 +78,7 @@ li{
     padding: 15px;
     text-decoration: none;
     display: block;
-    margin-left: -20.5%;
+    margin-left: -18.8%;
     font-family: montserrat;
 
     &:hover{
@@ -80,36 +86,40 @@ li{
     }
 }
 
-.contentMenu:hover .linkMenu{
+
+/* .contentMenu:hover .linkMenu{
     display: block;
+} */
+
+#linkMenuBuy{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
-.linkMenu0{
-    &:hover{
-      border-top-left-radius: 10px;  
-      border-top-right-radius: 10px;  
-    } 
+#linkMenuFavoris{
+   display: none;
 }
 
-.linkMenu1{
-    
+#linkMenuMyProperty{
+   display: none;
 }
 
-.linkMenu2{
-    position: relative;
-    margin-top: 2%;
+#linkMenuAccount{
+    border-top: solid 2px rgba(118, 120, 121, 0.327);
+    display: none;
 }
 
-.linkMenu3{
-    position: relative;
-    border-bottom: solid 0.5px rgba(0, 0, 0, 0.317);
-    margin-top: 2%;
+
+
+.linkMenuMyProperty{
+    border-bottom: solid 2px rgba(118, 120, 121, 0.327);
 }
 
-#linkMenu33{
-    border-bottom: solid 0.5px rgba(0, 0, 0, 0.317);
-    /* background-color: rgba(85, 83, 83, 0.262); */
+
+.linkMenuAdmin{
     color: #f6b100;
+    border-bottom: solid 2px rgba(0, 0, 0, 0.095);
+    background-color: rgba(118, 120, 121, 0.179);
     display: none;
 
     &:hover{
@@ -117,733 +127,21 @@ li{
     }
 }
 
-.linkMenu4{
-    position: relative;
-    margin-top: 0%;
+.linkMenuContactUs{
+    border-top: solid 2px rgba(118, 120, 121, 0.327);
 }
 
-.linkMenu5{
-    position: relative;
-    &:hover{
-        border-bottom-left-radius: 10px;  
-        border-bottom-right-radius: 10px;  
-    }
+#linkMenuSignIn{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
-#linkMenu6{
+#linkMenuLogout{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     display: none;
-    
-    &:hover{
-        border-bottom-left-radius: 10px;  
-        border-bottom-right-radius: 10px;  
-      }
 }
 
-/*media query*/
-@media (width>=1999px){
-    .buttonAccount{
-        float: right;
-        margin-top: 0%;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-    }
 
-    .logoFirstBanner{
-        float: left;
-        margin-top: -3.5%;
-        width: 150px;
-        height: 120px;
-    }
 
-    .listLinks{
-        position: absolute;
-        margin-top: 3.2%;
-        margin-left: 80%;
-        width: 170px;
-        text-align: left;
-        z-index: 1;
-        display: none;
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
-    }
-}
 
-@media (width>=1501px){
-    .buttonAccount{
-        float: right;
-        margin-top: 0%;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-    }
-
-    .logoFirstBanner{
-        float: left;
-        margin-left: -1%;
-        margin-top: -3.5%;
-        width: 150px;
-        height: 120px;
-    }
-
-    .listLinks{
-        position: absolute;
-        margin-top: 3%;
-        margin-left: 75%;
-        width: 200px;
-        text-align: left;
-        z-index: 1;
-        display: none;
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
-    }
-}
-
-@media (width<=1500px){
-    .buttonAccount{
-        float: right;
-        margin-right: 0.8%;
-        margin-top: 1%;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-    }
-
-    .logoFirstBanner{
-        float: left;
-        margin-left: -0.9%;
-        margin-top: -2.8%;
-        width: 150px;
-        height: 120px;
-    }
-
-    .listLinks{
-        position: absolute;
-        margin-top: 4%;
-        margin-left: 75%;
-        width: 190px;
-        text-align: left;
-        z-index: 1;
-        display: none;
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
-    }
-}
-
-@media (width<=1380px){
-    .listLinks{
-        position: absolute;
-        margin-top: 4%;
-        margin-left: 74%;
-        width: 190px;
-        text-align: left;
-        z-index: 1;
-        display: none;
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
-    }
-}
-
-@media (width<=1300px){
-    .listLinks{
-        position: absolute;
-        margin-top: 4%;
-        margin-left: 71%;
-        width: 190px;
-        text-align: left;
-        z-index: 1;
-        display: none;
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
-    }
-
-    .logoFirstBanner{
-        float: left;
-        margin-left: -1.1%;
-        margin-top: -2.8%;
-        width: 150px;
-        height: 120px;
-    }
-}
-
-@media (width<=1200px){
-    .listLinks{
-        position: absolute;
-        margin-top: 5%;
-        margin-left: 67%;
-        width: 200px;
-        text-align: left;
-        z-index: 1;
-        display: none;
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
-    }
-
-    .logoFirstBanner{
-        float: left;
-        margin-left: -1.3%;
-        margin-top: -2.8%;
-        width: 150px;
-        height: 120px;
-    }
-}
-
-@media (width<=1100px){
-    .firstBanner{
-        margin: auto;
-        width: 92%;
-        height: 45px;
-    }
-
-    .buttonAccount{
-        float: right;
-        margin-right: 0.8%;
-        margin-top: 0%;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-    }
-
-    .logoFirstBanner{
-        float: left;
-        margin-left: -1.3%;
-        margin-top: -4.8%;
-        width: 150px;
-        height: 120px;
-    }
-
-    .listLinks{
-        position: absolute;
-        margin-top: 4.2%;
-        margin-left: 67%;
-        width: 190px;
-        text-align: left;
-        z-index: 1;
-        display: none;
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
-    }
-}
-
-@media (width<=1000px){
-    .firstBanner{
-        margin: auto;
-        width: 92%;
-        height: 50px;
-    }
-
-    .buttonAccount{
-        float: right;
-        margin-right: 0.8%;
-        margin-top: 0%;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-    }
-
-    .logoFirstBanner{
-        float: left;
-        margin-left: -1.5%;
-        margin-top: -5.5%;
-        width: 150px;
-        height: 120px;
-    }
-
-    .listLinks{
-        position: absolute;
-        margin-top: 5%;
-        margin-left: 65%;
-        width: 190px;
-        text-align: left;
-        z-index: 1;
-        display: none;
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
-    }
-}
-
-@media (width<=900px){
-    .buttonAccount{
-        float: right;
-        margin-right: 0.8%;
-        margin-top: 0%;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-    }
-
-    .logoFirstBanner{
-        float: left;
-        margin-left: -2%;
-        margin-top: -6.5%;
-        width: 150px;
-        height: 120px;
-    }
-
-    .listLinks{
-        position: absolute;
-        margin-top: 5%;
-        margin-left: 61%;
-        width: 190px;
-        text-align: left;
-        z-index: 1;
-        display: none;
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
-    }
-}
-
-@media (width<=800px){
-    .listLinks{
-        position: absolute;
-        margin-top: 5.5%;
-        margin-left: 57%;
-        width: 190px;
-        text-align: left;
-        z-index: 1;
-        display: none;
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
-    }
-
-    .logoFirstBanner{
-        float: left;
-        margin-left: -2.5%;
-        margin-top: -6.5%;
-        width: 150px;
-        height: 120px;
-    }
-}
-
-@media (width<=750px){
-    .listLinks{
-        position: absolute;
-        margin-top: 6%;
-        margin-left: 56%;
-        width: 190px;
-        text-align: left;
-        z-index: 1;
-        display: none;
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
-    }
-
-    .logoFirstBanner{
-        float: left;
-        margin-left: -2.8%;
-        margin-top: -6.5%;
-        width: 150px;
-        height: 120px;
-    }
-}
-
-@media (width<=700px){
-    .firstBanner{
-    }
-
-    .buttonAccount{
-        float: right;
-        margin-right: 0.8%;
-        margin-top: 0%;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-    }
-
-    .logoFirstBanner{
-        float: left;
-        margin-left: -2.8%;
-        margin-top: -7.5%;
-        width: 150px;
-        height: 120px;
-    }
-    .listLinks{
-            position: absolute;
-            margin-top: 6%;
-            margin-left: 53%;
-            width: 190px;
-            text-align: left;
-            z-index: 1;
-            display: none;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
-    }
-}
-
-@media (width<=650px){
-    .listLinks{
-            position: absolute;
-            margin-top: 6.2%;
-            margin-left: 50%;
-            width: 190px;
-            text-align: left;
-            z-index: 1;
-            display: none;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
-    }
-
-    .logoFirstBanner{
-        float: left;
-        margin-left: -3.3%;
-        margin-top: -8%;
-        width: 150px;
-        height: 120px;
-    }
-}
-
-@media (width<=600px){
-    .buttonAccount{
-        float: right;
-        margin-right: 0.8%;
-        margin-top: 0%;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-    }
-
-    .logoFirstBanner{
-        float: left;
-        margin-left: -3.5%;
-        margin-top: -8.5%;
-        width: 150px;
-        height: 120px;
-    }
-
-    .listLinks{
-        position: absolute;
-        margin-top: 7%;
-        margin-left: 48%;
-        width: 190px;
-        text-align: left;
-        z-index: 1;
-        display: none;
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
-        font-size: 15px;
-}
-}
-
-@media (width<=550px){
-    .logoFirstBanner{
-        float: left;
-        margin-left: -3%;
-        margin-top: -7.5%;
-        width: 120px;
-        height: 100px;
-    }
-
-    .listLinks{
-            position: absolute;
-            margin-top: 8%;
-            margin-left: 45%;
-            width: 190px;
-            text-align: left;
-            z-index: 1;
-            display: none;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
-            font-size: 12px;
-    }
-}
-
-@media (width<=500px){
-    .firstBanner{
-        margin: auto;
-        width: 92%;
-        height: 45px;
-    }
-
-    .buttonAccount{
-        float: right;
-        margin-right: 0.8%;
-        margin-top: 0%;
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
-    }
-
-    .logoFirstBanner{
-        float: left;
-        margin-left: -3%;
-        margin-top: -9.2%;
-        width: 120px;
-        height: 100px;
-    }
-
-    .listLinks{
-        position: absolute;
-        margin-top: 7%;
-        margin-left: 50%;
-        width: 150px;
-        text-align: left;
-        z-index: 1;
-        display: none;
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
-}
-}
-
-@media (width<=450px){
-
-    .listLinks{
-            position: absolute;
-            margin-top: 7%;
-            margin-left: 45%;
-            width: 150px;
-            text-align: left;
-            z-index: 1;
-            display: none;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
-    }
-
-    .linkMenu{
-        margin-left: -27%;
-        &:hover{
-            background-color:#f6b100;
-        }
-    }
-
-    .buttonAccount{
-        margin-right: 0.5%;
-    }
-
-    .logoFirstBanner{
-        margin-left: -4.5%;
-    }
-}
-
-@media (width<=400px){
-    .buttonAccount{
-        float: right;
-        margin-right: 0.5%;
-        margin-top: 0%;
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
-    }
-
-    .logoFirstBanner{
-        float: left;
-        margin-left: -5%;
-        margin-top: -11%;
-        width: 120px;
-        height: 100px;
-    }
-
-    .listLinks{
-        position: absolute;
-        margin-top: 8%;
-        margin-left: 40%;
-        width: 150px;
-        text-align: left;
-        z-index: 1;
-        display: none;
-        background-color: white;
-        font-size: 12px;
-        border-radius: 10px;
-        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
-    }
-
-    .linkMenu{
-        margin-left: -27%;
-        &:hover{
-            background-color:#f6b100;
-        }
-    }
-}
-
-@media (width<=370px){
-    .logoFirstBanner{
-        float: left;
-        margin-left: -5%;
-        margin-top: -12%;
-        width: 120px;
-        height: 100px;
-    }
-
-    .listLinks{
-        position: absolute;
-        margin-top: 9%;
-        margin-left: 35%;
-        width: 150px;
-        text-align: left;
-        z-index: 1;
-        display: none;
-        background-color: white;
-        font-size: 12px;
-        border-radius: 10px;
-        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
-    }
-}
-
-@media (width<=350px){
-    .logoFirstBanner{
-        float: left;
-        margin-left: -5%;
-        margin-top: -13%;
-        width: 120px;
-        height: 100px;
-    }
-
-    .listLinks{
-        position: absolute;
-        margin-top: 9%;
-        margin-left: 32%;
-        width: 150px;
-        text-align: left;
-        z-index: 1;
-        display: none;
-        background-color: white;
-        font-size: 12px;
-        border-radius: 10px;
-        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
-    }
-}
-
-@media (width<=330px){
-    .logoFirstBanner{
-        float: left;
-        margin-left: -6%;
-        margin-top: -14%;
-        width: 120px;
-        height: 100px;
-    }
-
-    .listLinks{
-        position: absolute;
-        margin-top: 10%;
-        margin-left: 30%;
-        width: 150px;
-        text-align: left;
-        z-index: 1;
-        display: none;
-        background-color: white;
-        font-size: 12px;
-        border-radius: 10px;
-        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
-    }
-
-    .linkMenu{
-        margin-left: -29%;
-        &:hover{
-            background-color:#f6b100;
-        }
-    }
-}
-
-@media (width<=310px){
-    .logoFirstBanner{
-        float: left;
-        margin-left: -6%;
-        margin-top: -14%;
-        width: 120px;
-        height: 100px;
-    }
-
-    .listLinks{
-        position: absolute;
-        margin-top: 10%;
-        margin-left: 25%;
-        width: 150px;
-        text-align: left;
-        z-index: 1;
-        display: none;
-        background-color: white;
-        font-size: 12px;
-        border-radius: 10px;
-        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
-    }
-
-    .linkMenu{
-        margin-left: -30%;
-        font-size: 12px;
-        &:hover{
-            background-color:#f6b100;
-        }
-    }
-}
-
-@media (width<=300px){
-    .buttonAccount{
-        float: right;
-        margin-right: 0.8%;
-        margin-top: 3%;
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
-    }
-
-    .logoFirstBanner{
-        float: left;
-        margin-left: -6%;
-        margin-top: -13%;
-        width: 120px;
-        height: 100px;
-    }
-
-    .listLinks{
-        position: absolute;
-        margin-top: 13.5%;
-        margin-left: 25%;
-        width: 150px;
-        text-align: left;
-        z-index: 1;
-        display: none;
-        background-color: white;
-        font-size: 15px;
-        border-radius: 10px;
-        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
-    }
-}
-
-@media (width<=380px){
-    .buttonAccount{
-        float: right;
-        margin-right: 0.8%;
-        margin-top: 3%;
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
-    }
-
-    .logoFirstBanner{
-        float: left;
-        margin-left: -6.5%;
-        margin-top: -15%;
-        width: 120px;
-        height: 100px;
-    }
-
-    .listLinks{
-        position: absolute;
-        margin-top: 13.5%;
-        margin-left: 25%;
-        width: 150px;
-        text-align: left;
-        z-index: 1;
-        display: none;
-        background-color: white;
-        font-size: 15px;
-        border-radius: 10px;
-        box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
-    }
-}

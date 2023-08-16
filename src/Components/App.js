@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './Pages/HomePage';
 import SingUp from './Pages/SingUpPage';
 import PostProperty from './Pages/PostProperty';
+import HomeDashboardAdmin from './Pages/DashboardAdmin/HomeDashboardAdmin';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path = "/" element = { <Home/> }></Route>
           <Route path = "/SignUp" element = { <SingUp/> }></Route>
           <Route path= '/CreatePost' element = { <PostProperty/> }></Route>
+          <Route path='/Dashboard' element={<HomeDashboardAdmin/>}></Route>
         </Routes>
       </BrowserRouter>
     </div>

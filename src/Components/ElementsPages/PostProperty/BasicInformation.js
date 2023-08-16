@@ -23,7 +23,7 @@ function BasicInformation() {
                             <Form.Label className="labelBlockPost" id="labelBlockPostName">Type de propriété</Form.Label>
                             <Form.Select type="text" className="inputFormPost inputFormPostName" id="inputFormPostName" aria-label="Entrer le nom de la propriété" >
                                 <option>Selectionnez le type de la propriété</option>
-                                <option value="1" className="optionFormPost">Maison</option>
+                                <option value="1" className="optionFormPost option">Maison</option>
                                 <option value="2" className="optionFormPost">Appartement</option>
                                 <option value="3" className="optionFormPost">Studio</option>
                                 <option value="4" className="optionFormPost">Chambre</option>

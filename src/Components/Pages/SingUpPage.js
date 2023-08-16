@@ -30,8 +30,8 @@ function SingUp(){
 		e.preventDefault();
 		const { userName, name, secondname, phone, birthday, country, city, postalcode, email, password, password_confirmation,  } = e.target.elements;
 		const body = {
-			userName:   userName.value,
 			name:   name.value,
+			userName:   userName.value,
 			secondname:   secondname.value,
 			phone:   phone.value,
 			birthday:   birthday.value,

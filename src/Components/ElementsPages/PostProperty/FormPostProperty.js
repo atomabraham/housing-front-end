@@ -8,6 +8,7 @@ import LocationProperty from "./LocationProperty";
 import ImageProperty from "./ImagesProperty";
 import ContactPost from "./ContactPost";
 import DetailsPost from "./DetailsPost";
+import SubmitProperty from "./SubmitProperty";
 
 function FormPostProperty() {
 
@@ -30,6 +31,7 @@ function FormPostProperty() {
                 <DetailsPost/>
                 <ImageProperty/>
                 <ContactPost/>
+                <SubmitProperty/>
             </form>
 
         </Container>

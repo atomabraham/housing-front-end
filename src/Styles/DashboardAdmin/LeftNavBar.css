@@ -1,0 +1,10 @@
+.LeftNavBar{
+    position: fixed;
+    background-color: #f6b100;
+    height: 100%;
+}
+.Lef{
+    position: absolute;
+    background-color: red;
+    margin-left: 5%;
+}
