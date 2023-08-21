@@ -8,7 +8,6 @@ function PostProperty() {
     return(
         <>
             <FirstBanner/>
-            <Line/>
             <FormPostProperty/>
         </>
     )

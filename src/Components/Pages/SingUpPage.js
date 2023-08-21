@@ -119,7 +119,6 @@ function SingUp(){
         <>
             
             <FirstBanner/>
-            <Line/>
 
             {/* block d'inscription */}
             <div onClick={CloseMenu} className='row blockSingUp' id='blockSingUp'>

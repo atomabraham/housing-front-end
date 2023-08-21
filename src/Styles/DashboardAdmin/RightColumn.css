@@ -1,7 +1,9 @@
 .RightColumn{
     position: relative;
     margin-top: 50%;
-    background-color: red;
-    margin-left: 555%;
     width: 100%;
+}
+
+.menuOptionAdmin{
+    display: block;
 }

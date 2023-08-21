@@ -116,6 +116,11 @@
     width: 100%;
 }
 
+.inputFormPostDescription{
+    width: 100%;
+    height: 100px;
+}
+
 .option{
     /* background-color: red; */
 

@@ -32,7 +32,7 @@ function BasicInformation() {
                     </Col>
                     <Col sm="6">
                         <div className="mb-3" controlId="">
-                            <Form.Label className="labelBlockPost" id="labelBlockPostName">Statut de la propriété</Form.Label>
+                            <Form.Label multiple="multiple" className="labelBlockPost" id="labelBlockPostName">Statut de la propriété</Form.Label>
                             <select type="text" className="inputFormPost select  inputFormPostName" id="inputFormPostName" aria-label="Entrer le nom de la propriété" >
                                 <option>Selectionnez le statut de la propriété</option>
                                 <option selected value="1" className="optionFormPost1">A vendre</option>
