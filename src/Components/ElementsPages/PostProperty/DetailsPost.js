@@ -24,7 +24,7 @@ function DetailsPost() {
             </Row>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                 <Form.Label className="labelBlockPost" id="labelDescription">Description</Form.Label>
-                <textarea type="text" className="inputFormPost inputFormPostDescription" id="inputFormPostDescription" placeholder="Donnez une brève description de votre produit" />
+                <textarea name="inputFormPostDescription" type="text" className="inputFormPost inputFormPostDescription" id="inputFormPostDescription" placeholder="Donnez une brève description de votre produit" />
             </Form.Group>
                 <label for="supplement" className="labelBlockPost">Suplément de la propriété</label>
                 <Form.Select type="text" className="inputFormPost supplement" id="supplement" aria-label="" >

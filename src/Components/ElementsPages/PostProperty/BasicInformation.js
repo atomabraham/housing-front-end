@@ -14,29 +14,27 @@ function BasicInformation() {
                 <Row  style={{marginTop: '2%'}} >
                     <Form.Group className="mb-3" controlId="">
                         <Form.Label className="labelBlockPost" id="labelBlockPostName">Nom de la propriété</Form.Label>
-                        <Form.Control type="text" className="inputFormPost inputFormPostName" id="inputFormPostName" placeholder="Entrer le nom de la propriété" />
+                        <Form.Control name="inputFormPostName" type="text"  className="inputFormPost inputFormPostName" id="inputFormPostName" placeholder="Entrer le nom de la propriété" />
                     </Form.Group>
                 </Row>
                 <Row>
                     <Col sm="6">
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                             <Form.Label className="labelBlockPost" id="labelBlockPostName">Type de propriété</Form.Label>
-                            <Form.Select type="text" className="inputFormPost inputFormPostName" id="inputFormPostName" aria-label="Entrer le nom de la propriété" >
-                                <option>Selectionnez le type de la propriété</option>
-                                <option value="1" className="optionFormPost option">Maison</option>
-                                <option value="2" className="optionFormPost">Appartement</option>
-                                <option value="3" className="optionFormPost">Studio</option>
-                                <option value="4" className="optionFormPost">Chambre</option>
+                            <Form.Select type="text" className="inputFormPost inputFormPostType" id="inputFormPostType" aria-label="Entrer le nom de la propriété" >
+                                <option value="Maison" selected className="optionFormPost option">Maison</option>
+                                <option value="Appartement" className="optionFormPost">Appartement</option>
+                                <option value="Studio" className="optionFormPost">Studio</option>
                             </Form.Select>
                         </Form.Group>
                     </Col>
                     <Col sm="6">
                         <div className="mb-3" controlId="">
                             <Form.Label multiple="multiple" className="labelBlockPost" id="labelBlockPostName">Statut de la propriété</Form.Label>
-                            <select type="text" className="inputFormPost select  inputFormPostName" id="inputFormPostName" aria-label="Entrer le nom de la propriété" >
+                            <select type="text" className="inputFormPost select  inputFormPostStatus" id="inputFormPostStatus" aria-label="Entrer le nom de la propriété" >
                                 <option>Selectionnez le statut de la propriété</option>
-                                <option selected value="1" className="optionFormPost1">A vendre</option>
-                                <option value="2" className="optionFormPost">A louer</option>
+                                <option selected value="A vendre" className="optionFormPost1">A vendre</option>
+                                <option value="A louer" className="optionFormPost">A louer</option>
                             </select>
                         </div>
                     </Col>

@@ -5,6 +5,13 @@ import FormPostProperty from "../ElementsPages/PostProperty/FormPostProperty"
 
 function PostProperty() {
 
+    const addProperty = async (e) => {
+        // e.preventDefault();
+        // const {propertyName, description} = e.target.elements;
+        // const image = e.target.files[0];
+    }
+
+
     return(
         <>
             <FirstBanner/>

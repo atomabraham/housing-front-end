@@ -1,8 +1,14 @@
 import { Row } from "react-bootstrap"
 import "../../../Styles/PostProperty/FormPostProperty.css"
-import FormPostController from "../../Controllers/FormPostController"
+import { useNavigate } from "react-router-dom"
+import { useState } from "react";
+// import FormPostController from "../../Controllers/FormPostController"
 
 function SubmitProperty() {
+    function FormPostController() {
+        
+      }  
+
     return(
         <>
             <Row>
@@ -13,7 +19,7 @@ function SubmitProperty() {
                 </label>
             </Row>
             <Row>
-                <button type="button" onClick={FormPostController} className="buttonSubmitProperty" id="buttonSubmitProperty">Valider</button>
+                <button type="submit" className="buttonSubmitProperty" id="buttonSubmitProperty">Valider</button>
             </Row>
         </>
     )

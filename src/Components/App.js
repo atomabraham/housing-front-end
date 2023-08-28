@@ -6,6 +6,7 @@ import Home from './Pages/HomePage';
 import SingUp from './Pages/SingUpPage';
 import PostProperty from './Pages/PostProperty';
 import HomeDashboardAdmin from './Pages/DashboardAdmin/HomeDashboardAdmin';
+import ShowProperty from './Pages/ShowProperty';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path = "/SignUp" element = { <SingUp/> }></Route>
           <Route path= '/CreatePost' element = { <PostProperty/> }></Route>
           <Route path='/Dashboard' element={<HomeDashboardAdmin/>}></Route>
+          <Route path='/property/:id' element={<ShowProperty/>}></Route>
         </Routes>
       </BrowserRouter>
     </div>

@@ -10,6 +10,7 @@ import { Navigate, Outlet } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import axios from '../Authentification/axios';
 import { useAuth } from '../Authentification/AuthContext';
+import ContentProperty from '../ElementsPages/Home/ContentProperty';
 
 //composant de la page d'acceuil
 
@@ -40,6 +41,7 @@ function Home(){
             <FirstBanner/>
             <Line/>
             <SecondBanner/>
+			<ContentProperty/>
         </div>
     )
 }

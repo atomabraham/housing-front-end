@@ -1,3 +1,4 @@
+import axios from "axios";
 import "../../../../Styles/SingIn-SingUp/SingUp.css"
 
 let Email = '';
@@ -9,7 +10,7 @@ function BlockForm1 () {
         Email = e.target.value;
     };
 
-    function Form1Next(){
+async function Form1Next(){
         // recuperation des donnees du formulaire 1
         let email = document.getElementById('inputEmail')
         let userName = document.getElementById('inputUserName')
@@ -66,6 +67,29 @@ function BlockForm1 () {
             //     email.style.borderColor='red'
             // }
             else{
+                // verification de l'existance ou non d'une addresse email
+                // const ok = async (e) => {
+                //     e.preventDefault();
+                //     const {email} = e.target.elements
+                //         const body = {
+                //             email: email.value
+                //         };
+                //     let errorEmail = document.getElementById('errorEmail')
+                //     let emailValue = email.value
+
+                    // console.log(body.email)
+                        // const resp =await axios.post('http://localhost:8000/api/emailVerification', email.value);
+                        // if (resp.data.message === 'found') {
+                        //     errorEmail.innerHTML='Cette adresse email existe déja'
+                        //     email.style.borderColor='red'
+                        //     // return true
+                        // }else{
+                        //     errorEmail.innerHTML=''
+                        //     email.style.borderColor='#00000064'
+                        //     // return false
+                        // }
+                // }
+                //
                 errorEmail.innerHTML=''
                 email.style.borderColor='#00000064'
                 emailValid=true

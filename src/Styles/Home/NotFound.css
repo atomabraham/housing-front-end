@@ -1,0 +1,34 @@
+.div404{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+@keyframes rotation {
+    From{
+        transform: rotate(0deg);
+    }
+    To{
+        transform: rotate(360deg);
+    }
+}
+
+.image404{
+    margin-top: -10%;
+    animation:rotation infinite linear 15s;
+}
+
+.notFound404{
+    font-weight: bold;
+    text-align: center;
+    font-size: 30px;
+    font-family: lato;
+    margin-top: -8%;
+}
+
+.textNotFound{
+    font-size: 20px;
+    font-family: lato;
+}

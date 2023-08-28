@@ -76,28 +76,7 @@ function SingUp(){
 		}
     }
     
-    // verification de l'existance ou non d'une addresse email
-    const ok = async (e) => {
-        e.preventDefault();
-        const {email} = e.target.elements
-            const body = {
-                email: email.value
-            };
-        let errorEmail = document.getElementById('errorEmail')
-        let emailValue = email.value
-
-        console.log(body.email)
-            const resp =await axios.post('http://localhost:8000/api/emailVerification', body);
-            if (resp.data.message === 'found') {
-                errorEmail.innerHTML='Cette adresse email existe déja'
-                email.style.borderColor='red'
-                return true
-            }else{
-                errorEmail.innerHTML=''
-                email.style.borderColor='#00000064'
-                return false
-            }
-    }
+    
 
     // Verifier si un utilisateur est connecter ou non au serveur
 	useEffect(() => {
