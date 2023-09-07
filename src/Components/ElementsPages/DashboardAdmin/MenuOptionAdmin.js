@@ -8,8 +8,23 @@ import { Form } from 'react-bootstrap';
 import React from 'react';
 import { addOption,deleteOption } from '../../Controllers/DahboardAdmin/MenuOptionController';
 import { LayoutOptionController2 } from '../../Controllers/DahboardAdmin/LayoutOptionController';
+import { useLocation } from 'react-router-dom';
 
 function MenuOptionAdmin() {
+    
+    let location = useLocation()
+    window.addEventListener('load',function (){
+        // condition d'affichage des menus
+        let rowMenuOptionAdmin = document.getElementById('rowMenuOptionAdmin')
+        if (location.pathname === '/Dashboard/options'){
+            // alert('ok')
+            rowMenuOptionAdmin.style.display = 'block'
+        }else{
+            rowMenuOptionAdmin.style.display = 'none'
+        } 
+    })
+    // console.log(location.pathname)
+
     //le modal
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -32,7 +47,7 @@ function MenuOptionAdmin() {
     }, []);
 
     return(
-        <Row className='rowMenuOptionAdmin' id='rowMenuOptionAdmin'>
+        <Row className='rowMenuOptionAdmin' id='rowMenuOptionAdmin' >
             <Row className='rowAddElement'>
                <button className="addElement addOption" id="addOption" onClick={handleShow}>AJOUTER</button> 
             </Row>
@@ -55,7 +70,11 @@ function MenuOptionAdmin() {
                                     <td className='idMenuOption'>{option.id}</td>
                                     <td>{option.name.toUpperCase()}</td>
                                     <td>
-                                        {option.role==="enable" ? <LockOpen className='statusOption'/> : <Lock className='statusOption'/>}
+                                        {option.role==="enable" ? (
+                                        <LockOpen className='statusOption'/>
+                                        ) : (
+                                        <Lock className='statusOption'/>
+                                        ) }
                                     </td>
                                     <td className='editDeleteOption'>
                                         <button type="button" onClick={handleShow2} className="buttonEditOption" id="buttonEditOption">

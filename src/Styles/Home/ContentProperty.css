@@ -8,119 +8,67 @@
     margin-right: auto;
 }
 
-.colPropertie{
-    position: relative;
-    /* border: solid 2px black; */
+.property-card{
+    border-radius: 10px;
+
+    /* &:hover{
+        transform: scale(1.05); 
+        cursor: pointer;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        padding: -1%;
+    } */
 }
 
+.card-body{
+    font-family: lato;
+}
+
+.imageCard{
+    border: none;
+}
+
+.namePropertyCard{
+    font-weight: bold;
+}
 
 .imageProperty{
     border-radius: 10px;
 }
 
-.statusProperty{
-    position: absolute;
-    margin-top: -20%;
-    right: 30%;
-    left: 30%;
-    margin-left: auto;
-    margin-right: auto;
-    color: black;
-    background-color: #f3f3f3b3;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    padding-left: 3%;
-    padding-right: 3%;
-    font-weight: bold;
-    border-radius: 10px;
-}
-
-.nameProperty{
-    font-weight: bold;
-    text-align: left;
-    font-size: 25px;
-    font-family: lato;
-    margin-bottom: -2%;
-}
-
-.localizationProperty{
-    text-align: left;
-    font-family: lato;
-}
-
-.iconLocalizationProperty{
-    color: #ffb100;
-}
-
-.spanLocalizationProperty{
-    position: absolute;
-    margin-top: 1%;
+.statusPropertyCard{
+    background-color: #f6b00076;
     padding-left: 1%;
-    font-family: lato;
-}
-
-.priceProperty{
-    text-align: left;
-    color: #ffb100;
+    padding-right: 1%;
     font-weight: bold;
-    font-size: 20px;
-    margin-top: -3%;
-}
-
-.iconFavorite{
-    position: absolute;
-    right: 0;
-    text-align: right;
-}
-
-.iconBedRoom{
-    border: none;
-    color: #ffb100;
-}
-
-.manyDetail{
-    text-align: left;
-    font-family: lato;
-    margin-top: -3%;
-}
-
-.iconBathRoom{
-    color: #ffb100;
-}
-
-.spanBathrooms{
-    position: absolute;
-    right: 0;
-    text-align: right;
-    font-family: lato;   
-}
-
-.linePoperty{
-    width: 100%;
-    height: 1px;
-    background-color: rgba(0, 0, 0, 0.311);
-}
-
-.rowLinkForDetail{
-    display: flex;
-    justify-content: end;
-    margin-top: 2%;
-}
-
-.linkForDetail{
-    text-decoration: none;
-    color: #ffb100;
-    border: solid 2px #ffb100;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    padding-left: 3%;
-    padding-right: 3%;
-    font-family: lato;
-    font-weight: bold;
+    /* color: rgba(0, 0, 0, 0.628); */
     border-radius: 10px;
+}
 
-    &:hover{
-        color: white;
-        background-color: #ffb100;
-    }
+.icon-container{
+    background-color: rgba(225, 223, 223, 0.895);
+    border-radius: 80px;
+    padding: 5px ; 
+    width: 25px;
+    height: 25px;
+    display: flex;
+    /* alignItems: center;
+    justifyContent: center; */
+    margin-right: 5px;
+}
+
+.iconLocalizationCard{
+    color: rgba(0, 0, 0, 0.518);
+    width: 100%;
+    height: 100%;
+}
+
+.detailCard p{
+    font-weight: bold;
+}
+
+.priceCard{
+    text-align: left;
+    font-weight: bold;
+    font-family: lato;
+    font-size: 20px;
 }

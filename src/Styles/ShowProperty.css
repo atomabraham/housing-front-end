@@ -1,0 +1,207 @@
+.divShowImageProp{
+    position: relative;
+    padding-top: 8%;
+}
+
+.showImageProperty{
+    position: relative;
+    width: 100%;
+    height: 70vh;
+}
+
+.showNameProperty{
+    font-size :35px ;
+    font-weight: bold;
+    font-family: lato;
+    text-align: left;
+    margin-top: 2%;
+    margin-bottom: -0.5%;
+}
+
+.showPriceProperty{
+    font-size :30px ;
+    font-weight: bold;
+    font-family: lato;
+    text-align: left;
+    margin-top: -1.5%;
+}
+
+.showLocalizationProperty{
+    text-align: left;
+    font-family: lato;
+    font-size: 20px;
+}
+
+.lineNameProperty1{
+    margin-left: 0%;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.488);
+    margin-bottom: 2%;
+}
+.lineNameProperty{
+    margin-left: 1%;
+    width: 80%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.488);
+}
+
+.showBedroomsProperty{
+    text-align: left;
+    font-family: lato;
+    font-size: 20px;
+}
+
+.iconShowBedrooms{
+    color: #0d0d0d7f;
+    width: 20px;
+    height: 20px;
+}
+
+.showBadroomsProperty{
+    text-align: left;
+    font-family: lato;
+    font-size: 20px;
+}
+
+.iconShowBadrooms{
+    color: #0d0d0d7f;
+    width: 20px;
+    height: 20px;
+}
+
+.showAreaProperty{
+    text-align: left;
+    font-weight: bold;
+    font-family: lato;
+    font-size: 20px;
+}
+
+.positionFlex{
+    display: flex;
+}
+
+.blockLeftInformation{
+    width: 80%;
+}
+
+.blockRightContact{
+    width: 25%;
+    height: fit-content;
+    padding-bottom: 2%;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 5px;
+}
+
+.inputFormPost{
+    width: 100%;
+    border-color: rgba(0, 0, 0, 0.623);
+
+}
+
+.inputFormPost::placeholder{
+    color: black;
+}
+.inputContactMessageShowProp{
+    &::placeholder{
+        margin-top: 2%;
+    }
+}
+
+.submitSendMessageShowProp{
+
+}
+
+.showTitleDescriptionProperty{
+    text-align: left;
+    font-family: lato;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.showDescriptionProperty{
+    text-align: justify;
+}
+
+.askQuestion{
+    width: fit-content;
+    margin-bottom: 2%;
+    margin-left: 1%;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-family: lato;
+    font-weight: bold;
+    background-color: #f6b100;
+}
+
+.searchPropertyButton{
+    width: fit-content;
+    margin-bottom: 2%;
+    margin-left: 1%;
+    border: none;
+    border-radius: 10px;
+    color: #f6b100;
+    font-family: lato;
+    font-weight: bold;
+    background-color: white;
+    border: #f6b100 solid 2px;
+}
+
+.blockAgrement{
+    width: 90%;
+    border: rgba(0, 0, 0, 0.458) solid 1px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.showTitleAgrementroperty{
+    text-align: left;
+    font-family: lato;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.text-left{
+    text-align: left;
+}
+
+.textAboutShowProp{
+    font-size: 25px;
+    font-style: oblique;
+    font-family: lato;
+}
+
+.block2ContactProprio{
+    border: rgba(0, 0, 0, 0.278) solid 2px;
+    border-radius: 10px;
+    padding: 1%;
+}
+
+.showImageProperty2{
+    position: relative;
+    width: 100%;
+    height: 50vh;
+}
+
+.similareTilteShowProp{
+    text-align: left;
+    font-size: 25px;
+    font-family: lato;
+    font-weight: bold;
+}
+
+@media (width<750px){
+    .blockLeftInformation{
+        width: 100%;
+    }
+
+    .lineNameProperty{
+        width: 100%;
+    }
+
+   .blockRightContact{
+    display: none;
+   } 
+}

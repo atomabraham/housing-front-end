@@ -70,7 +70,7 @@
     background-color: white;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.169) 0px 0px 5px 3px;
-    z-index: 50;
+    z-index: 5;
 }
 
 .linkMenu{

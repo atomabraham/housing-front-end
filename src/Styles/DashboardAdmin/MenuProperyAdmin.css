@@ -1,0 +1,23 @@
+.rowMenupropertyAdmin{
+    margin-top: 2%;
+}
+
+.espaceTableproperty{
+    height:10px;
+}
+
+.trMenuProperty{
+    margin-top: 1%;
+    background-color: rgba(203, 199, 199, 0.242);
+    border-radius: 10px;
+}
+
+.trMenuProperty td{
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.idPropertyMenuDashboard{
+    font-weight: bold;
+    color: #f6b100;
+}

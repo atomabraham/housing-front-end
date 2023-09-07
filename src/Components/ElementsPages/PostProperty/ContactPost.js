@@ -11,19 +11,19 @@ function ContactPost(){
             </Row>
             <Row>
                     <Col sm="4">
-                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                        <Form.Group className="mb-3"  >
                             <Form.Label className="labelBlockPost" id="labelName">Nom et prénom</Form.Label>
                             <Form.Control type="text" className="inputFormPost inputFormPostContactName" id="inputFormPostContactName" placeholder="Entrer la superficie de la propriété" />
                         </Form.Group>
                     </Col>
                     <Col sm="4">
-                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                        <Form.Group className="mb-3"  >
                             <Form.Label className="labelBlockPost" id="labelBlockEmail">Email</Form.Label>
                             <Form.Control type="email" className="inputFormPost inputFormPostContactEmail" id="inputFormPostContactEmail" placeholder="Entrer le prix de la propriété" />
                         </Form.Group>
                     </Col>
                     <Col sm="4">
-                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                        <Form.Group className="mb-3"  >
                             <Form.Label className="labelBlockPost" id="labelBlockPhone">Téléphone</Form.Label>
                             <Form.Control type="number" className="inputFormPost inputFormPostPhone" id="inputFormPostPhone" placeholder="Entrer le prix de la propriété" />
                         </Form.Group>

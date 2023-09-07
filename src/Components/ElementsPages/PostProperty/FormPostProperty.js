@@ -10,58 +10,12 @@ import ContactPost from "./ContactPost";
 import DetailsPost from "./DetailsPost";
 import SubmitProperty from "./SubmitProperty";
 import axios from "axios";
-import logo from '../../../Assets/Images/logo 2.png'
+import logo from '../../../Assets/Images/add-2935429_1280.png'
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 function FormPostProperty() {
-
-    function SelectImage1(){
-        let file1=document.getElementById('imagePost1')
-        let picture1=document.getElementById('backgroundLogo1')
-        let nb=document.getElementById('NB')
-        picture1.style.border='none'
-        picture1.src=window.URL.createObjectURL(file1.files[0])
-        nb.style.display='block'
-    }
-    useEffect (() => {
-        let file1=document.getElementById('imagePost1')
-        file1.addEventListener('change',SelectImage1)
-
-    })
-
-    function SelectImage2(){
-        let file2=document.getElementById('imagePost2')
-        let picture2=document.getElementById('backgroundLogo2')
-        let nb=document.getElementById('NB')
-        picture2.style.border='none'
-        nb.style.display='block'
-        picture2.src=window.URL.createObjectURL(file2.files[0])
-    }
-    function SelectImage3(){
-        let file3=document.getElementById('imagePost3')
-        let picture3=document.getElementById('backgroundLogo3')
-        let nb=document.getElementById('NB')
-        picture3.style.border='none'
-        nb.style.display='block'
-        picture3.src=window.URL.createObjectURL(file3.files[0])
-    }
-    function SelectImage4(){
-        let file4=document.getElementById('imagePost4')
-        let picture4=document.getElementById('backgroundLogo4')
-        let nb=document.getElementById('NB')
-        picture4.style.border='none'
-        nb.style.display='block'
-        picture4.src=window.URL.createObjectURL(file4.files[0])
-    }
-    function SelectImage5(){
-        let file5=document.getElementById('imagePost5')
-        let picture5=document.getElementById('backgroundLogo5')
-        let nb=document.getElementById('NB')
-        picture5.style.border='none'
-        nb.style.display='block'
-        picture5.src=window.URL.createObjectURL(file5.files[0])
-    }
-
+    
     // recuperation des options
     const [options, setOptions] = useState([])
     const fetchOptions = async () => {
@@ -74,14 +28,108 @@ function FormPostProperty() {
         fetchOptions();
     }, []);
 
-    const [image, setImage] = useState()
+    // gestion du select
+    const tableOptions= []
 
-    const changeHandler = (event) => {
-		setImage(event.target.files[0]);
-	};
+    options.map ((option) => (
+        tableOptions.push({value: `${option.name}`, label: `${option.name}`,})
+    ))
+    // console.log(tableOptions)
 
+    const [selectedItems, setSelectedItems] = useState([]);
+
+    const [availableTableOptions, setAvailableTableOptions] = useState(tableOptions);
+
+    const handleSelect = (event) => {
+      const selectedOption = event.target.value;
+
+      // Vérifier si l'option sélectionnée existe déjà dans la liste des éléments sélectionnés
+      if (!selectedItems.includes(selectedOption)) {
+        setSelectedItems([...selectedItems, selectedOption]);
+
+        // Retirer l'option sélectionnée des options disponibles
+        const updatedTableOptions = availableTableOptions.filter(tableOptions => tableOptions.value !== selectedOption);
+        setAvailableTableOptions(updatedTableOptions);
+
+        console.log(selectedItems)
+    }
+};
+
+    // const location = useLocation()
+    // console.log(location.pathname)
+
+    const handleRemoveItem = (item) => {
+        const updatedItems = selectedItems.filter(selectedItem => selectedItem !== item);
+        setSelectedItems(updatedItems);
+    }
+
+    /* gestion des images */
+
+    const [images, setImages] = useState([]); // Images sélectionnées par l'utilisateur
+    const [previewImages, setPreviewImages] = useState([]); // Chemins d'accès aux images prévisualisées
+    const [selectedImages, setSelectedImages] = useState([]);
+
+    //ajouter une image dans la liste
+    const handleImageUpload = (event) => {
+        const files = Array.from(event.target.files);
+        // const files = event.target.files;
+        const selectedImages = Array.from(files);
+
+        // const filesImages = Array.from(event.target.files);
+        const selectedImagesArray = [];
+        
+        // Met à jour les images sélectionnées
+        setImages((prevImages) => [...prevImages, ...selectedImages]);
+    };
+
+    //retier une image dans la liste
+    const handleImageRemove = (index) => {
+        setImages((prevImages) => {
+          const updatedImages = [...prevImages];
+          updatedImages.splice(index, 1);
+          console.log(images)
+          return updatedImages;
+        });
+      };
+
+    //Ensuite, utilise l'objet FileReader pour lire les fichiers d'images en tant que données binaires.
+    const readImageFile = (file) => {
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(reader.result);
+          reader.onerror = reject;
+          reader.readAsDataURL(file);
+        });
+    };
+
+    //itérer sur le tableau images et lire chaque fichier d'image en utilisant la fonction readImageFile
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+      
+        const imageDataPromises = images.map((image) => readImageFile(image));
+        const imageDataArray = await Promise.all(imageDataPromises);
+      
+        // imageDataArray contient les données des images sous forme de tableau
+      
+        const jsonData = JSON.stringify(imageDataArray);
+      
+    };
+
+
+    //preparetion et envoi des data en back-end
     const addProperty = async (e) => {
         e.preventDefault();
+
+        const ul = document.getElementById('selectedItems');
+        const elements = ul.getElementsByTagName('li');
+
+        const listeJson = [];
+
+        for (let i = 0; i < elements.length; i++) {
+            const element = elements[i].textContent;
+            listeJson.push(element);
+        }
+        const listeJsonTexte = JSON.stringify(listeJson);
 
         // Basic informatiom
         let inputFormPostName = document.getElementById('inputFormPostName').value
@@ -101,6 +149,8 @@ function FormPostProperty() {
         // Detail
         let inputFormPostDescription = document.getElementById('inputFormPostDescription').value
 
+        // images
+        
         // contact
         let inputFormPostContactName = document.getElementById('inputFormPostContactName').value
         let inputFormPostContactEmail = document.getElementById('inputFormPostContactEmail').value
@@ -121,12 +171,16 @@ function FormPostProperty() {
         formData.append('quartier', inputFormAddress)
         formData.append('postalcode', inputFormPostalCode)
         formData.append('description', inputFormPostDescription)
-        formData.append('image', image)
+        formData.append('agrement', listeJsonTexte)
+        // formData.append('images', formDataImg)
+        for (let i = 0; i < images.length; i++){
+            formData.append('images[]', images[i]);
+        }
+
         formData.append('contactName', inputFormPostContactName)
         formData.append('contactEmail', inputFormPostContactEmail)
         formData.append('contactPhone', inputFormPostPhone)
-
-        // alert(inputFormPostStatus)
+        // console.log(JSON.stringify(selectedItems))
         try {
             const resp = await axios.post('http://localhost:8000/api/createProperties', formData)
 
@@ -138,7 +192,9 @@ function FormPostProperty() {
         } catch (error) {
                 
         }
+        // console.log(DetailsPost.getSelectedItems)
     }
+        // console.log(tableJson)
 
     return(
     <>    
@@ -154,11 +210,37 @@ function FormPostProperty() {
 
             {/* formulaire d'ajout des informations sur les propriétes*/}
             <form action="" method="POST" onSubmit={addProperty}>
+
                 {/* information de base */}
                 <BasicInformation/>
                 <LocationProperty/>
+
                 {/* details */}
-                <DetailsPost/>
+                <>
+                    <Row className="rowBasicInformationTitle" id="rowBasicInformationTile">
+                        <p className="basicInformation" id="basicInformation">Détails de la propriétés</p>
+                    </Row>
+                    <Form.Group className="mb-3">
+                        <Form.Label className="labelBlockPost" id="labelDescription">Description</Form.Label>
+                        <textarea name="inputFormPostDescription" type="text" className="inputFormPost inputFormPostDescription" id="inputFormPostDescription" placeholder="Donnez une brève description de votre produit" />
+                    </Form.Group>
+                    <label for="supplement" className="labelBlockPost"><b>Agréments</b></label>
+                    <ul id="selectedItems" className="selected-items">
+                        {selectedItems.map((item, index) => (
+                            <li className="optionSelectCreateProp" onClick={() => handleRemoveItem(item)} key={index}>{item}</li>
+                        ))}
+                    </ul>
+                    <Form.Select onChange={handleSelect} type="select" className="supplement" id="supplement" aria-label="" value="option2">
+
+                        <option disabled value="Selectionnez tous les suplément que contient votre propriété">Selectionnez tous les suplément que contient votre propriété</option>
+                        {
+                            tableOptions.map ((option) => (
+                                <option value={option.value} className="optionFormPost">{option.value}</option>
+                            ))    
+                        }
+                    </Form.Select>
+                </>
+
                 {/* images */}
                 <>
                     <Row className="rowBasicInformationTitle" id="rowBasicInformationTile">
@@ -170,40 +252,26 @@ function FormPostProperty() {
                             Vous pouvez cliquer sur une image pour la modifier
                         </p>
                     </Row>
-                    <Row className="imageProperty" id="imageProperty">
+                    <Row>
+                        {images.map((image, index) => (
+                            <Col md="4">
+                                <img className="img-thumbnail m-2 backgroundLogo2" key={index} src={URL.createObjectURL(image)} alt={`Image ${index}`}/>
+                                <svg className="bi bi-x deleteImage" onClick={() => handleImageRemove(index)} xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                            </Col>
+                        ))}
                         <Col md="4">
                             <label for='imagePost1' className="labelImagePost labelImagePost1" id="labelImagePost1">
                                 <img src={logo} className="backgroundLogo" id="backgroundLogo1" alt="HOUSING"/>
                             </label> 
-                    `       <input type="file" onChange={changeHandler} name="imagePost1" className="imagePost imagePost1" id="imagePost1"/>
-                        </Col>
-                        <Col md="4">
-                            <label for='imagePost2' className="labelImagePost labelImagePost2" id="labelImagePost2">
-                                <img src={logo} className="backgroundLogo" id="backgroundLogo2" alt="HOUSING"/>
-                            </label> 
-                    `       <input type="file" onChange={SelectImage2} name="imagePost2" className="imagePost imagePost2" id="imagePost2"/>
-                        </Col>
-                        <Col md="4">
-                            <label for='imagePost3' className="labelImagePost labelImagePost3" id="labelImagePost3">
-                                <img src={logo} className="backgroundLogo" id="backgroundLogo3" alt="HOUSING"/>
-                            </label> 
-                    `       <input type="file" onChange={SelectImage3} name="imagePost3" className="imagePost imagePost3" id="imagePost3"/>
+                    `       <input type="file" multiple onChange={handleImageUpload} name="images" className="imagePost imagePost1" id="imagePost1"/>
                         </Col>
                     </Row>
                     <Row className="imageProperty" id="imageProperty">
-                        <Col md="6">
-                            <label for='imagePost4' className="labelImagePost labelImagePost4" id="labelImagePost4">
-                                <img src={logo} className="backgroundLogo" id="backgroundLogo4" alt="HOUSING"/>
-                            </label> 
-                    `       <input type="file" onChange={SelectImage4} name="imagePost4" className="imagePost imagePost4" id="imagePost4"/>
-                        </Col>
-                        <Col md="6">
-                            <label for='imagePost5' className="labelImagePost labelImagePost5" id="labelImagePost5">
-                                <img src={logo} className="backgroundLogo" id="backgroundLogo5" alt="HOUSING"/>
-                            </label> 
-                    `       <input type="file" onChange={SelectImage5} name="imagePost5" className="imagePost imagePost5" id="imagePost5"/>
-                        </Col>
                     </Row>
+                    {/* <div className="d-flex flex-wrap"> */}
+                {/* </div> */}
                 </>
                 <ContactPost/>
                 <SubmitProperty/>

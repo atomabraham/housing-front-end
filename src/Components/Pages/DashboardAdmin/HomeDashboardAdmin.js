@@ -31,9 +31,9 @@ function HomeDashboardAdmin() {
     
     return(
         <>
-            {/* <FirstBanner/>
-            <BodyDashboard/> */}
-            <NotFound id="notFound"/>
+            <FirstBanner/>
+            <BodyDashboard/>
+            {/* <NotFound id="notFound"/> */}
         </>
     )
 }
