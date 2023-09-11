@@ -8,6 +8,7 @@ import PostProperty from './Pages/PostProperty';
 import HomeDashboardAdmin from './Pages/DashboardAdmin/HomeDashboardAdmin';
 import ShowProperty from './Pages/ShowProperty';
 import NotFound from './Pages/NotFound';
+import EditProperty from './ElementsPages/EditProperty/EditProperty';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/Dashboard' element={<HomeDashboardAdmin/>}/>
           <Route path='/Dashboard/options' element={<HomeDashboardAdmin/>}/>
           <Route path='/property/:id' element={<ShowProperty/>}/>
+          <Route path='/edit/property/:id' element={<EditProperty/>}/> 
           <Route path="/*" element={<NotFound/>}/>
         </Routes>
       </BrowserRouter>

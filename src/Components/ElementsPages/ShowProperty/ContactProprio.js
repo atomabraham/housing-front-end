@@ -2,6 +2,8 @@ import { Form } from 'react-bootstrap'
 import '../../../Styles/ShowProperty.css'
 
 function ContactProprio(){
+    
+
     return(
         <>
             <form action='' method=''>
@@ -14,7 +16,7 @@ function ContactProprio(){
                 <Form.Group className="mt-3"  >
                     <textarea name="inputContactMessageShowProp" type="email"  className="inputFormPost inputContactPhoneShowProp inputContactMessageShowProp" id="inputContactMessageShowProp" placeholder="Message" />
                 </Form.Group>
-                <button type='button' className='submitSignIn pt-3 pb-3 submitSendMessageShowProp' id='submitSignIn'>Contacter le propriétaire</button>
+                <button type='button' className='pt-3 pb-3 submitSendMessageShowProp' id='submitSignIn'>Contacter le propriétaire</button>
             </form>
         </>
     )

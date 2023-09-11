@@ -10,7 +10,7 @@ import ContactPost from "./ContactPost";
 import DetailsPost from "./DetailsPost";
 import SubmitProperty from "./SubmitProperty";
 import axios from "axios";
-import logo from '../../../Assets/Images/add-2935429_1280.png'
+import addImage from '../../../Assets/Images/add-2935429_1280.png'
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -182,13 +182,14 @@ function FormPostProperty() {
         formData.append('contactPhone', inputFormPostPhone)
         // console.log(JSON.stringify(selectedItems))
         try {
-            const resp = await axios.post('http://localhost:8000/api/createProperties', formData)
+            console.log(images)
+            // const resp = await axios.post('http://localhost:8000/api/createProperties', formData)
 
-            if (resp.status === 200) {
-                document.location.href="/"
-            } else {
-                alert('Save failed')
-                }
+            // if (resp.status === 200) {
+            //     document.location.href="/"
+            // } else {
+            //     alert('Save failed')
+            //     }
         } catch (error) {
                 
         }
@@ -199,7 +200,7 @@ function FormPostProperty() {
     return(
     <>    
         <BlockImagePostPorperty/>
-        <Container onClick={CloseMenu} className="FormPostProperty" id="FormPostProperty">
+        <Container className="FormPostProperty" id="FormPostProperty">
             {/* Titre de la section */}
             <Row className="row rowTitleFormPP" id="rowTitleFormPP">
                 <p className="text-left titleFormPP" id="titleFormPP">AJOUTER UNE PROPRIETE</p>
@@ -263,7 +264,7 @@ function FormPostProperty() {
                         ))}
                         <Col md="4">
                             <label for='imagePost1' className="labelImagePost labelImagePost1" id="labelImagePost1">
-                                <img src={logo} className="backgroundLogo" id="backgroundLogo1" alt="HOUSING"/>
+                                <img src={addImage} className="backgroundLogo" id="backgroundLogo1" alt="HOUSING"/>
                             </label> 
                     `       <input type="file" multiple onChange={handleImageUpload} name="images" className="imagePost imagePost1" id="imagePost1"/>
                         </Col>

@@ -19,8 +19,13 @@
     } */
 }
 
+.linkShowProperty{
+    text-decoration: none;
+}
+
 .card-body{
     font-family: lato;
+    color:rgb(0, 0, 0);
 }
 
 .imageCard{
