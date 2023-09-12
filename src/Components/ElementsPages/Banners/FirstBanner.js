@@ -1,7 +1,7 @@
 //importation des dépendances
 import React, { useEffect } from 'react';
 import { Link, Navigate } from 'react-router-dom';
-import '../../../Styles/Banners/FirstBanner.css'
+import '../../../Styles/Banners/Navbar.css'
 import '../../../Styles/SingIn-SingUp/SingIn.css'
 import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
@@ -20,7 +20,7 @@ export function CloseMenu(){
     }
 }
 
-function FirstBanner(){
+function Navbar1(){
             
 
 
@@ -106,9 +106,9 @@ function FirstBanner(){
 	};
 
     return(
-    <nav className='firstBanner' id='FirstBanner'>
+    <nav className='Navbar' id='Navbar'>
         <div className='blockLogo' id='blockLogo'>
-            <Link to="/"><img src={logo} className='logoFirstBanner' id='logoFirstBanner' alt='housing'/></Link>
+            <Link to="/"><img src={logo} className='logoNavbar' id='logoNavbar' alt='housing'/></Link>
             <Link to="/CreatePost" className='postProperty' id='postProperty'>
                 <svg className='iconAddPost' id='iconAddPost' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  className="bi bi-plus-circle" viewBox="0 0 16 16">
                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
@@ -162,4 +162,4 @@ function FirstBanner(){
     )
 }
 
-export default FirstBanner
+export default Navbar1

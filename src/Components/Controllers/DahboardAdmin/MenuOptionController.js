@@ -26,7 +26,7 @@ export const addOption = async (e) => {
             console.log(resp.status)
             if (resp.status === 200) {
                 // return (
-                    document.location.href="/Dashboard"
+                    document.location.href="/Dashboard/options"
                 // )
                 let rowMenuOptionAdmin = document.getElementById('rowMenuOptionAdmin')
                 rowMenuOptionAdmin.style.display = "block"

@@ -10,4 +10,4 @@ const axios = Axios.create({
 	},
 });
 
-export default axios;
+export default axios;	

@@ -2,7 +2,7 @@ import "../../../Styles/PostProperty/FormPostProperty.css"
 import { Container, Form } from "react-bootstrap"
 import { Row, Col } from "react-bootstrap"
 import BlockImagePostPorperty from "./BlockImageFormProperty";
-import { CloseMenu } from "../Banners/FirstBanner";
+import { CloseMenu } from "../Banners/Navbar";
 import BasicInformation from "./BasicInformation";
 import LocationProperty from "./LocationProperty";
 import ImageProperty from "./ImagesProperty";
@@ -10,6 +10,7 @@ import ContactPost from "./ContactPost";
 import DetailsPost from "./DetailsPost";
 import SubmitProperty from "./SubmitProperty";
 import axios from "axios";
+// import axios from "../../Authentification/axios";
 import addImage from '../../../Assets/Images/add-2935429_1280.png'
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
@@ -182,14 +183,14 @@ function FormPostProperty() {
         formData.append('contactPhone', inputFormPostPhone)
         // console.log(JSON.stringify(selectedItems))
         try {
-            console.log(images)
-            // const resp = await axios.post('http://localhost:8000/api/createProperties', formData)
+            // console.log(images)
+            const resp = await axios.post('http://localhost:8000/api/createProperties', formData)
 
-            // if (resp.status === 200) {
-            //     document.location.href="/"
-            // } else {
-            //     alert('Save failed')
-            //     }
+            if (resp.status === 200) {
+                document.location.href="/"
+            } else {
+                alert('Save failed')
+                }
         } catch (error) {
                 
         }

@@ -3,7 +3,6 @@ import React from 'react';
 import '../../../Styles/Banners/SecondBanner.css'
 import { TbListSearch } from 'react-icons/tb';
 import { TbHomePlus } from 'react-icons/tb';
-import {CloseMenu} from './FirstBanner'
 //conposqnt qui créé la navbar du filtre de recherche
 
 function SecondBanner(){
@@ -48,7 +47,7 @@ function SecondBanner(){
     }
 
     return(
-    <nav className='secondBanner' id='secondBanner' onClick={CloseMenu}>
+    <nav className='secondBanner' id='secondBanner' >
         <Resolution/>
         {/*<select className='language'>
             <option selected>

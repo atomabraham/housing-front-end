@@ -2,7 +2,7 @@ import "../../../Styles/PostProperty/FormPostProperty.css"
 import { useEffect, useState } from "react"
 import axios from "../../Authentification/axios"
 import { useParams } from "react-router-dom"
-import FirstBanner from "../Banners/FirstBanner"
+import Navbar from "../Banners/Navbar"
 import BlockImagePostPorperty from "../PostProperty/BlockImageFormProperty"
 import LocationProperty from "../PostProperty/LocationProperty"
 import DetailsPost from "../PostProperty/DetailsPost"
@@ -107,7 +107,7 @@ function EditProperty () {
 
     return(
         <>
-            <FirstBanner/>
+            <Navbar/>
             <BlockImagePostPorperty/>
             <Container className="FormPostProperty" id="FormPostProperty">
                 {/* Titre de la section */}

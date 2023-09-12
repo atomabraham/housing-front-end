@@ -70,7 +70,7 @@ function MenuOptionAdmin() {
                                     <td className='idMenuOption'>{option.id}</td>
                                     <td>{option.name.toUpperCase()}</td>
                                     <td>
-                                        {option.role==="enable" ? (
+                                        {option.status=="enable" ? (
                                         <LockOpen className='statusOption'/>
                                         ) : (
                                         <Lock className='statusOption'/>

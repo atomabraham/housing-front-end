@@ -73,7 +73,7 @@ function ContentProperty() {
                     {Properties.map((property, index) => (
                         <div key={index} className="col-xxl-3 col-lg-3 col-md-4 col-sm-6 my-3">
                             <div className='property-card'>
-                                {/* <div className='card imageCard carousel slide'>
+                                <div className='card imageCard carousel slide'>
                                     {
                                         property.images.length == 1 ?(
                                              <div class="carousel-item active">
@@ -87,7 +87,7 @@ function ContentProperty() {
                                                         <img width="100%" height="350px" className='imageProperty card-img-top mb-3 d-block w-100' src={`http://localhost:8000/storage/${image}`} alt="" />
                                                     </Carousel.Item> 
                                                 ))}
-                                                {isHovered && (
+                                                {/* {isHovered && (
                                                     <>
                                                     <Carousel.Control
                                                         className="carousel-control-prev"
@@ -100,11 +100,11 @@ function ContentProperty() {
                                                         icon={<span className="carousel-control-next-icon" />}
                                                     />
                                                     </>
-                                                )}
+                                                )} */}
                                             </Carousel> 
                                         )
                                     }
-                                </div> */}
+                                </div>
                                 <Link to={`/property/${property.id}`} className="linkShowProperty">
                                     <div className="card-body">
                                         <div className="d-flex justify-content-between mt-2">

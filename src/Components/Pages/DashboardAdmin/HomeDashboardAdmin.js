@@ -1,6 +1,6 @@
 import { Col, Row } from "react-bootstrap"
 import "../../../Styles/DashboardAdmin/HomeDashboardAdmin.css"
-import FirstBanner from '../../ElementsPages/Banners/FirstBanner'
+import Navbar from '../../ElementsPages/Banners/Navbar'
 import Line from '../../ElementsPages/Banners/Line'
 import BodyDashboard from "../../ElementsPages/DashboardAdmin/BodyDashboard"
 import { useAuth } from "../../Authentification/AuthContext"
@@ -31,7 +31,7 @@ function HomeDashboardAdmin() {
     
     return(
         <>
-            <FirstBanner/>
+            <Navbar/>
             <BodyDashboard/>
             {/* <NotFound id="notFound"/> */}
         </>

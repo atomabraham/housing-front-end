@@ -1,5 +1,5 @@
 import "../../Styles/PostProperty/PostProperty.css"
-import FirstBanner from "../ElementsPages/Banners/FirstBanner"
+import Navbar from "../ElementsPages/Banners/Navbar"
 import Line from "../ElementsPages/Banners/Line"
 import FormPostProperty from "../ElementsPages/PostProperty/FormPostProperty"
 
@@ -14,7 +14,7 @@ function PostProperty() {
 
     return(
         <>
-            <FirstBanner/>
+            <Navbar/>
             <FormPostProperty/>
         </>
     )

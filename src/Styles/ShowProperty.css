@@ -88,6 +88,10 @@
     font-weight: normal;
   }
 
+#map{
+  z-index: 0;
+}
+
   .left-column {
     width: 70%;
     float: left;
@@ -121,9 +125,51 @@
 }
 
   .fixed-column {
-    position: sticky;
-    top: 200px;
+    position: fixed;
+    top: 0;
     right: 0;
     width: 30%;
     /* transform: translateY(-10px); */
   }
+
+  .titleDescriptionShowProperty{
+    text-align: left;
+    font-weight: bold;
+    font-family: lato;
+    font-size: 20px;
+  }
+
+  .showDescriptionProperty{
+    text-align: left;
+    font-family: lato;
+  }
+
+.ifAgrementExist{
+  border: rgba(0, 0, 0, 0.577) solid 1px;
+  border-radius: 8px;
+  width: 95%;
+  margin-left: 1%;
+}
+
+.titleAgrementShowProperty{
+  text-align: left;
+  font-weight: bold;
+  font-family: lato;
+  font-size: 20px;
+}
+
+.agrementShowProerty p{
+  text-align: left;
+  padding-left: 1%;
+}
+
+.showProprioProperty{
+  text-align: left;
+  font-family: lato;
+  
+}
+
+.showCreateAtProperty{
+  text-align: left;
+  font-family: lato;
+}

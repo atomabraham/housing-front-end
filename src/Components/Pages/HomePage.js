@@ -1,7 +1,6 @@
 //importation des dépendances
 // import React from 'react'
 import '../../Styles/Home/Home.css'
-import FirstBanner from '../ElementsPages/Banners/FirstBanner'
 import Line from '../ElementsPages/Banners/Line'
 import SecondBanner from '../ElementsPages/Banners/SecondBanner'
 
@@ -11,6 +10,7 @@ import { NavLink } from 'react-router-dom';
 import axios from '../Authentification/axios';
 import { useAuth } from '../Authentification/AuthContext';
 import ContentProperty from '../ElementsPages/Home/ContentProperty';
+import Navbar from '../ElementsPages/Banners/Navbar';
 
 //composant de la page d'acceuil
 
@@ -38,9 +38,10 @@ function Home(){
 
     return(
         <div className='home' id='home'>
-            <FirstBanner/>
-            <Line/>
-            <SecondBanner/>
+            {/* <Navbar/> */}
+			<Navbar/>
+            {/* <Line/>
+            <SecondBanner/> */}
 			<ContentProperty/>
         </div>
     )

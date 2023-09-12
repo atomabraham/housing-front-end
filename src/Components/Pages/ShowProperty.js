@@ -3,13 +3,18 @@ import '../../Styles/ShowProperty.css'
 import { useEffect, useState } from 'react';
 import axios from '../Authentification/axios';
 import { Bathtub, Bed, Hotel } from '@mui/icons-material';
-import FirstBanner from '../ElementsPages/Banners/FirstBanner';
+import Navbar from '../ElementsPages/Banners/Navbar';
 import { Form } from 'react-bootstrap';
 import ContactProprio from '../ElementsPages/ShowProperty/ContactProprio';
 import { Carousel } from 'react-bootstrap';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import { FaBath, FaBed, FaExpand } from 'react-icons/fa';
 import { FaHeart, FaShareAlt, FaRegHeart  } from 'react-icons/fa';
+import LocalisationShowProperty from '../ElementsPages/ShowProperty/LocalisationShowProperty';
+import moment from 'moment';
+import 'moment/locale/fr';
+
+moment.locale('fr');
 
 function ShowProperty () {
 
@@ -62,14 +67,17 @@ function ShowProperty () {
         };
     }, []);
 
+    let lenght = 0
+
     return(
 
         <>
-            <FirstBanner/>
+            <Navbar/>
             <div className='container'>
                 {
-                property.map(prop => (
-                    <>
+                    property.map(prop => (
+                        <>
+                        {/* {console.log(prop.agrement)} */}
                         <div className="row">
                             <div clasName="d-flex">
                                     <Carousel className="main-carousel">
@@ -130,6 +138,38 @@ function ShowProperty () {
                                             </>
                                         )}
                                     </div>
+                                </div>
+                                
+                                <div className='row'>
+                                    <LocalisationShowProperty/>
+                                </div>
+
+                                <div className='row'>
+                                    <p className='titleDescriptionShowProperty'>Description</p>
+                                    <p className='showDescriptionProperty'>{prop.description}</p>
+                                </div>
+                                <div className='row'>
+                                    {prop.agrement.lenght == 0 ? (
+                                        <></>
+                                        ) : (
+                                        <div className='row ifAgrementExist'>
+                                            <p className='titleAgrementShowProperty'>Commodités</p>
+                                            {
+                                                prop.agrement.map((agrement, index) => (
+                                                    <div className='col-md-6 agrementShowProerty' key={index}>
+                                                        <p>{agrement}</p>
+                                                    </div> 
+                                                ))
+                                            }
+                                                
+                                            
+                                        </div>
+                                    )}
+                                </div>
+                                
+                                <div className='row'>
+                                    <p className='showProprioProperty'>Publié par : {prop.contactName}</p>
+                                    <p className='showCreateAtProperty'>Date de publication : {moment(prop.created_at).format('DD-MM-YYYY')} à {moment(prop.created_at).format('HH:MM')} ({moment(prop.created_at).fromNow()})</p>
                                 </div>
                             </div>
                             <div className={`right-column ${isFixed ? 'fixed-column' : ''}`}>

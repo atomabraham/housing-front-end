@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import '../../Styles/SingIn-SingUp/SingUp.css'
-import FirstBanner, { CloseMenu } from '../ElementsPages/Banners/FirstBanner'
+import Navbar from '../ElementsPages/Banners/Navbar'
 import Line from '../ElementsPages/Banners/Line'
 import {redirect  } from 'react-router-dom'
 import axios from '../Authentification/axios'
@@ -97,10 +97,10 @@ function SingUp(){
     return(
         <>
             
-            <FirstBanner/>
+            <Navbar/>
 
             {/* block d'inscription */}
-            <div onClick={CloseMenu} className='row blockSingUp' id='blockSingUp'>
+            <div className='row blockSingUp' id='blockSingUp'>
                 
                 {/* block de droite */}
                 <div className='blockRightSingUp' id='blockRightSingUp'>

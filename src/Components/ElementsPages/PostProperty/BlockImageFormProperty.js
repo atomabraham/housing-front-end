@@ -1,6 +1,5 @@
 import "../../../Styles/PostProperty/PostProperty.css"
 import ImageBlockPost from "../../../Assets/Images/600.jpg"
-import { CloseMenu } from "../Banners/FirstBanner"
 import { useEffect } from "react"
 
 function BlockImagePostPorperty(){
@@ -56,7 +55,7 @@ function BlockImagePostPorperty(){
     
 
     return(
-        <div onClick={CloseMenu} className="BlockImagePostPorperty" id="BlockImagePostPorperty">
+        <div  className="BlockImagePostPorperty" id="BlockImagePostPorperty">
             <div className="background" id="background">
                 <div className="container">
                     <p className="TextBlockImagePost1" id="texteBlockImagePostPorperty"> <span className="changeText invisibles" id="changeText">Vendez</span> votre bien immobilier rapidement et facilement !</p>

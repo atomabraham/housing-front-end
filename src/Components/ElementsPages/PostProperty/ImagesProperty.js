@@ -2,7 +2,7 @@
 // import Row from "react-bootstrap/Row"
 // import Col from "react-bootstrap/Col"
 // import logo from '../../../Assets/Images/logo 2.png'
-// import { CloseMenu } from "../Banners/FirstBanner"
+// import { CloseMenu } from "../Banners/Navbar"
 // import { useState } from "react"
 // import axios from "axios"
 
