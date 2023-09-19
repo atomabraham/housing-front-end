@@ -17,6 +17,8 @@ import Navbar from '../ElementsPages/Banners/Navbar';
 function Home(){
     const { user, setUser } = useAuth();
     // check if user is logged in or not from server
+
+	
 	useEffect(() => {
 		(async () => {
 			try {
@@ -40,8 +42,8 @@ function Home(){
         <div className='home' id='home'>
             {/* <Navbar/> */}
 			<Navbar/>
-            {/* <Line/>
-            <SecondBanner/> */}
+            {/* <Line/> */}
+            <SecondBanner/> 
 			<ContentProperty/>
         </div>
     )

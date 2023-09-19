@@ -13,21 +13,31 @@ import addImage from '../../../Assets/Images/add-2935429_1280.png'
 
 
 function EditProperty () {
+    
+
+    //
     const [property, setProperty] = useState([])
-    const {id} = useParams
+    const {id} = useParams()
 
 
-    const fetchProperty = async () => {
-        await axios.get(`http://localhost:8000/api/property/${id}`).then(({data}) =>
-            setProperty(data)
-        )
-    }
+    // const fetchProperty = async () => {
+    //     await axios.get(`http://localhost:8000/api/property/${id}`).then(({data}) =>
+    //         setProperty(data)
+    //     )
+    // }
 
-    useEffect(() => {
-        fetchProperty()
-    },[])
+    // useEffect(() => {
+    //     fetchProperty()
+    // },[])
 
-    console.log(property)
+    // useEffect(() => {
+    //     property = await axios.get(`http://localhost:8000/api/property/${id}`)
+
+
+    // })
+
+
+    //Modification des proprietes
 
     let inputFormPostName = document.getElementById('inputFormPostName')
     let inputFormPostType = document.getElementById('inputFormPostType')
@@ -44,36 +54,19 @@ function EditProperty () {
 
     let inputFormPostDescription = document.getElementById('inputFormPostDescription')
 
-    // gestion des images
-    const [images, setImages] = useState([]);
-    const [previewImages, setPreviewImages] = useState([]);
-    const [selectedImages, setSelectedImages] = useState([]);
-
-    const handleImageUpload = (event) => {
-        property.map(prop => {
-            prop.images.map(image => {
-
-            })
-        })
-
-        const files = Array.from(event.target.files);
-        // const files = event.target.files;
-        const selectedImages = Array.from(files);
-
-        // const filesImages = Array.from(event.target.files);
-        const selectedImagesArray = [];
-        
-        // Met à jour les images sélectionnées
-        setImages((prevImages) => [...prevImages, ...selectedImages]);
-    };
-
-    const handleImageRemove=0
-
     let inputFormPostContactName = document.getElementById('inputFormPostContactName')
     let inputFormPostContactEmail = document.getElementById('inputFormPostContactEmail')
     let inputFormPostPhone = document.getElementById('inputFormPostPhone')
 
+    const [images, setImages] = useState([]);
+    const [imagesData, setImageData] = useState() 
 
+    // console.log(property[0].images) 
+
+    // useEffect(() => {
+    //     setImageData((property[0].images))
+    // })
+    
     //affichage des informations par defauts
     property.map(prop => (
         // informations de bases
@@ -93,9 +86,11 @@ function EditProperty () {
         
         //details
         inputFormPostDescription.value = prop.description,
-
+        
         // images
-        // images = prop.images,
+    
+        // setImages(prop.images),
+        // console.log(images),
         
         //contact
         inputFormPostContactName.value = prop.contactName,
@@ -112,7 +107,7 @@ function EditProperty () {
             <Container className="FormPostProperty" id="FormPostProperty">
                 {/* Titre de la section */}
                 <Row className="row rowTitleFormPP" id="rowTitleFormPP">
-                    <p className="text-left titleFormPP" id="titleFormPP">AJOUTER UNE PROPRIETE</p>
+                    <p className="text-left titleFormPP" id="titleFormPP">MODIFIER VOTRE PROPRIETE</p>
                 </Row>
 
                 {/* ligne */}
@@ -136,19 +131,19 @@ function EditProperty () {
                                 </p>
                             </Row>
                             <Row>
-                                {images.map((image, index) => (
+                                {/* {property[0].images.map((image, index) => (
                                     <Col md="4">
                                         <img className="img-thumbnail m-2 backgroundLogo2" key={index} src={URL.createObjectURL(image)} alt={`Image ${index}`}/>
-                                        <svg className="bi bi-x deleteImage" onClick={() => handleImageRemove(index)} xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+                                        <svg className="bi bi-x deleteImage" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
                                             <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
                                         </svg>
                                     </Col>
-                                ))}
+                                ))} */}
                                 <Col md="4">
                                     <label for='imagePost1' className="labelImagePost labelImagePost1" id="labelImagePost1">
                                         <img src={addImage} className="backgroundLogo" id="backgroundLogo1" alt="HOUSING"/>
                                     </label> 
-                            `       <input type="file" multiple onChange={handleImageUpload} name="images" className="imagePost imagePost1" id="imagePost1"/>
+                            `       <input type="file" multiple name="images" className="imagePost imagePost1" id="imagePost1"/>
                                 </Col>
                             </Row>
                             <Row className="imageProperty" id="imageProperty">

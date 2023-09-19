@@ -23,7 +23,6 @@ function DetailsPost() {
     options.map ((option) => (
         tableOptions.push({value: `${option.name}`, label: `${option.name}`,})
     ))
-    // console.log(tableOptions)
 
     const [selectedItems, setSelectedItems] = useState([]);
 
@@ -47,7 +46,7 @@ function DetailsPost() {
         const updatedItems = selectedItems.filter(selectedItem => selectedItem !== item);
         setSelectedItems(updatedItems);
     }
-    console.log(selectedItems)
+    
     function getSelectedItems(){
         return selectedItems
     }
@@ -61,15 +60,15 @@ function DetailsPost() {
                 <Form.Label className="labelBlockPost" id="labelDescription">Description</Form.Label>
                 <textarea name="inputFormPostDescription" type="text" className="inputFormPost inputFormPostDescription" id="inputFormPostDescription" placeholder="Donnez une brève description de votre produit" />
             </Form.Group>
-            <label for="supplement" className="labelBlockPost"><b>Agréments</b></label>
+            <label for="supplement" className="labelBlockPost"><b>Commodités</b></label>
             <ul id="selectedItems" className="selected-items">
                 {selectedItems.map((item, index) => (
                     <li className="optionSelectCreateProp" onClick={() => handleRemoveItem(item)} key={index}>{item}</li>
                 ))}
             </ul>
-            <Form.Select onChange={handleSelect} type="select" className="supplement" id="supplement" aria-label="" >
+            <Form.Select onChange={handleSelect} type="select" className="inputFormPost" id="supplement" aria-label="" >
 
-                <option disabled selected>Selectionnez tous les suplément que contient votre propriété</option>
+                <option disabled selected>Selectionnez toutes les commodités que contient votre propriété</option>
                 {
                     tableOptions.map ((option) => (
                         <option value={option.value} className="optionFormPost">{option.value}</option>

@@ -9,6 +9,10 @@ import HomeDashboardAdmin from './Pages/DashboardAdmin/HomeDashboardAdmin';
 import ShowProperty from './Pages/ShowProperty';
 import NotFound from './Pages/NotFound';
 import EditProperty from './ElementsPages/EditProperty/EditProperty';
+import SearchResultPage from './Pages/SearchResultPage';
+import AboutUs from './Pages/AboutPage';
+import ContactUs from './Pages/ContactPage';
+
 
 function App() {
   return (
@@ -22,6 +26,9 @@ function App() {
           <Route path='/Dashboard/options' element={<HomeDashboardAdmin/>}/>
           <Route path='/property/:id' element={<ShowProperty/>}/>
           <Route path='/edit/property/:id' element={<EditProperty/>}/> 
+          <Route path='/search' element={<SearchResultPage/>}/> 
+          <Route path='/aboutUs' element={<AboutUs/>}/> 
+          <Route path='/contactUs' element={<ContactUs/>}/> 
           <Route path="/*" element={<NotFound/>}/>
         </Routes>
       </BrowserRouter>

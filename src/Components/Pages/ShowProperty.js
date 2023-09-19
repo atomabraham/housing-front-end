@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import '../../Styles/ShowProperty.css'
 import { useEffect, useState } from 'react';
 import axios from '../Authentification/axios';
@@ -87,21 +87,21 @@ function ShowProperty () {
                                             </Carousel.Item>
                                         ))}
                                     </Carousel>   
-                                    <div className="carousel-controls">
+                                    {/* <div className="carousel-controls">
                                         <button className="carousel-control-prev">
                                         <BsChevronLeft />
                                         </button>
                                         <button className="carousel-control-next">
                                         <BsChevronRight />
                                         </button>
-                                    </div>
+                                    </div> */}
                             </div>
                             {/* <div className='row property-header'> */}
                             <div className="pt-2 property-actions">
                                     <div className="spacer"></div>
-                                    <button className="action-button">
+                                    <Link to={`/edit/property/${prop.id}`} className="action-button">
                                         <IconSave />
-                                    </button>
+                                    </Link>
                                     <button className="action-button">
                                         <IconShare /> 
                                     </button>

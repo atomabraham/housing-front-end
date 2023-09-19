@@ -1,44 +1,44 @@
-import { useEffect, useState } from 'react'
-import '../../../Styles/Home/ContentProperty.css'
-import axios from 'axios'
-import { Row } from 'react-bootstrap'
-import { TbBellDollar } from 'react-icons/tb'
-import { Bathroom, BathroomOutlined, BedroomParent, BedroomParentOutlined, BedroomParentRounded, BedroomParentSharp, BedroomParentTwoTone, Favorite, FavoriteBorder, Hotel } from '@mui/icons-material'
-import { FaBath, FaBed, FaExpand, FaMapMarkerAlt } from 'react-icons/fa';
-import { Link } from 'react-router-dom'
-import { Carousel } from 'react-bootstrap';
-import { AddThousandSeparator } from '../../Controllers/Config'
+import { useEffect, useState } from "react"
+import { Link, useLocation } from "react-router-dom"
+import axios from "../Authentification/axios"
+import Navbar from "../ElementsPages/Banners/Navbar"
+import SecondBanner from "../ElementsPages/Banners/SecondBanner"
+import { Row, Carousel } from "react-bootstrap"
+import { FaBath, FaBed, FaExpand, FaMapMarkerAlt } from "react-icons/fa"
 
 
-function ContentProperty() { 
-    //recuperation des propriete
+function SearchResultPage(){
+    const location = useLocation()
+    const [searchResults, setSearchResults] = useState([])
+    const [properties, setProperties] = useState([])
 
-    const [Properties, setProperties] = useState([])
+    useEffect (() => {
+        const searchParams = new URLSearchParams(location.search)
 
-    const fetchProperties = async () => {
-        await axios.get('http://localhost:8000/api/properties').then(({data}) => {
-            setProperties(data);
-        })
-    }
+        const world = searchParams.get('world')
+        const city = searchParams.get('city')
+        const status = searchParams.get('status')
+        const type = searchParams.get('type')
 
-    useEffect(() => {
+        const fetchProperties = async () => {
+            const formData = new FormData()
+            
+            formData.append('world', world)
+            formData.append('status', status)
+            formData.append('Type', type)
+            formData.append('city', city)
+            
+            try {
+                const resp =await axios.post('http://localhost:8000/api/search',formData)
+                setProperties(resp.data)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        
         fetchProperties()
-    }, [])
 
-
-    // mettre les premieres lettres des mots d'une phrase en majuscule
-    function capitalizeWords(sentence) {
-        const words = sentence.split(' ');
-      
-        const capitalizedWords = words.map(word => {
-          const firstLetter = word.charAt(0).toUpperCase();
-          const restOfWord = word.slice(1);
-      
-          return firstLetter + restOfWord;
-        });
-      
-        return capitalizedWords.join(' ');
-    }
+    }, [location.search])
 
     //ajouter un point apres 3 chiffres
     function addThousandSeparator(number) {
@@ -67,10 +67,13 @@ function ContentProperty() {
 
     return(
         <>
+            <Navbar/>
+            <SecondBanner/>
+
             <div className='ContentProperty'>
                 <Row>
                     {/* <img width="100%" height="300px" className='imageProperty' src={`http://localhost:8000/storage/${property.images[0]}`} alt="" /> */}
-                    {Properties.map((property, index) => (
+                    {properties.map((property, index) => (
                         <div key={property.id} className="col-xxl-3 col-lg-3 col-md-4 col-sm-6 my-3">
                             <div className='property-card'>
                                 <div className='card imageCard carousel slide'>
@@ -157,10 +160,8 @@ function ContentProperty() {
                 </Row>
 
             </div>
-
-
         </>
     )
 }
 
-export default ContentProperty
+export default SearchResultPage

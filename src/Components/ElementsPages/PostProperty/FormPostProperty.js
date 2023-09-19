@@ -9,11 +9,12 @@ import ImageProperty from "./ImagesProperty";
 import ContactPost from "./ContactPost";
 import DetailsPost from "./DetailsPost";
 import SubmitProperty from "./SubmitProperty";
-import axios from "axios";
-// import axios from "../../Authentification/axios";
+// import axios from "axios";
+import axios from "../../Authentification/axios";
 import addImage from '../../../Assets/Images/add-2935429_1280.png'
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useAuth } from "../../Authentification/AuthContext";
 
 function FormPostProperty() {
     
@@ -116,6 +117,19 @@ function FormPostProperty() {
       
     };
 
+    //recuperation de l'id de l'utilisateur
+    const [user, setUser] = useState([])
+    // const { user, setUser } = useAuth();
+
+    const fetchUser = async () => {
+        await axios.get(`http://localhost:8000/api/user`).then(({data}) =>
+            setUser(data)
+        )
+    }
+
+    useEffect(() => {
+        fetchUser()
+    },[])
 
     //preparetion et envoi des data en back-end
     const addProperty = async (e) => {
@@ -160,6 +174,7 @@ function FormPostProperty() {
 
         const formData = new FormData()
 
+        formData.append('id_user', parseInt(user.data.id))
         formData.append('propertyName', inputFormPostName)
         formData.append('propertyType', inputFormPostType)
         formData.append('propertyStatus', inputFormPostStatus)
@@ -182,6 +197,7 @@ function FormPostProperty() {
         formData.append('contactEmail', inputFormPostContactEmail)
         formData.append('contactPhone', inputFormPostPhone)
         // console.log(JSON.stringify(selectedItems))
+        
         try {
             // console.log(images)
             const resp = await axios.post('http://localhost:8000/api/createProperties', formData)

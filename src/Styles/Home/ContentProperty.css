@@ -47,6 +47,8 @@
     font-weight: bold;
     /* color: rgba(0, 0, 0, 0.628); */
     border-radius: 10px;
+    white-space: nowrap;
+    height:25px;
 }
 
 .icon-container{
@@ -60,6 +62,13 @@
     justifyContent: center; */
     margin-right: 5px;
 }
+
+h5{
+    text-align: left;
+    white-space: pre-wrap;
+}
+
+
 
 .iconLocalizationCard{
     color: rgba(0, 0, 0, 0.518);

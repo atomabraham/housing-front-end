@@ -5,8 +5,9 @@ const axios = Axios.create({
 	baseURL: "http://localhost:8000/api",
 	withCredentials: true, //true signifie que  les cookies seront envoyés avec les demandes, permettant des demandes authentifiées
 	headers: {
-		"Content-Type": "application/json",
+		// "Content-Type": "application/json",
 		Accept: "application/json",
+		'Content-Type': 'multipart/form-data'
 	},
 });
 

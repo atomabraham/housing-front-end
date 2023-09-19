@@ -8,6 +8,10 @@
     position: fixed;
 }
 
+.line--scrolled{
+    display: none;
+}
+
 @media (width<=700px){
     .line{
         height: 0px;
