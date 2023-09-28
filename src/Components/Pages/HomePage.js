@@ -27,7 +27,6 @@ function Home(){
 					setUser(resp.data.data);
 					// document.location.href = "http://localhost:3000/";
 					<Navigate to="/"/>;
-					console.log(resp.data.data.role);
 				}
 			} catch (error) {
 				if (error.response.status === 401) {

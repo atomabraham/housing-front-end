@@ -1,0 +1,16 @@
+.content-section {
+  margin-left: 250px;
+  padding: 20px;
+  z-index: 10;
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}

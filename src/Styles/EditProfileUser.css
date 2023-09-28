@@ -1,0 +1,105 @@
+.edit-profile {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15vh;
+  border: solid rgba(0, 0, 0, 0.202) 2px;
+  border-radius: 10px;
+}
+
+.edit-profile h1 {
+  text-align: center;
+  font-family: lato;
+}
+
+.blockProfileEditUser {
+  /* border: black 2px solid; */
+  /* display: flex; */
+  /* border: solid 2px rgba(0, 0, 0, 0.401); */
+  border-radius: 10px;
+  display: inline;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  /* background-color: rgba(221, 215, 215, 0.201); */
+}
+
+.profilePicture {
+  width: 150px;
+  height: 150px;
+  /* border: solid black 2px; */
+  border: none;
+  display: flex;
+  justify-content: center;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+}
+
+.actionProfilePicture {
+  justify-content: center;
+}
+
+.actionProfilePicture .actionProfilePicture {
+  border: solid 2px #f6b100;
+  background-color: white;
+  border-radius: 10px;
+  font-weight: bold;
+  font-family: lato;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #ffffff;
+    color: black;
+    /* border: none; */
+    box-shadow: #f6b100 3px 5px 0px 0px;
+  }
+}
+
+#editProfilePictureBtn {
+  display: inline-block;
+}
+
+.deleteProfilePictureBtn {
+  display: inline-block;
+  border: solid 2px #f6b100;
+  background-color: white;
+  border-radius: 10px;
+  font-weight: bold;
+  font-family: lato;
+}
+
+#updateProfilePictureBtn {
+  display: none;
+}
+
+#inputProfilePicture {
+  display: none;
+}
+
+.blockInformationEditUser {
+  width: 90%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blockInformationEditUser label {
+  text-align: left;
+  font-family: lato;
+}
+
+@media (width < 700px) {
+  .edit-profile {
+    border: none;
+    width: 100%;
+  }
+
+  .blockInformationEditUser {
+    width: 100%;
+  }
+}

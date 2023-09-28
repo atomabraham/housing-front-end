@@ -37,7 +37,7 @@ function ContactUs() {
                         </Row>
                     </div>
                     <div className="col-md-6 firstBlockRightContact">
-
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15919.181609071664!2d9.6898324!3d4.0620860500000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2scm!4v1695201777704!5m2!1sfr!2scm" width="100%" height="100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </Row>
             </div>

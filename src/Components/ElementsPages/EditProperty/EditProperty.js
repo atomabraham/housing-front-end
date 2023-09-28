@@ -1,137 +1,139 @@
-import "../../../Styles/PostProperty/FormPostProperty.css"
-import { useEffect, useState } from "react"
-import axios from "../../Authentification/axios"
-import { useParams } from "react-router-dom"
-import Navbar from "../Banners/Navbar"
-import BlockImagePostPorperty from "../PostProperty/BlockImageFormProperty"
-import LocationProperty from "../PostProperty/LocationProperty"
-import DetailsPost from "../PostProperty/DetailsPost"
-import ContactPost from "../PostProperty/ContactPost"
-import BasicInformation from "../PostProperty/BasicInformation"
-import { Container, Row, Col } from "react-bootstrap"
-import addImage from '../../../Assets/Images/add-2935429_1280.png'
+import "../../../Styles/PostProperty/FormPostProperty.css";
+import { useEffect, useState } from "react";
+import axios from "../../Authentification/axios";
+import { useParams } from "react-router-dom";
+import Navbar from "../Banners/Navbar";
+import BlockImagePostPorperty from "../PostProperty/BlockImageFormProperty";
+import LocationProperty from "../PostProperty/LocationProperty";
+import DetailsPost from "../PostProperty/DetailsPost";
+import ContactPost from "../PostProperty/ContactPost";
+import BasicInformation from "../PostProperty/BasicInformation";
+import { Container, Row, Col } from "react-bootstrap";
+import addImage from "../../../Assets/Images/add-2935429_1280.png";
 
+function EditProperty() {
+  //
+  const [property, setProperty] = useState([]);
+  const { id } = useParams();
 
-function EditProperty () {
-    
+  const fetchProperty = async () => {
+    await axios
+      .get(`http://localhost:8000/api/property/${id}`)
+      .then(({ data }) => setProperty(data));
+  };
 
-    //
-    const [property, setProperty] = useState([])
-    const {id} = useParams()
+  useEffect(() => {
+    fetchProperty();
+  }, []);
 
+  //Modification des proprietes
 
-    // const fetchProperty = async () => {
-    //     await axios.get(`http://localhost:8000/api/property/${id}`).then(({data}) =>
-    //         setProperty(data)
-    //     )
-    // }
+  let inputFormPostName = document.getElementById("inputFormPostName");
+  let inputFormPostType = document.getElementById("inputFormPostType");
+  let inputFormPostStatus = document.getElementById("inputFormPostStatus");
+  let inputFormPostBetRoom = document.getElementById("inputFormPostBetRoom");
+  let inputFormPostBadRoom = document.getElementById("inputFormPostBadRoom");
+  let inputFormPostSuperficie = document.getElementById(
+    "inputFormPostSuperficie"
+  );
+  let inputFormPostPrice = document.getElementById("inputFormPostPrice");
 
-    // useEffect(() => {
-    //     fetchProperty()
-    // },[])
+  let inputFormPostCountry = document.getElementById("inputFormPostCountry");
+  let inputFormPostCity = document.getElementById("inputFormPostCity");
+  let inputFormAddress = document.getElementById("inputFormAddress");
+  let inputFormPostalCode = document.getElementById("inputFormPostalCode");
 
-    // useEffect(() => {
-    //     property = await axios.get(`http://localhost:8000/api/property/${id}`)
+  let inputFormPostDescription = document.getElementById(
+    "inputFormPostDescription"
+  );
 
+  let inputFormPostContactName = document.getElementById(
+    "inputFormPostContactName"
+  );
+  let inputFormPostContactEmail = document.getElementById(
+    "inputFormPostContactEmail"
+  );
+  let inputFormPostPhone = document.getElementById("inputFormPostPhone");
 
-    // })
+  const [images, setImages] = useState([]);
+  const [imagesData, setImageData] = useState();
 
+  // console.log(property[0].images)
 
-    //Modification des proprietes
+  // useEffect(() => {
+  //     setImageData((property[0].images))
+  // })
 
-    let inputFormPostName = document.getElementById('inputFormPostName')
-    let inputFormPostType = document.getElementById('inputFormPostType')
-    let inputFormPostStatus = document.getElementById('inputFormPostStatus')
-    let inputFormPostBetRoom = document.getElementById('inputFormPostBetRoom')
-    let inputFormPostBadRoom = document.getElementById('inputFormPostBadRoom')
-    let inputFormPostSuperficie = document.getElementById('inputFormPostSuperficie')
-    let inputFormPostPrice = document.getElementById('inputFormPostPrice')
+  //affichage des informations par defauts
+  property.map(
+    (prop) => (
+      // informations de bases
+      (inputFormPostName.value = prop.propertyName),
+      (inputFormPostType.value = prop.propertyType),
+      (inputFormPostStatus.value = prop.propertyStatus),
+      (inputFormPostBetRoom.value = prop.bedrooms),
+      (inputFormPostBadRoom.value = prop.bathrooms),
+      (inputFormPostSuperficie.value = prop.area),
+      (inputFormPostPrice.value = prop.price),
+      // localisation
+      (inputFormPostCountry.value = prop.country),
+      (inputFormPostCity.value = prop.city),
+      (inputFormAddress.value = prop.quartier),
+      (inputFormPostalCode.value = prop.postalcode),
+      //details
+      (inputFormPostDescription.value = prop.description),
+      // images
 
-    let inputFormPostCountry = document.getElementById('inputFormPostCountry')
-    let inputFormPostCity = document.getElementById('inputFormPostCity')
-    let inputFormAddress = document.getElementById('inputFormAddress')
-    let inputFormPostalCode = document.getElementById('inputFormPostalCode')
+      // setImages(prop.images),
+      // console.log(images),
 
-    let inputFormPostDescription = document.getElementById('inputFormPostDescription')
+      //contact
+      (inputFormPostContactName.value = prop.contactName),
+      (inputFormPostContactEmail.value = prop.contactEmail),
+      (inputFormPostPhone.value = prop.contactPhone)
+    )
+  );
+  // console.log(property)
 
-    let inputFormPostContactName = document.getElementById('inputFormPostContactName')
-    let inputFormPostContactEmail = document.getElementById('inputFormPostContactEmail')
-    let inputFormPostPhone = document.getElementById('inputFormPostPhone')
+  return (
+    <>
+      <Navbar />
+      <BlockImagePostPorperty />
+      <Container className="FormPostProperty" id="FormPostProperty">
+        {/* Titre de la section */}
+        <Row className="row rowTitleFormPP" id="rowTitleFormPP">
+          <p className="text-left titleFormPP" id="titleFormPP">
+            MODIFIER VOTRE PROPRIETE
+          </p>
+        </Row>
 
-    const [images, setImages] = useState([]);
-    const [imagesData, setImageData] = useState() 
+        {/* ligne */}
+        <div className="lineFormPost" id="lineFormPost"></div>
 
-    // console.log(property[0].images) 
+        {/* formulaire d'ajout des informations sur les propriétes*/}
+        <form action="" method="POST">
+          <BasicInformation />
+          <LocationProperty />
+          <DetailsPost />
 
-    // useEffect(() => {
-    //     setImageData((property[0].images))
-    // })
-    
-    //affichage des informations par defauts
-    property.map(prop => (
-        // informations de bases
-        inputFormPostName.value = prop.propertyName,
-        inputFormPostType.value = prop.propertyType,
-        inputFormPostStatus.value = prop.propertyStatus,
-        inputFormPostBetRoom.value = prop.bedrooms,
-        inputFormPostBadRoom.value = prop.bathrooms,
-        inputFormPostSuperficie.value = prop.area,
-        inputFormPostPrice.value = prop.price,
-        
-        // localisation
-        inputFormPostCountry.value = prop.country,
-        inputFormPostCity.value = prop.city,
-        inputFormAddress.value = prop.quartier,
-        inputFormPostalCode.value = prop.postalcode,
-        
-        //details
-        inputFormPostDescription.value = prop.description,
-        
-        // images
-    
-        // setImages(prop.images),
-        // console.log(images),
-        
-        //contact
-        inputFormPostContactName.value = prop.contactName,
-        inputFormPostContactEmail.value = prop.contactEmail,
-        inputFormPostPhone.value = prop.contactPhone
-    ))
-    // console.log(property)
-    
-
-    return(
-        <>
-            <Navbar/>
-            <BlockImagePostPorperty/>
-            <Container className="FormPostProperty" id="FormPostProperty">
-                {/* Titre de la section */}
-                <Row className="row rowTitleFormPP" id="rowTitleFormPP">
-                    <p className="text-left titleFormPP" id="titleFormPP">MODIFIER VOTRE PROPRIETE</p>
-                </Row>
-
-                {/* ligne */}
-                <div className="lineFormPost" id="lineFormPost"></div>
-
-                {/* formulaire d'ajout des informations sur les propriétes*/}
-                <form action="" method="POST">
-                    <BasicInformation/>
-                    <LocationProperty/>
-                    <DetailsPost/>
-
-                    {/* images */}
-                    <>
-                            <Row className="rowBasicInformationTitle" id="rowBasicInformationTile">
-                                <p className="basicInformation" id="basicInformation">Images (Vous pouvez ajouté jusqu'a 5 images)</p>
-                            </Row>
-                            <Row className="rowNB" id="roNB">
-                                <p className="NB" id="NB">
-                                    <span>NB :</span>
-                                    Vous pouvez cliquer sur une image pour la modifier
-                                </p>
-                            </Row>
-                            <Row>
-                                {/* {property[0].images.map((image, index) => (
+          {/* images */}
+          <>
+            <Row
+              className="rowBasicInformationTitle"
+              id="rowBasicInformationTile"
+            >
+              <p className="basicInformation" id="basicInformation">
+                Images (Vous pouvez ajouté jusqu'a 5 images)
+              </p>
+            </Row>
+            <Row className="rowNB" id="roNB">
+              <p className="NB" id="NB">
+                <span>NB :</span>
+                Vous pouvez cliquer sur une image pour la modifier
+              </p>
+            </Row>
+            <Row>
+              {/* {property[0].images.map((image, index) => (
                                     <Col md="4">
                                         <img className="img-thumbnail m-2 backgroundLogo2" key={index} src={URL.createObjectURL(image)} alt={`Image ${index}`}/>
                                         <svg className="bi bi-x deleteImage" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
@@ -139,24 +141,39 @@ function EditProperty () {
                                         </svg>
                                     </Col>
                                 ))} */}
-                                <Col md="4">
-                                    <label for='imagePost1' className="labelImagePost labelImagePost1" id="labelImagePost1">
-                                        <img src={addImage} className="backgroundLogo" id="backgroundLogo1" alt="HOUSING"/>
-                                    </label> 
-                            `       <input type="file" multiple name="images" className="imagePost imagePost1" id="imagePost1"/>
-                                </Col>
-                            </Row>
-                            <Row className="imageProperty" id="imageProperty">
-                            </Row>
-                            {/* <div className="d-flex flex-wrap"> */}
-                        {/* </div> */}
-                        </>
+              <Col md="4">
+                <label
+                  for="imagePost1"
+                  className="labelImagePost labelImagePost1"
+                  id="labelImagePost1"
+                >
+                  <img
+                    src={addImage}
+                    className="backgroundLogo"
+                    id="backgroundLogo1"
+                    alt="HOUSING"
+                  />
+                </label>
+                `{" "}
+                <input
+                  type="file"
+                  multiple
+                  name="images"
+                  className="imagePost imagePost1"
+                  id="imagePost1"
+                />
+              </Col>
+            </Row>
+            <Row className="imageProperty" id="imageProperty"></Row>
+            {/* <div className="d-flex flex-wrap"> */}
+            {/* </div> */}
+          </>
 
-                        <ContactPost/>
-                    </form>
-            </Container>
-        </>
-    )
+          <ContactPost />
+        </form>
+      </Container>
+    </>
+  );
 }
 
-export default EditProperty
+export default EditProperty;

@@ -1,514 +1,512 @@
 /*style de l'inscription*/
 
-.blockSingUp{
-    position: absolute;
-    width: 90%;
-    height: 550px;
-    display: block;
-    margin: auto;
-    margin-top:6%;
-    margin-left:5%;
-    box-shadow: rgba(0, 0, 0, 0.402) 5px 5px 9px 3px;
+.blockSingUp {
+  position: absolute;
+  width: 90%;
+  height: 550px;
+  display: block;
+  margin: auto;
+  margin-top: 6%;
+  margin-left: 5%;
+  box-shadow: rgba(0, 0, 0, 0.402) 5px 5px 9px 3px;
 }
 
 /*title signUp*/
 
-.titleSingUp{
-    position: relative;
-    font-family:initial;
-    text-align: left;
-    display: flex;
-    margin-left: 4.5%;
-    padding-top: 0%;
-    font-weight:bold;
+.titleSingUp {
+  position: relative;
+  font-family: initial;
+  text-align: left;
+  display: flex;
+  margin-left: 4.5%;
+  padding-top: 0%;
+  font-weight: bold;
 }
-.titleSingUp2{
-    text-align: right;
+.titleSingUp2 {
+  text-align: right;
 }
 
 /*Vertical Line*/
 
-.verticalLine{
-    position: absolute;
-    margin-top: 1%;
-    margin-left: 5%;
-    width: 1px;
-    height: 400px;
-    background-color: #f6b105;
+.verticalLine {
+  position: absolute;
+  margin-top: 1%;
+  margin-left: 5%;
+  width: 1px;
+  height: 400px;
+  background-color: #f6b105;
 }
 
-.blockCircle{
+.blockCircle {
 }
 
 /*circle*/
 
-.circle{
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    border-radius: 50%;
-    border: solid 1px #f6b105;
-    background-color: white;
-    margin-left: -1850%;
+.circle {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  border-radius: 50%;
+  border: solid 1px #f6b105;
+  background-color: white;
+  margin-left: -1850%;
 }
 
-.circle1{
-    background-color: #f6b100;
+.circle1 {
+  background-color: #f6b100;
 }
 
-.circle2{
-    margin-top: 12250%;
+.circle2 {
+  margin-top: 12250%;
 }
 
-.circle3{
-    margin-top: 24250%;
+.circle3 {
+  margin-top: 24250%;
 }
 
-.circle4{
-    margin-top: 36500%;
+.circle4 {
+  margin-top: 36500%;
 }
 
 /*number*/
 
-.number{
-    display: block;
-    margin: auto;
-    margin-top: 0%;
-    font-size: 25px;
+.number {
+  display: block;
+  margin: auto;
+  margin-top: 0%;
+  font-size: 25px;
 }
 
 /*titles*/
-.titlesSingUp{
-    position: absolute;
-    text-align: left;
-    margin-left: 8%;
-    margin-top: 1%;
+.titlesSingUp {
+  position: absolute;
+  text-align: left;
+  margin-left: 8%;
+  margin-top: 1%;
 }
 
-.titles{
-    font-weight: bold;
-    color: #f6b100;
+.titles {
+  font-weight: bold;
+  color: #f6b100;
 }
 
-.title2{
-    margin-top: 50%;
+.title2 {
+  margin-top: 50%;
 }
 
-.title3{
-    margin-top: 155%;
+.title3 {
+  margin-top: 155%;
 }
 
-.title4{
-    margin-top: 158%;
+.title4 {
+  margin-top: 158%;
 }
 
-.titleDescription1{
-    margin-top: -5%;
+.titleDescription1 {
+  margin-top: -5%;
 }
 
-
-.titleDescription2{
-    margin-top: -8%;
+.titleDescription2 {
+  margin-top: -8%;
 }
 
-.titleDescription3{
-    margin-top: -12%;
+.titleDescription3 {
+  margin-top: -12%;
 }
 
-.titleDescription4{
-    margin-top: -8.5%;
+.titleDescription4 {
+  margin-top: -8.5%;
 }
-
 
 /*second vertical line*/
 
-
-.secondVerticalLine{
-    margin-left: 49%;
-    margin-top: -1%;
-    max-width: 1px;
-    height:450px;
-    background-color: rgb(0, 0, 0);
+.secondVerticalLine {
+  margin-left: 49%;
+  margin-top: -1%;
+  max-width: 1px;
+  height: 450px;
+  background-color: rgb(0, 0, 0);
 }
 
 /*block form*/
 
 /*block form 1*/
-.formSingUp1{
-    margin-top: -39%;
-    margin-left: 45%;
+.formSingUp1 {
+  margin-top: -39%;
+  margin-left: 45%;
 }
 
-.titlesForm{
-    font-weight: bold;
-    color: #f6b100; 
-    margin-left: 5%;
+.titlesForm {
+  font-weight: bold;
+  color: #f6b100;
+  margin-left: 5%;
 }
 
-.titleDescriptionForm{
-    margin-top: -2%;
-    margin-left: 7%;
+.titleDescriptionForm {
+  margin-top: -2%;
+  margin-left: 7%;
 }
 
-.labelForm{
-    text-align: left;
-    font-weight: bold;
-    margin-left: 19%;
+.labelForm {
+  text-align: left;
+  font-weight: bold;
+  margin-left: 19%;
 }
 
-.labelUserName{
-    margin-top: 3%;
+.labelUserName {
+  margin-top: 3%;
 }
 
-.labelPassword{
-    margin-top: 3%;
+.labelPassword {
+  margin-top: 3%;
 }
 
-.labelPasswordRepeat{
-    margin-top: 3%;
+.labelPasswordRepeat {
+  margin-top: 3%;
 }
 /*button 1*/
 
-.blockButton{
-    margin-top: 7%;
-    margin-left: 8.5%;
+.blockButton {
+  margin-top: 7%;
+  margin-left: 8.5%;
 }
 
-.prevButton{
-    margin-right: 15%;
-    border: none;
-    padding-left:2%;
-    padding-right:2%;
-    padding-top: 1.5%;
-    padding-bottom: 1.5%;
-    border-radius:5px;
-    background-color: #d1d0cd;
+.prevButton {
+  margin-right: 15%;
+  border: none;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+  border-radius: 5px;
+  background-color: #d1d0cd;
 }
 
-.nextButton{
-    border: none;
-    margin-left: 22%;
-    padding-left:5%;
-    padding-right:5%;
-    padding-top: 1.5%;
-    padding-bottom: 1.5%;
-    background-color: #f6b105;
-    border-radius:5px
+.nextButton {
+  border: none;
+  margin-left: 22%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+  background-color: #f6b105;
+  border-radius: 5px;
 }
 
 /*block form 2*/
-.formSingUp2{
-    margin-top: -39%;
-    margin-left: 45%;
-    display: none; 
+.formSingUp2 {
+  margin-top: -39%;
+  margin-left: 45%;
+  display: none;
 }
 
-.blockForm2{
+.blockForm2 {
 }
 
-.scrolldiv{
-    height: 310px;
-    overflow: auto;
+.scrolldiv {
+  height: 310px;
+  overflow: auto;
 }
 
-.labelSecondName{
-    margin-top: 3%;
+.labelSecondName {
+  margin-top: 3%;
 }
 
-.labelNumberPhone{
-    margin-top: 3%;
+.labelNumberPhone {
+  margin-top: 3%;
 }
 
-.labelBirthday{
-    margin-top: 3%;
+.labelBirthday {
+  margin-top: 3%;
 }
 
-.prevButton2{
-    background-color: #d1d0cd;
+.prevButton2 {
+  background-color: #d1d0cd;
 }
 
 /*block form 3*/
-.formSingUp3{
-    margin-top: -39%;
-    margin-left: 45%;
-    display: none;
+.formSingUp3 {
+  margin-top: -39%;
+  margin-left: 45%;
+  display: none;
 }
 
-.blockButton3{
-    margin-top: 25.8%;
-    margin-left: 8.5%;
+.blockButton3 {
+  margin-top: 25.8%;
+  margin-left: 8.5%;
 }
 
-.prevButton3{
-
+.prevButton3 {
 }
 
 /*block form 4*/
-.formSingUp4{
-    margin-top: -39%;
-    margin-left: 45%;
-    display: none;
+.formSingUp4 {
+  margin-top: -39%;
+  margin-left: 45%;
+  display: none;
 }
 
-.blockButton4{
-    margin-top: 59%;
-    margin-left: 8.5%;
+.blockButton4 {
+  margin-top: 59%;
+  margin-left: 8.5%;
 }
 
 /*input*/
-.input{
-    display: flex;
-    justify-content: left;
-    margin-top: -2%;
-    margin-left: 19%;
-    width: 70%;
-    height: 35px;
-    line-height: 28px;
-    padding-left: 5px;
-    border: 2px solid transparent;
-    border-color: #00000064;
-    border-radius: 8px;
-    outline: none;
-    background-color: #ffffff;
+.input {
+  display: flex;
+  justify-content: left;
+  margin-top: -2%;
+  margin-left: 19%;
+  width: 70%;
+  height: 35px;
+  line-height: 28px;
+  padding-left: 5px;
+  border: 2px solid transparent;
+  border-color: #00000064;
+  border-radius: 8px;
+  outline: none;
+  background-color: #ffffff;
 }
 
+.input:focus {
+  outline: none;
+  border-color: #f6b0008d;
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+}
 
-    .input:focus{
-    outline: none;
-    border-color: #f6b0008d;
-    background-color: #fff;
-    box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
-   }
-
-   .input:hover{
-    outline: none;
-    border-color: #f6b0008d;
-    background-color: #fff;
-    box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
-   }
+.input:hover {
+  outline: none;
+  border-color: #f6b0008d;
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+}
 
 /* deja inscrit */
-.haveAccount{
-    margin-top: 2%;
-    height: 45px;
-    background-color: #00000015;
-    padding-top: 0.8%;
-    border-top: 2px rgba(0, 0, 0, 0.3) solid;
+.haveAccount {
+  margin-top: 2%;
+  height: 45px;
+  background-color: #00000015;
+  padding-top: 0.8%;
+  border-top: 2px rgba(0, 0, 0, 0.3) solid;
 }
 
-.signInRegister{
-    text-decoration: underline;
-    cursor: pointer;
-    color: #f6b100;
-    font-weight: bold;
+.signInRegister {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #f6b100;
+  font-weight: bold;
 }
 
 /*style des erreur*/
-.error{
-    text-align: center;
-    color: red;
+.error {
+  text-align: center;
+  color: red;
 }
 
-@media (width>=1500px){
-    .titlesForm{
-        font-weight: bold;
-        color: #f6b100; 
-        margin-top: 8%;
-        margin-left: 5%;
-    }
+@media (width>=1500px) {
+  .titlesForm {
+    font-weight: bold;
+    color: #f6b100;
+    margin-top: 8%;
+    margin-left: 5%;
+  }
 
-    .blockButton4{
-        margin-top: 55%;
-        margin-left: 8.5%;
-    }
+  .blockButton4 {
+    margin-top: 55%;
+    margin-left: 8.5%;
+  }
 
-    .blockButton{
-        margin-top: 7%;
-        margin-left: 8%;
-    }
-    
-    .prevButton{
-        margin-right: 16%;
-    }
-    
-    .nextButton{
-        margin-left: 25%;
-    }
+  .blockButton {
+    margin-top: 7%;
+    margin-left: 8%;
+  }
 
-    .haveAccount{
-        margin-top: 1%;
-        height: 55px;
-        background-color: #00000015;
-        padding-top: 0.8%;
-        border-top: 2px rgba(0, 0, 0, 0.3) solid;
-    }  
+  .prevButton {
+    margin-right: 16%;
+  }
+
+  .nextButton {
+    margin-left: 25%;
+  }
+
+  .haveAccount {
+    margin-top: 1%;
+    height: 55px;
+    background-color: #00000015;
+    padding-top: 0.8%;
+    border-top: 2px rgba(0, 0, 0, 0.3) solid;
+  }
 }
 
-@media (width<=1500px){
-    .titlesForm{
-        font-weight: bold;
-        color: #f6b100; 
-        margin-top: 5%;
-        margin-left: 5%;
-    }
+@media (width<=1500px) {
+  .titlesForm {
+    font-weight: bold;
+    color: #f6b100;
+    margin-top: 5%;
+    margin-left: 5%;
+  }
 
-    .blockButton{
-        margin-top: 7%;
-        margin-left: 8%;
-    }
-    
-    .prevButton{
-        margin-right: 16%;
-    }
-    
-    .nextButton{
-        margin-left: 25%;
-    }
+  .blockButton {
+    margin-top: 7%;
+    margin-left: 8%;
+  }
 
-    .haveAccount{
-        margin-top: 1.5%;
-        height: 55px;
-        background-color: #00000015;
-        padding-top: 0.8%;
-        border-top: 2px rgba(0, 0, 0, 0.3) solid;
-    }  
+  .prevButton {
+    margin-right: 16%;
+  }
+
+  .nextButton {
+    margin-left: 25%;
+  }
+
+  .haveAccount {
+    margin-top: 1.5%;
+    height: 55px;
+    background-color: #00000015;
+    padding-top: 0.8%;
+    border-top: 2px rgba(0, 0, 0, 0.3) solid;
+  }
 }
 
-@media (width<=1450px){
-    .titlesForm{
-        font-weight: bold;
-        color: #f6b100; 
-        margin-top: 2%;
-        margin-left: 5%;
-    }
+@media (width<=1450px) {
+  .titlesForm {
+    font-weight: bold;
+    color: #f6b100;
+    margin-top: 2%;
+    margin-left: 5%;
+  }
 
-    .blockButton{
-        margin-top: 7%;
-        margin-left: 8%;
-    }
-    
-    .prevButton{
-        margin-right: 15%;
-    }
-    
-    .nextButton{
-        margin-left: 24%;
-    }
+  .blockButton {
+    margin-top: 7%;
+    margin-left: 8%;
+  }
 
-    .haveAccount{
-        margin-top: 1.8%;
-        height: 55px;
-        background-color: #00000015;
-        padding-top: 0.8%;
-        border-top: 2px rgba(0, 0, 0, 0.3) solid;
-    }  
+  .prevButton {
+    margin-right: 15%;
+  }
+
+  .nextButton {
+    margin-left: 24%;
+  }
+
+  .haveAccount {
+    margin-top: 1.8%;
+    height: 55px;
+    background-color: #00000015;
+    padding-top: 0.8%;
+    border-top: 2px rgba(0, 0, 0, 0.3) solid;
+  }
 }
 
-@media (width<=1400px){
-    .titlesForm{
-        font-weight: bold;
-        color: #f6b100; 
-        margin-top: 0%;
-        margin-left: 5%;
-    }
+@media (width<=1400px) {
+  .blockSingUp {
+    margin-top: 10%;
+  }
+  .titlesForm {
+    font-weight: bold;
+    color: #f6b100;
+    margin-top: 0%;
+    margin-left: 5%;
+  }
 
-    .blockButton{
-        margin-top: 7%;
-        margin-left: 8%;
-    }
-    
-    .prevButton{
-        margin-right: 16%;
-    }
-    
-    .nextButton{
-        margin-left: 25%;
-    }
+  .blockButton {
+    margin-top: 7%;
+    margin-left: 8%;
+  }
 
-    .haveAccount{
-        margin-top: 1.8%;
-        height: 55px;
-        background-color: #00000015;
-        padding-top: 0.8%;
-        border-top: 2px rgba(0, 0, 0, 0.3) solid;
-    }  
+  .prevButton {
+    margin-right: 16%;
+  }
+
+  .nextButton {
+    margin-left: 25%;
+  }
+
+  .haveAccount {
+    margin-top: 1.8%;
+    height: 55px;
+    background-color: #00000015;
+    padding-top: 0.8%;
+    border-top: 2px rgba(0, 0, 0, 0.3) solid;
+  }
 }
 
-@media (width<=1350px){
-    .titlesForm{
-        font-weight: bold;
-        color: #f6b100;
-        position: absolute;
-        margin-top: -2%;
-        margin-left: 20%;
-    }
+@media (width<=1350px) {
+  .titlesForm {
+    font-weight: bold;
+    color: #f6b100;
+    position: absolute;
+    margin-top: -2%;
+    margin-left: 20%;
+  }
 
-    .blockButton{
-        margin-top: 7%;
-        margin-left: 8%;
-    }
-    
-    .prevButton{
-        margin-right: 13%;
-    }
-    
-    .nextButton{
-        margin-left: 23%;
-    }
+  .blockButton {
+    margin-top: 7%;
+    margin-left: 8%;
+  }
 
-    .haveAccount{
-        margin-top: 1.8%;
-        height: 55px;
-        background-color: #00000015;
-        padding-top: 0.8%;
-        border-top: 2px rgba(0, 0, 0, 0.3) solid;
-    }  
+  .prevButton {
+    margin-right: 13%;
+  }
+
+  .nextButton {
+    margin-left: 23%;
+  }
+
+  .haveAccount {
+    margin-top: 1.8%;
+    height: 55px;
+    background-color: #00000015;
+    padding-top: 0.8%;
+    border-top: 2px rgba(0, 0, 0, 0.3) solid;
+  }
 }
 
-@media (width<=1300px){
-    .titles{
-        font-size: 15px;
-    }
+@media (width<=1300px) {
+  .titles {
+    font-size: 15px;
+  }
 
-    .titlesForm{
-        font-weight: bold;
-        color: #f6b100;
-        position: absolute;
-        margin-top: -3%;
-        margin-left: 20%;
-    }
+  .titlesForm {
+    font-weight: bold;
+    color: #f6b100;
+    position: absolute;
+    margin-top: -3%;
+    margin-left: 20%;
+  }
 
-    .blockButton{
-        margin-top: 5%;
-        margin-left: 8%;
-    }
-    
-    .prevButton{
-        margin-right: 13%;
-    }
-    
-    .nextButton{
-        margin-left: 23%;
-    }
+  .blockButton {
+    margin-top: 5%;
+    margin-left: 8%;
+  }
 
-    .haveAccount{
-        margin-top: 1.8%;
-        height: 55px;
-        background-color: #00000015;
-        padding-top: 0.8%;
-        border-top: 2px rgba(0, 0, 0, 0.3) solid;
-    }  
+  .prevButton {
+    margin-right: 13%;
+  }
+
+  .nextButton {
+    margin-left: 23%;
+  }
+
+  .haveAccount {
+    margin-top: 1.8%;
+    height: 55px;
+    background-color: #00000015;
+    padding-top: 0.8%;
+    border-top: 2px rgba(0, 0, 0, 0.3) solid;
+  }
 }
 
-@media (width<=700px){
-    .verticalLine{
-        display: none;
-    }
-    .blockTitles{
-        display: none;
-    }
-    .secondVerticalLine{
-        display: none;
-    }
+@media (width<=700px) {
+  .verticalLine {
+    display: none;
+  }
+  .blockTitles {
+    display: none;
+  }
+  .secondVerticalLine {
+    display: none;
+  }
 }
