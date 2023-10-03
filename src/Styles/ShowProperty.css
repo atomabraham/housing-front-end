@@ -1,10 +1,11 @@
-.divShowImageProp{
-    position: relative;
-    padding-top: 8%;
+.divShowImageProp {
+  position: relative;
+  padding-top: 8%;
 }
 
-.imageShowProperty{
-    height : 750px;
+.imageShowProperty {
+  /* height : 750px; */
+  height: 85vh;
 }
 
 /* .next-image-right .carousel-item-next {
@@ -31,18 +32,18 @@
     transform: translateX(-100%);
   } */
 
-  .property-actions {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .spacer {
-    flex-grow: 1;
-  }
+.property-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
 
-.action-button{
+.spacer {
+  flex-grow: 1;
+}
+
+.action-button {
   color: rgba(0, 0, 0, 0.721);
   border-radius: 50%;
   border: solid 1px rgba(0, 0, 0, 0.721);
@@ -51,125 +52,139 @@
   height: 50px;
 }
 
-  .textShowProperty{
-    text-align: left;
-    font-family : lato;
-  }
+.textShowProperty {
+  text-align: left;
+  font-family: lato;
+}
 
-  .showNameProperty{
-    font-size : 25px;
-    font-weight : bold;
-  }
+.showNameProperty {
+  font-size: 25px;
+  font-weight: bold;
+}
 
-  .showLocalisationProperty{
-    margin-top: -1%;
-  }
+.showLocalisationProperty {
+  margin-top: -1%;
+}
 
-  .showPriceProperty{
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: -1.5%;
-  }
+.showPriceProperty {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: -1.5%;
+}
 
-  hr {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: none;
-    border-top: 1px solid #ccc;
-  }
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: none;
+  border-top: 1px solid #ccc;
+}
 
-  .showIconProperty{
-    width: 30px;
-    height: 30px;
-  }
+.showIconProperty {
+  width: 30px;
+  height: 30px;
+}
 
-  .showbedbadProperty{
-    font-size: 20px;
-    font-weight: normal;
-  }
+.showbedbadProperty {
+  font-size: 20px;
+  font-weight: normal;
+}
 
-#map{
+#map {
   z-index: 0;
 }
 
-  .left-column {
-    width: 70%;
-    float: left;
-    padding-bottom: 60%;
-  }
-  
-  .right-column {
-    width: 30%;
-    float: right;
-    padding-bottom: 50%;
-  }
+.left-column {
+  width: 70%;
+  float: left;
+  padding-bottom: 60%;
+}
 
-  textarea{
-    width: 100%;
-  }
+.right-column {
+  width: 30%;
+  float: right;
+  padding-bottom: 50%;
+}
 
-  .submitSendMessageShowProp{
-    width: 100%;
-    border: none;
-    border-radius: 5px;
-    font-family: lato;
-    font-weight: bold;
-    font-size: 20px;
-    color: white;
-    background-color: #f6b100;
-  }
+textarea {
+  width: 100%;
+}
+
+.submitSendMessageShowProp {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  font-family: lato;
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+  background-color: #f6b100;
+}
 
 .container {
   position: relative;
   overflow: auto;
 }
 
-  .fixed-column {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 30%;
-    /* transform: translateY(-10px); */
-  }
-
-  .titleDescriptionShowProperty{
-    text-align: left;
-    font-weight: bold;
-    font-family: lato;
-    font-size: 20px;
-  }
-
-  .showDescriptionProperty{
-    text-align: left;
-    font-family: lato;
-  }
-
-.ifAgrementExist{
-  border: rgba(0, 0, 0, 0.577) solid 1px;
-  border-radius: 8px;
-  width: 95%;
-  margin-left: 1%;
+.fixed-column {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 30%;
+  /* transform: translateY(-10px); */
 }
 
-.titleAgrementShowProperty{
+.titleDescriptionShowProperty {
   text-align: left;
   font-weight: bold;
   font-family: lato;
   font-size: 20px;
 }
 
-.agrementShowProerty p{
+.showDescriptionProperty {
+  text-align: left;
+  font-family: lato;
+}
+
+.ifAgrementExist {
+  border: rgba(0, 0, 0, 0.577) solid 1px;
+  border-radius: 8px;
+  width: 95%;
+  margin-left: 1%;
+}
+
+.titleAgrementShowProperty {
+  text-align: left;
+  font-weight: bold;
+  font-family: lato;
+  font-size: 20px;
+}
+
+.agrementShowProerty p {
   text-align: left;
   padding-left: 1%;
 }
 
-.showProprioProperty{
+.showProprioProperty {
   text-align: left;
   font-family: lato;
-  
 }
 
-.showCreateAtProperty{
+.showCreateAtProperty {
   text-align: left;
   font-family: lato;
+}
+
+@media (width <= 1000px) {
+  .right-column {
+    display: none;
+  }
+  .left-column {
+    width: 100%;
+  }
+}
+
+@media (width <= 500px) {
+  .imageShowProperty {
+    height: 50vh;
+  }
 }

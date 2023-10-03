@@ -248,7 +248,7 @@ function EditProfileUser() {
                 </div>
                 <button
                   type="button"
-                  className="p-2 mx-2 mb-2 actionProfilePicture updateProfilePictureBtn"
+                  className="p-2 mx-2 mb-2 actionProfilePicture saveUpdateInformationUser"
                   onClick={updateInformationUser}
                 >
                   SAUVEGARDER

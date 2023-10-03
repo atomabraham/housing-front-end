@@ -1,13 +1,15 @@
 /*style de l'inscription*/
 
 .blockSingUp {
-  position: absolute;
-  width: 90%;
-  height: 550px;
-  display: block;
-  margin: auto;
+  position: relative;
+  width: 95%;
+  height: 600px;
+  /* display: block; */
+  /* margin: auto; */
+  padding-top: 25px;
   margin-top: 6%;
-  margin-left: 5%;
+  margin-left: auto;
+  margin-right: auto;
   box-shadow: rgba(0, 0, 0, 0.402) 5px 5px 9px 3px;
 }
 
@@ -499,6 +501,90 @@
   }
 }
 
+@media (width<=1150px) {
+  .blockSingUp {
+    height: 620px;
+  }
+}
+
+@media (width<=1000px) {
+  .verticalLine {
+    margin-left: 3%;
+    display: none;
+  }
+
+  .titles {
+    font-size: 20px;
+    display: none;
+  }
+
+  .titlesForm {
+    text-align: center;
+  }
+
+  .titleDescription1 {
+    display: none;
+  }
+
+  .titleDescription2 {
+    display: none;
+  }
+
+  .titleDescription3 {
+    display: none;
+  }
+
+  .titleDescription4 {
+    display: none;
+  }
+
+  .secondVerticalLine {
+    display: none;
+  }
+
+  .formSingUp1 {
+    margin-top: 10%;
+    margin-left: -5%;
+    /* margin-right: auto; */
+    width: 100%;
+  }
+
+  .formSingUp2 {
+    margin-top: 10%;
+    margin-left: -5%;
+    width: 100%;
+  }
+
+  .formSingUp3 {
+    margin-top: 10%;
+    margin-left: -5%;
+    width: 100%;
+  }
+
+  .formSingUp4 {
+    margin-top: 10%;
+    margin-left: 0%;
+    width: 100%;
+  }
+
+  .prevButton {
+    margin-right: 21%;
+  }
+
+  .nextButton1 {
+    /* margin-left: 15%; */
+  }
+
+  .blockButton3 {
+    margin-top: 20%;
+    margin-left: 0%;
+  }
+
+  .blockForm3 {
+    margin-left: -8%;
+  }
+}
+
 @media (width<=700px) {
   .verticalLine {
     display: none;
@@ -507,6 +593,16 @@
     display: none;
   }
   .secondVerticalLine {
+    display: none;
+  }
+}
+
+@media (width < 400px) {
+  .scrolldiv {
+    height: 400px;
+    width: 100%;
+  }
+  .titleDescriptionForm {
     display: none;
   }
 }
