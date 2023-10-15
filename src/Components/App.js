@@ -14,6 +14,8 @@ import ContactUs from "./Pages/ContactPage";
 import MenuOptionAdmin from "./ElementsPages/DashboardAdmin/MenuOptionAdmin";
 import EditProfileUser from "./Pages/EditProfileUser";
 import ProtectedRoute from "./Controllers/ProtectedRoute";
+import MyProperty from "./Pages/MyProperty";
+import ValidateProperty from "./Pages/ValidateProperty";
 
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
           <Route path="/contactUs" element={<ContactUs />} />
           <Route path="/users/edit" element={<EditProfileUser />} />
           {/* <ProtectedRoute path="/users/edit" element={<EditProfileUser />} /> */}
+          <Route path="/MyProperties" element={<MyProperty />} />
+          <Route path="/ValidateProperty/:id" element={<ValidateProperty />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

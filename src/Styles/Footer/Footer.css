@@ -1,0 +1,21 @@
+.blockFooter {
+  margin-top: 2%;
+  width: 100%;
+  background-color: white;
+}
+
+.contentFooterDiv {
+  width: 90%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blockLinkFooter {
+  display: block;
+  align-items: flex-start;
+}
+
+.contentFooterDiv Link {
+  text-align: left;
+}

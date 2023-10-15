@@ -4,6 +4,8 @@ import Line from "../ElementsPages/Banners/Line";
 import FormPostProperty from "../ElementsPages/PostProperty/FormPostProperty";
 import { useEffect, useState } from "react";
 import axios from "../Authentification/axios";
+import Footer from "../ElementsPages/Footer/Footer";
+import NotFound from "./NotFound";
 
 function PostProperty() {
   const addProperty = async (e) => {
@@ -32,9 +34,12 @@ function PostProperty() {
         <>
           <Navbar />
           <FormPostProperty />
+          <Footer />
         </>
       ) : (
-        <></>
+        <>
+          <NotFound />
+        </>
       )}
     </>
   );

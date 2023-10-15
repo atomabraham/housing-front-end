@@ -1,23 +1,119 @@
-.rowMenupropertyAdmin{
-    margin-top: 2%;
+.rowMenupropertyAdmin {
+  margin-top: 20vh;
+  display: none;
+  /* width: 95%; */
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.espaceTableproperty{
-    height:10px;
+.rowpropertyList {
+  display: block;
 }
 
-.trMenuProperty{
-    margin-top: 1%;
-    background-color: rgba(203, 199, 199, 0.242);
-    border-radius: 10px;
+.btnMenuProperty {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 20px;
+  margin-right: 40px;
 }
 
-.trMenuProperty td{
-    padding-top: 1%;
-    padding-bottom: 1%;
+.espaceTableproperty {
+  height: 10px;
 }
 
-.idPropertyMenuDashboard{
-    font-weight: bold;
-    color: #f6b100;
+.trMenuProperty {
+  margin-top: 1%;
+  background-color: rgba(203, 199, 199, 0.242);
+  border-radius: 10px;
+}
+
+.trMenuProperty td {
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.blockPropertyToValidate {
+  display: none;
+}
+
+#btnAllProperties {
+  margin-right: 20px;
+  border: 2px solid #f6b100;
+  border-radius: 10px;
+  background-color: #f6b100;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+#btnPropertiesEnAttente {
+  margin-right: 20px;
+  border: 2px solid #f6b100;
+  border-radius: 10px;
+  background-color: transparent;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+#btnPropertieVendu {
+  margin-right: 20px;
+  border: 2px solid #f6b100;
+  border-radius: 10px;
+  background-color: transparent;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+/* .trMenuPropertyToValidate {
+  margin-top: 1%;
+  background-color: rgba(203, 199, 199, 0.242);
+  border-radius: 10px;
+}
+
+.trMenuPropertyToValidate td {
+  padding-top: 1%;
+  padding-bottom: 1%;
+} */
+
+.idPropertyMenuDashboard {
+  font-weight: bold;
+  color: #f6b100;
+}
+
+.buttonShowProperty {
+  margin-left: 10px;
+  border-radius: 10px;
+  border: solid 2px #f6b100;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: 0.3s;
+  font-weight: bold;
+
+  &:hover {
+    background-color: #f6b100;
+    color: white;
+  }
+}
+
+.buttonValidateProperty {
+  /* background-color: #f6b100; */
+  margin-left: 10px;
+  border-radius: 10px;
+  border: solid 2px #004080;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: 0.3s;
+  font-weight: bold;
+
+  &:hover {
+    background-color: #004080;
+    color: white;
+  }
 }

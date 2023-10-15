@@ -1,4 +1,6 @@
-function LayoutPropertiesController() {
+// import { useLocation } from "react-router-dom";
+
+function AgrementController() {
   let rowMenuOptionAdmin = document.getElementById("rowMenuOptionAdmin");
   let rowMenupropertyAdmin = document.getElementById("rowMenupropertyAdmin");
 
@@ -14,12 +16,11 @@ function LayoutPropertiesController() {
     "btnAgrementSideBarAdmin"
   );
 
-  rowMenuOptionAdmin.style.display = "none";
+  rowMenuOptionAdmin.style.display = "block";
 
-  btnPropertieSideBarAdmin.style.backgroundColor = "#f6b100";
-  btnAgrementSideBarAdmin.style.backgroundColor = "transparent";
-  rowMenupropertyAdmin.style.display = "block";
-  // rowMenuProperties.style.backgroundColor = "#f6b100";
+  btnPropertieSideBarAdmin.style.backgroundColor = "transparent";
+  rowMenupropertyAdmin.style.display = "none";
+  btnAgrementSideBarAdmin.style.backgroundColor = "#f6b100";
   // rowMenuProperties.style.display = "block";
   // rowMenuStatistic.style.backgroundColor = "transparent";
   // rowMenuOption.style.backgroundColor = "transparent";
@@ -27,4 +28,4 @@ function LayoutPropertiesController() {
   // rowMenuTransaction.style.backgroundColor = "transparent";
 }
 
-export default LayoutPropertiesController;
+export default AgrementController;

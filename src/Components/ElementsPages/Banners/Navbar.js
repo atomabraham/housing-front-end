@@ -1,6 +1,7 @@
 import "../../../Styles/Banners/Navbar.css";
 import React, { useState, useEffect, useRef } from "react";
 import logo from "../../../Assets/Images/logo 1.png";
+import dafaultAvatar from "../../../Assets/Images/man-avatar-icon-free-vector.jpg";
 import { Link } from "react-router-dom";
 import SingIn from "../../SingIn-SingUp/SingIn/SingIn";
 import { Modal } from "react-bootstrap";
@@ -141,13 +142,34 @@ const Navbar = () => {
         <div className="navbar__account" ref={menuRef}>
           <button className="navbar__account-icon" onClick={toggleMenu}>
             {user ? (
-              <img
-                className="pictureProfile"
-                src={`http://localhost:8000/storage/images/profilePicture/${user.picture}`}
-                width="50px"
-                height="50px"
-                alt="profile"
-              />
+              <>
+                {user.picture ? (
+                  <img
+                    className="pictureProfile"
+                    src={`http://localhost:8000/storage/images/profilePicture/${user.picture}`}
+                    width="50px"
+                    height="50px"
+                    alt="profile"
+                  />
+                ) : (
+                  <>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="36"
+                      height="36"
+                      fill="currentColor"
+                      class="bi bi-person-circle"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                      <path
+                        fill-rule="evenodd"
+                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
+                      />
+                    </svg>
+                  </>
+                )}
+              </>
             ) : (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -182,9 +204,9 @@ const Navbar = () => {
               <a href="#" className="" id="linkMenuFavoris">
                 Mes favoris
               </a>
-              <a href="#" className="" id="linkMenuMyProperty">
+              <Link to="/MyProperties" className="" id="linkMenuMyProperty">
                 Mes biens
-              </a>
+              </Link>
               <Link to="/Dashboard" className="" id="linkMenuAdmin">
                 ADMINISTRATEUR
               </Link>

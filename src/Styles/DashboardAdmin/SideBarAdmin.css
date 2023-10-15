@@ -3,8 +3,10 @@
   height: 100vh;
   position: fixed;
   top: 0;
-  left: 0;
+  /* left: ; */
+  margin-top: 9vh;
   background-color: #f0f0f0;
+  /* background-color: blue; */
   transition: transform 0.3s ease;
   transform: translateX(0);
 }
@@ -13,8 +15,42 @@
   transform: translateX(-250px);
 }
 
-.menu {
+/* .content-section {
+  margin-left: 250px;
   padding: 20px;
+  z-index: 10;
+} */
+
+.toggle-btn {
+  position: fixed;
+  margin-top: 10vh;
+  margin-left: 0px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.profilePictureAdmin {
+  width: 80px;
+  height: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  border-radius: 100px;
+  margin-top: 20px;
+}
+
+.pictureAdmin {
+  width: 80px;
+  height: 80px;
+  border-radius: 100px;
+}
+
+.menu {
+  /* padding-top: 20vh; */
+  border-bottom: 5px solid #f6b100;
 }
 
 .menu h2 {
@@ -22,7 +58,7 @@
   margin-bottom: 10px;
 }
 
-.menu ul {
+/* .menu ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -30,4 +66,30 @@
 
 .menu li {
   margin-bottom: 10px;
+} */
+
+/* .iconSideBarAdmin {
+  width: 50px;
+  height: 50px;
+  color: red;
+} */
+
+.blockStatisticAdmin {
+  /* background-color: #f6b100; */
+  width: 262px;
+}
+
+.btnSideBarAdmin {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 0%;
+  text-align: left;
+  color: #004080;
+
+  &:hover {
+    background-color: #f6b100;
+  }
 }

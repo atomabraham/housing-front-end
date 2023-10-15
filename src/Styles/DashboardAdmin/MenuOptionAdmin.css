@@ -1,10 +1,11 @@
 .rowMenuOptionAdmin {
-  margin-left: 1%;
+  /* background-color: red; */
+  width: 100%;
 }
 
 .rowAddElement {
   justify-content: flex-end;
-  margin-top: 1%;
+  margin-top: 15vh;
 }
 
 .inputNameOptionMenu {
@@ -12,7 +13,6 @@
   height: 50px;
   line-height: 28px;
   padding: 0 1rem;
-  padding-left: 2.5rem;
   border: 2px solid transparent;
   border-color: rgba(0, 0, 0, 0.174);
   border-radius: 8px;
@@ -30,7 +30,7 @@
     outline: none;
     border-color: #f6b0008d;
     background-color: #fff;
-    box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+    box-shadow: 0 0 0 4px #f6b00032;
   }
 
   &:hover {
@@ -42,20 +42,23 @@
 }
 
 .addElement {
-  width: 10%;
+  width: 100px;
   margin-right: 0%;
   border: none;
-  color: white;
-  background-color: #482e5d;
+  color: #f6b100;
+  background-color: #004080;
   font-weight: bold;
   padding-top: 0.5%;
   padding-bottom: 0.5%;
   padding-right: 0.5%;
   border-radius: 10px;
   text-align: center;
+  transition: 0.1s;
+  color: white;
 
   &:hover {
-    background-color: #f6b100;
+    /* background-color: #f6b100; */
+    color: white;
   }
 }
 
@@ -153,7 +156,7 @@
 }
 
 .deleteMenu {
-  color: #482e5d;
+  color: #004080;
   cursor: pointer;
   margin-left: 5%;
 }
