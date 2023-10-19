@@ -33,7 +33,7 @@ function ShowProperty() {
   }, []);
 
   const viewProperty = async () => {
-    axios.put(`http://localhost:8000/api/viewProperties/${id}`);
+    axios.post(`http://localhost:8000/api/viewProperties/${id}`);
   };
   useEffect(() => {
     document.addEventListener("DOMContentLoaded", function () {

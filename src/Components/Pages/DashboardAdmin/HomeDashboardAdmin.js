@@ -56,21 +56,31 @@ function HomeDashboardAdmin() {
     <>
       {user ? (
         <>
-          <Navbar />
-          {/* <BodyDashboard/> */}
-          {/* <NotFound id="notFound"/> */}
-          <Sidebar
-            isVisible={isSidebarVisible}
-            toggleSidebar={toggleSidebar}
-            isSidebarVisible={isSidebarVisible}
-          />
-          <ContentSection
-            toggleSidebar={toggleSidebar}
-            isSidebarVisible={isSidebarVisible}
-          />
+          {user.role === "Admin" ? (
+            <>
+              <Navbar />
+              {/* <BodyDashboard/> */}
+              {/* <NotFound id="notFound"/> */}
+              <Sidebar
+                isVisible={isSidebarVisible}
+                toggleSidebar={toggleSidebar}
+                isSidebarVisible={isSidebarVisible}
+              />
+              <ContentSection
+                toggleSidebar={toggleSidebar}
+                isSidebarVisible={isSidebarVisible}
+              />
+            </>
+          ) : (
+            <>
+              <NotFound />
+            </>
+          )}
         </>
       ) : (
-        <></>
+        <>
+          <NotFound />
+        </>
       )}
     </>
   );

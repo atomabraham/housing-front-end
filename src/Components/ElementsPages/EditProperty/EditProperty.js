@@ -55,6 +55,10 @@ function EditProperty() {
   );
   let inputFormPostPhone = document.getElementById("inputFormPostPhone");
 
+  // inputFormPostContactName.disabled = "true";
+  // inputFormPostContactEmail.disabled = "true";
+  // inputFormPostPhone.disabled = "true";
+
   const [images, setImages] = useState([]);
   const [imagesData, setImageData] = useState();
 
@@ -93,7 +97,42 @@ function EditProperty() {
       (inputFormPostPhone.value = prop.contactPhone)
     )
   );
-  // console.log(property)
+
+  // recuperation et envoi des mise a jours de propriete
+
+  const UpdateProperty = async (e) => {
+    const formData = new FormData();
+
+    // formData.append("id_user", parseInt(user.data.id));
+    formData.append("propertyName", inputFormPostName.value);
+    formData.append("propertyType", inputFormPostType.value);
+    formData.append("propertyStatus", inputFormPostStatus.value);
+    formData.append("bedrooms", inputFormPostBetRoom.value);
+    formData.append("bathrooms", inputFormPostBadRoom.value);
+    formData.append("area", inputFormPostSuperficie.value);
+    formData.append("price", inputFormPostPrice.value);
+    formData.append("country", inputFormPostCountry.value);
+    formData.append("city", inputFormPostCity.value);
+    formData.append("quartier", inputFormAddress.value);
+    formData.append("postalcode", inputFormPostalCode.value);
+    formData.append("description", inputFormPostDescription.value);
+    // formData.append("agrement", listeJsonTexte);
+
+    try {
+      // console.log(images)
+      const resp = await axios.put(
+        `http://localhost:8000/api/propertyEdit/${id}`,
+        formData
+      );
+
+      if (resp.status === 200) {
+        document.location.href = "/";
+      } else {
+        alert("Save failed");
+      }
+    } catch (error) {}
+    // console.log(DetailsPost.getSelectedItems)
+  };
 
   return (
     <>
@@ -184,7 +223,8 @@ function EditProperty() {
           </Row>
           <Row>
             <button
-              type="submit"
+              type="button"
+              onClick={UpdateProperty}
               className="buttonSubmitProperty"
               id="buttonSubmitProperty"
             >

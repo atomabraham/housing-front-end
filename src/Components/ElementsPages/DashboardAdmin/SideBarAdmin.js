@@ -2,7 +2,13 @@ import { Link } from "react-router-dom";
 import "../../../Styles/DashboardAdmin/SideBarAdmin.css";
 import React, { useEffect, useState } from "react";
 import axios from "../../Authentification/axios";
-import { AutoGraph } from "@mui/icons-material";
+import {
+  AddHome,
+  Apartment,
+  AutoGraph,
+  Paid,
+  People,
+} from "@mui/icons-material";
 import AgrementController from "../../Controllers/DahboardAdmin/AgrementController";
 import LayoutPropertiesController from "../../Controllers/DahboardAdmin/LayoutPropertiesController";
 
@@ -79,25 +85,20 @@ function Sidebar({ isVisible, toggleSidebar, isSidebarVisible }) {
             </p>
           </div>
           <div className="row blockStatisticAdmin" id="blockStatisticAdmin">
-            <AutoGraph
-              className="iconSideBarAdmin"
-              // fontSize="large"
-              // color="#f6b100"
-            />
             <Link
               to="#statistics"
               className="btnSideBarAdmin"
               name="linkStatistic"
             >
-              STATISTIQUES
+              <AutoGraph
+                className="iconSideBarAdmin"
+                fontSize="large"
+                color="#f6b100"
+              />
+              <span>STATISTIQUES</span>
             </Link>
           </div>
           <div className="row blockStatisticAdmin" id="blockStatisticAdmin">
-            <AutoGraph
-              className="iconSideBarAdmin"
-              // fontSize="large"
-              // color="#f6b100"
-            />
             <Link
               to="#property"
               className="btnSideBarAdmin"
@@ -105,15 +106,15 @@ function Sidebar({ isVisible, toggleSidebar, isSidebarVisible }) {
               name="linkStatistic"
               onClick={LayoutPropertiesController}
             >
-              PROPRIETES
+              <Apartment
+                className="iconSideBarAdmin"
+                fontSize="large"
+                color="#f6b100"
+              />
+              <span>PROPRIETES</span>
             </Link>
           </div>
           <div className="row blockStatisticAdmin" id="blockStatisticAdmin">
-            <AutoGraph
-              className="iconSideBarAdmin"
-              // fontSize="large"
-              // color="#f6b100"
-            />
             <Link
               to="#agrements"
               className="btnSideBarAdmin"
@@ -121,31 +122,36 @@ function Sidebar({ isVisible, toggleSidebar, isSidebarVisible }) {
               name="linkStatistic"
               onClick={AgrementController}
             >
-              AGREMENTS
+              <AddHome
+                className="iconSideBarAdmin"
+                fontSize="large"
+                color="#f6b100"
+              />
+              <span>AGREMENTS</span>
             </Link>
           </div>
           <div className="row blockStatisticAdmin" id="blockStatisticAdmin">
-            <AutoGraph
-              className="iconSideBarAdmin"
-              // fontSize="large"
-              // color="#f6b100"
-            />
             <Link to="#users" className="btnSideBarAdmin" name="linkStatistic">
-              UTILISATEURS
+              <People
+                className="iconSideBarAdmin"
+                fontSize="large"
+                color="#f6b100"
+              />
+              <span>UTILISATEURS</span>
             </Link>
           </div>
           <div className="row blockStatisticAdmin" id="blockStatisticAdmin">
-            <AutoGraph
-              className="iconSideBarAdmin"
-              // fontSize="large"
-              // color="#f6b100"
-            />
             <Link
               to="#transactions"
               className="btnSideBarAdmin"
               name="linkStatistic"
             >
-              TRANSACTIONS
+              <Paid
+                className="iconSideBarAdmin"
+                fontSize="large"
+                color="#f6b100"
+              />
+              <span>TRANSACTIONS</span>
             </Link>
           </div>
         </div>

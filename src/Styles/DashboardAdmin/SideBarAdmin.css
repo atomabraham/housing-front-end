@@ -68,11 +68,9 @@
   margin-bottom: 10px;
 } */
 
-/* .iconSideBarAdmin {
-  width: 50px;
-  height: 50px;
-  color: red;
-} */
+.iconSideBarAdmin {
+  margin-left: 20px;
+}
 
 .blockStatisticAdmin {
   /* background-color: #f6b100; */
@@ -92,4 +90,8 @@
   &:hover {
     background-color: #f6b100;
   }
+}
+
+.btnSideBarAdmin span {
+  margin-left: 15px;
 }

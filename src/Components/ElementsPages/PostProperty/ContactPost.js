@@ -19,6 +19,7 @@ function ContactPost() {
             </Form.Label>
             <Form.Control
               type="text"
+              disabled="false"
               className="inputFormPost inputFormPostContactName"
               id="inputFormPostContactName"
               placeholder="Votre nom et prenom"
@@ -32,6 +33,7 @@ function ContactPost() {
             </Form.Label>
             <Form.Control
               type="email"
+              disabled="false"
               className="inputFormPost inputFormPostContactEmail"
               id="inputFormPostContactEmail"
               placeholder="Votre addresse email"
@@ -45,6 +47,7 @@ function ContactPost() {
             </Form.Label>
             <Form.Control
               type="number"
+              disabled="false"
               className="inputFormPost inputFormPostPhone"
               id="inputFormPostPhone"
               placeholder="Votre addresse numéro de téléphone"
