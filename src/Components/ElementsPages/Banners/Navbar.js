@@ -83,25 +83,6 @@ const Navbar = () => {
     })();
   });
 
-  //afficher le box-shadow lorsqu'on commence a scroller
-  const [hasScrolled, setHasScrolled] = useState(false);
-
-  const handleScroll = () => {
-    const scrollTop = window.pageYOffset;
-    if (scrollTop > 0) {
-      setHasScrolled(true);
-    } else {
-      setHasScrolled(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   //déconnexion d'un utilisqteur
   const handleLogout = async () => {
     try {
@@ -127,6 +108,25 @@ const Navbar = () => {
       });
   }, []);
 
+  //afficher le box-shadow lorsqu'on commence a scroller
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  const handleScroll = () => {
+    const scrollTop = window.pageYOffset;
+    if (scrollTop > 0) {
+      setHasScrolled(true);
+    } else {
+      setHasScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <nav className={`navbar ${hasScrolled ? "navbar--scrolled" : ""}`}>
       <div className="navbar__logo">
@@ -136,9 +136,28 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar__links">
-        <Link to="/CreatePost" className="linkCreateProperty">
-          PUBLIER MA PROPRIETE
-        </Link>
+        {user ? (
+          <Link to="/CreatePost" className="linkCreateProperty">
+            PUBLIER MA PROPRIETE
+          </Link>
+        ) : (
+          <>
+            <Link
+              to="#login"
+              className="linkCreateProperty"
+              onClick={handleShow}
+            >
+              PUBLIER MA PROPRIETE
+            </Link>
+            <button
+              type="button"
+              className="linkCreateProperty"
+              onClick={handleShow}
+            >
+              SE CONNECTER
+            </button>
+          </>
+        )}
         <div className="navbar__account" ref={menuRef}>
           <button className="navbar__account-icon" onClick={toggleMenu}>
             {user ? (

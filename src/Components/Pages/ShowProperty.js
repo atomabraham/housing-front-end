@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "../Authentification/axios";
 import { Bathtub, Bed, Hotel } from "@mui/icons-material";
 import Navbar from "../ElementsPages/Banners/Navbar";
-import { Form } from "react-bootstrap";
+import { Form, Modal } from "react-bootstrap";
 import ContactProprio from "../ElementsPages/ShowProperty/ContactProprio";
 import { Carousel } from "react-bootstrap";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
@@ -13,6 +13,9 @@ import { FaHeart, FaShareAlt, FaRegHeart } from "react-icons/fa";
 import LocalisationShowProperty from "../ElementsPages/ShowProperty/LocalisationShowProperty";
 import moment from "moment";
 import "moment/locale/fr";
+import SingIn from "../SingIn-SingUp/SingIn/SingIn";
+// import { emailjs } from "emailjs-com";
+// import emailjs
 
 moment.locale("fr");
 
@@ -82,6 +85,91 @@ function ShowProperty() {
   }, []);
 
   let lenght = 0;
+
+  //verifier si un utilisateur est connecter
+
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    // Effectue une requête HTTP GET à l'API pour récupérer les données de l'utilisateur
+    axios
+      .get("http://localhost:8000/api/user")
+      .then((response) => {
+        setUser(response.data.data); // Affecte les données de l'utilisateur à la variable d'état "user"
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
+  //les constances du modal
+  const [show, setShow] = useState(false);
+  const [showSingIn, setShowSingIn] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const handleCloseSingin = () => setShowSingIn(false);
+  const handleShowSingIn = () => setShowSingIn(true);
+
+  //recuperation des information de l'utilisateur interessé
+  const UserInteressed = async () => {
+    let inputNameInteressed = document.getElementById(
+      "inputNameInteressed"
+    ).value;
+    let inputSecondNameInteressed = document.getElementById(
+      "inputSecondNameInteressed"
+    ).value;
+    let inputEmailInteressed = document.getElementById(
+      "inputEmailInteressed"
+    ).value;
+    let inputPhoneInteressed = document.getElementById(
+      "inputPhoneInteressed"
+    ).value;
+    let inputMessageInteressed = document.getElementById(
+      "inputMessageInteressed"
+    ).value;
+    let inputDateRendezvous = document.getElementById(
+      "inputDateRendezvous"
+    ).value;
+
+    const formData = new FormData();
+
+    formData.append("id_property", property[0].id);
+    formData.append("id_reserveur", user.id);
+    formData.append("id_proprio", property[0].id_user);
+    formData.append("id_proprio", property[0].id_user);
+    formData.append("name", user.name);
+    formData.append("secondname", user.secondname);
+    formData.append("email_reserveur", user.email);
+    formData.append("phone_reserveur", user.phone);
+    formData.append("commentaire", inputMessageInteressed);
+    formData.append("rendezvous", inputDateRendezvous);
+
+    const resp = await axios.post(
+      "http://localhost:8000/api/reservation",
+      formData
+    );
+    if (resp.status == 200) {
+      const resp2 = await axios.post(
+        `http://localhost:8000/api/updatePropertyReserved/${property[0].id}`
+      );
+
+      if (resp2.status == 200) {
+        // Envoi de l'email
+        // const transporter = emailjs.createTransport({
+        //   host: "smtp.emailjs.com",
+        //   port: 587,
+        //   secure: false,
+        //   user: "YOUR_EMAIL_ADDRESS",
+        //   password: "YOUR_EMAIL_PASSWORD",
+        // });
+        // document.location.href = `/property/${property[0].id}`;
+      }
+    }
+
+    console.log(formData);
+  };
 
   return (
     <>
@@ -213,13 +301,193 @@ function ShowProperty() {
                     {moment(prop.created_at).fromNow()})
                   </p>
                 </div>
+                <div className="divInteresdToProperty">
+                  {user ? (
+                    <>
+                      <Link
+                        to="#"
+                        onClick={handleShow}
+                        className="linkToHome"
+                        id="interesdToProperty"
+                      >
+                        Je suis interessé
+                      </Link>
+                    </>
+                  ) : (
+                    <>
+                      <Link
+                        to="#"
+                        onClick={handleShowSingIn}
+                        className="linkToHome"
+                        id="interesdToProperty"
+                      >
+                        Je suis interessé
+                      </Link>
+                    </>
+                  )}
+                </div>
               </div>
-              <div className={`right-column ${isFixed ? "fixed-column" : ""}`}>
+              {/* <div className={`right-column ${isFixed ? "fixed-column" : ""}`}>
                 <ContactProprio />
-              </div>
+              </div> */}
             </div>
           </>
         ))}
+        <>
+          {/* modal pour connexion */}
+          {user ? (
+            <>
+              <Modal show={show} onHide={handleClose} id="login">
+                <Modal.Header closeButton>
+                  <p className="textInteressed">
+                    Veuillez renseigner les informations suivantes
+                  </p>
+                </Modal.Header>
+                <Modal.Body>
+                  <div className="row">
+                    <div className="col-sm-12">
+                      <Form.Group className="mb-3">
+                        <Form.Label
+                          className="labelBlockPost"
+                          id="labelBlockPostBetRooms"
+                        >
+                          Nom
+                        </Form.Label>
+                        <Form.Control
+                          type="text"
+                          className="inputFormPost inputFormPostBetRoom"
+                          id="inputNameInteressed"
+                          placeholder="Entrer votre nom"
+                          value={user.name}
+                        />
+                      </Form.Group>
+                    </div>
+                    <div className="col-md-12">
+                      <Form.Group className="mb-3">
+                        <Form.Label
+                          className="labelBlockPost"
+                          id="labelBlockPostBadRooms"
+                        >
+                          Prénom
+                        </Form.Label>
+                        <Form.Control
+                          type="text"
+                          className="inputFormPost inputFormPostBadRoom"
+                          id="inputSecondNameInteressed"
+                          // placeholder="Entrer votre prénom"
+                          value={user.secondname}
+                        />
+                      </Form.Group>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-sm-12">
+                      <Form.Group className="mb-3">
+                        <Form.Label
+                          className="labelBlockPost"
+                          id="labelBlockPostBetRooms"
+                        >
+                          Email
+                        </Form.Label>
+                        <Form.Control
+                          type="email"
+                          className="inputFormPost inputFormPostBetRoom"
+                          id="inputEmailInteressed"
+                          placeholder="Entrer votre email"
+                          value={user.email}
+                        />
+                      </Form.Group>
+                    </div>
+                    <div className="col-md-12">
+                      <Form.Group className="mb-3">
+                        <Form.Label
+                          className="labelBlockPost"
+                          id="labelBlockPostBadRooms"
+                        >
+                          Téléphone
+                        </Form.Label>
+                        <Form.Control
+                          type="text"
+                          className="inputFormPost inputFormPostBadRoom"
+                          id="inputPhoneInteressed"
+                          // placeholder="Entrer votre prénom"
+                          value={user.phone}
+                        />
+                      </Form.Group>
+                    </div>
+                    <div className="col-md-12">
+                      <Form.Group className="mb-3">
+                        <Form.Label
+                          className="labelBlockPost"
+                          id="labelBlockPostBadRooms"
+                        >
+                          Message ou commentaires (facultatif)
+                        </Form.Label>
+                        <textarea
+                          type="text"
+                          className="inputFormPost inputFormPostBadRoom"
+                          id="inputMessageInteressed"
+                        ></textarea>
+                      </Form.Group>
+                    </div>
+                    <div className="col-md-12">
+                      <Form.Group className="mb-3">
+                        <Form.Label
+                          className="labelBlockPost"
+                          id="labelBlockPostBadRooms"
+                        >
+                          Comment voulez-vous etre contacter ?
+                        </Form.Label>
+                        <select
+                          type="text"
+                          className="inputFormPost inputFormPostBadRoom"
+                          id="inputContactMethodInteressed"
+                        >
+                          <option value="email" selected>
+                            Email
+                          </option>
+                          <option value="téléphone">Téléphone</option>
+                        </select>
+                      </Form.Group>
+                    </div>
+                    <div className="col-md-12">
+                      <Form.Group className="mb-3">
+                        <Form.Label
+                          className="labelBlockPost"
+                          id="labelBlockPostBadRooms"
+                        >
+                          Prendre un rendez-vous
+                        </Form.Label>
+                        <Form.Control
+                          type="date"
+                          className="inputFormPost inputFormPostBadRoom"
+                          id="inputDateRendezvous"
+                          // placeholder="Entrer votre prénom"
+                          // value={user.phone}
+                        />
+                      </Form.Group>
+                    </div>
+                    <button
+                      type="button"
+                      className="submitInteressedInformation"
+                      id="submitInteressedInformation"
+                      onClick={UserInteressed}
+                    >
+                      Valider
+                    </button>
+                  </div>
+                </Modal.Body>
+              </Modal>
+            </>
+          ) : (
+            <>
+              {/*modal connexion*/}
+              <Modal show={show} onHide={handleClose} id="login">
+                <SingIn />
+              </Modal>
+            </>
+          )}
+        </>
       </div>
     </>
   );

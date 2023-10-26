@@ -59,8 +59,6 @@ function HomeDashboardAdmin() {
           {user.role === "Admin" ? (
             <>
               <Navbar />
-              {/* <BodyDashboard/> */}
-              {/* <NotFound id="notFound"/> */}
               <Sidebar
                 isVisible={isSidebarVisible}
                 toggleSidebar={toggleSidebar}
@@ -72,15 +70,11 @@ function HomeDashboardAdmin() {
               />
             </>
           ) : (
-            <>
-              <NotFound />
-            </>
+            <>{/* <NotFound /> */}</>
           )}
         </>
       ) : (
-        <>
-          <NotFound />
-        </>
+        <>{/* <NotFound /> */}</>
       )}
     </>
   );

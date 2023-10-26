@@ -36,6 +36,14 @@
   display: none;
 }
 
+.blockPropertyReserved {
+  display: none;
+}
+
+.blockPropertyVendu {
+  display: none;
+}
+
 #btnAllProperties {
   margin-right: 20px;
   border: 2px solid #f6b100;
@@ -48,6 +56,16 @@
 }
 
 #btnPropertiesEnAttente {
+  margin-right: 20px;
+  border: 2px solid #f6b100;
+  border-radius: 10px;
+  background-color: transparent;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+#btnPropertiesReserve {
   margin-right: 20px;
   border: 2px solid #f6b100;
   border-radius: 10px;

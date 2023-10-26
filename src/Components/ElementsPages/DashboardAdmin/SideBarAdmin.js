@@ -11,6 +11,7 @@ import {
 } from "@mui/icons-material";
 import AgrementController from "../../Controllers/DahboardAdmin/AgrementController";
 import LayoutPropertiesController from "../../Controllers/DahboardAdmin/LayoutPropertiesController";
+import LayoutUsersController from "../../Controllers/DahboardAdmin/LayoutUsersController";
 
 function Sidebar({ isVisible, toggleSidebar, isSidebarVisible }) {
   const [user, setUser] = useState(null);
@@ -130,8 +131,28 @@ function Sidebar({ isVisible, toggleSidebar, isSidebarVisible }) {
               <span>AGREMENTS</span>
             </Link>
           </div>
+          <div className="row blockStatisticAdmin" id="blockReservationAdmin">
+            <Link
+              to="#reservations"
+              className="btnSideBarAdmin"
+              name="linkStatistic"
+            >
+              <People
+                className="iconSideBarAdmin"
+                fontSize="large"
+                color="#f6b100"
+              />
+              <span>RESERVATIONS</span>
+            </Link>
+          </div>
           <div className="row blockStatisticAdmin" id="blockStatisticAdmin">
-            <Link to="#users" className="btnSideBarAdmin" name="linkStatistic">
+            <Link
+              to="#users"
+              className="btnSideBarAdmin"
+              id="btnUserSideBarAdmin"
+              onClick={LayoutUsersController}
+              name="linkStatistic"
+            >
               <People
                 className="iconSideBarAdmin"
                 fontSize="large"
@@ -140,6 +161,7 @@ function Sidebar({ isVisible, toggleSidebar, isSidebarVisible }) {
               <span>UTILISATEURS</span>
             </Link>
           </div>
+
           <div className="row blockStatisticAdmin" id="blockStatisticAdmin">
             <Link
               to="#transactions"

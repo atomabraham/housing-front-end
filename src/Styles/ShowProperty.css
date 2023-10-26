@@ -94,16 +94,27 @@ hr {
 }
 
 .left-column {
-  width: 70%;
+  width: 100%;
   float: left;
   padding-bottom: 60%;
 }
 
-.right-column {
+.divInteresdToProperty {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+#interesdToProperty {
+  justify-content: flex-start;
+  align-items: flex-start;
+  left: 0px;
+}
+
+/* .right-column {
   width: 30%;
   float: right;
   padding-bottom: 50%;
-}
+} */
 
 textarea {
   width: 100%;
@@ -172,6 +183,35 @@ textarea {
 .showCreateAtProperty {
   text-align: left;
   font-family: lato;
+}
+
+.textInteressed {
+  font-family: lato;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.submitInteressedInformation {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 40px;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: lato;
+  background-color: #f6b100;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  transition: 2s;
+
+  &:hover {
+    background-color: #f6b000e9;
+  }
+}
+
+#inputContactMethodInteressed {
+  width: 100%;
 }
 
 @media (width <= 1000px) {

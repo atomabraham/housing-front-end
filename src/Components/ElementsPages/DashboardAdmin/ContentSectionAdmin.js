@@ -10,6 +10,7 @@ import {
 import { setOptions } from "leaflet";
 import MenuOptionAdmin from "./MenuOptionAdmin";
 import MenuProperyAdmin from "./MenuProperyAdmin";
+import MenuUserAdmin from "./MenuUserAdmin";
 
 function ContentSection({ toggleSidebar, isSidebarVisible }) {
   return (
@@ -52,6 +53,7 @@ function ContentSection({ toggleSidebar, isSidebarVisible }) {
 
       <MenuOptionAdmin />
       <MenuProperyAdmin />
+      <MenuUserAdmin />
     </div>
   );
 }

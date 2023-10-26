@@ -13,11 +13,7 @@
   z-index: 10;
   transition: box-shadow 0.3s;
   border-bottom: rgba(0, 0, 0, 0.251) solid 1px;
-}
-
-.navbar--scrolled {
-  box-shadow: 0 2px 4px 3px rgba(0, 0, 0, 0.236);
-  border: none;
+  margin-top: 0px;
 }
 
 .navbar__logo img {
@@ -35,6 +31,7 @@
   font-weight: bold;
   border: solid 1px #f6b100;
   transition: 0.3s;
+  background-color: transparent;
 
   &:hover {
     background-color: #ffffff;
@@ -67,7 +64,7 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  margin-right: 20%;
+  margin-right: 20px;
 }
 
 .pictureProfile {
@@ -140,8 +137,48 @@
   display: none;
 }
 
+@media (width <= 1200px) {
+  .navbar__logo img {
+    margin-left: -10px;
+  }
+
+  .navbar__account-icon {
+    margin-right: 5px;
+  }
+}
+
+@media (width <= 1000px) {
+  .navbar__logo img {
+    margin-left: -15px;
+  }
+
+  .navbar__account-icon {
+    margin-right: 2px;
+  }
+}
+
+@media (width <= 800px) {
+  .navbar__logo img {
+    margin-left: -15px;
+  }
+
+  .navbar__account-icon {
+    margin-right: 2px;
+  }
+}
+
 @media (width<700px) {
   .linkCreateProperty {
     display: none;
+  }
+}
+
+@media (width <= 500px) {
+  .navbar__logo img {
+    margin-left: -22px;
+  }
+
+  .navbar__account-icon {
+    margin-right: -4px;
   }
 }
