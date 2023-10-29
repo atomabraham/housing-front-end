@@ -1,0 +1,30 @@
+.blockPropertiesUser {
+  margin-top: 20vh;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.trMenuProperty:hover {
+  background-color: #f6b00034;
+}
+
+.confirmReservation {
+  color: #f6b100;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-decoration: none;
+  background-color: transparent;
+  border-radius: 10px;
+  font-weight: bold;
+  font-family: lato;
+  border: 2px solid #f6b100;
+  transition: 0.5s;
+
+  &:hover {
+    background-color: #f6b100;
+    color: white;
+  }
+}

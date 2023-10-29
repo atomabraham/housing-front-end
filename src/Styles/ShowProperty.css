@@ -1,3 +1,7 @@
+.blockShowProperty {
+  height: auto;
+}
+
 .divShowImageProp {
   position: relative;
   padding-top: 8%;
@@ -183,6 +187,11 @@ textarea {
 .showCreateAtProperty {
   text-align: left;
   font-family: lato;
+}
+
+.minteresdToPropertyc {
+  margin-bottom: 2px;
+  background-color: red;
 }
 
 .textInteressed {

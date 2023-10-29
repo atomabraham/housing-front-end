@@ -4,22 +4,41 @@ import { useEffect, useState } from "react";
 import axios from "../Authentification/axios";
 import { Bathtub, Bed, Hotel } from "@mui/icons-material";
 import Navbar from "../ElementsPages/Banners/Navbar";
-import { Form, Modal } from "react-bootstrap";
+import { Form, Modal, Row } from "react-bootstrap";
 import ContactProprio from "../ElementsPages/ShowProperty/ContactProprio";
 import { Carousel } from "react-bootstrap";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
-import { FaBath, FaBed, FaExpand } from "react-icons/fa";
+import { FaBath, FaBed, FaExpand, FaMapMarkerAlt } from "react-icons/fa";
 import { FaHeart, FaShareAlt, FaRegHeart } from "react-icons/fa";
 import LocalisationShowProperty from "../ElementsPages/ShowProperty/LocalisationShowProperty";
 import moment from "moment";
 import "moment/locale/fr";
 import SingIn from "../SingIn-SingUp/SingIn/SingIn";
-// import { emailjs } from "emailjs-com";
-// import emailjs
+import Footer from "../ElementsPages/Footer/Footer";
+import emailjs from "emailjs-com";
+import logo from "../../Assets/Images/logo 3.png";
+
+// import nodemailer from "nodemailer";
 
 moment.locale("fr");
 
 function ShowProperty() {
+  //recuperation des propriete
+
+  const [Properties, setProperties] = useState([]);
+
+  const fetchProperties = async () => {
+    await axios.get("http://localhost:8000/api/properties").then(({ data }) => {
+      setProperties(data);
+    });
+  };
+
+  useEffect(() => {
+    fetchProperties();
+  }, []);
+
+  //recuperation de la propriete a afficher
+
   const { id } = useParams();
 
   const [property, setProperty] = useState([]);
@@ -58,9 +77,6 @@ function ShowProperty() {
 
     return formattedNumber;
   }
-
-  //icon de sauvegarde et de partage
-  // ...
 
   // const IconSave = () => <FaHeart />;
   const IconSave = () => <FaRegHeart />;
@@ -113,7 +129,7 @@ function ShowProperty() {
   const handleShowSingIn = () => setShowSingIn(true);
 
   //recuperation des information de l'utilisateur interessé
-  const UserInteressed = async () => {
+  const UserInteressed = async (e) => {
     let inputNameInteressed = document.getElementById(
       "inputNameInteressed"
     ).value;
@@ -132,6 +148,12 @@ function ShowProperty() {
     let inputDateRendezvous = document.getElementById(
       "inputDateRendezvous"
     ).value;
+    let inputPropertyEmailReserveur = document.getElementById(
+      "inputPropertyIdUser"
+    ).value;
+    let inputPropertyNameUser = document.getElementById(
+      "inputPropertyNameUser"
+    ).value;
 
     const formData = new FormData();
 
@@ -146,6 +168,54 @@ function ShowProperty() {
     formData.append("commentaire", inputMessageInteressed);
     formData.append("rendezvous", inputDateRendezvous);
 
+    // variable de l'email
+    e.preventDefault();
+    let date = new Date();
+
+    const templateParamsReserveur = {
+      from_name: "HOUSING",
+      from_email: "housingatom@gmail.com",
+      subject: "Confirmation de reservation",
+      // message: "Salut",
+      to_name: inputSecondNameInteressed,
+      to_email: inputEmailInteressed,
+      logo: logo,
+      date:
+        date.getDate() +
+        "/" +
+        date.getMonth() +
+        1 +
+        "/" +
+        date.getFullYear() +
+        "( " +
+        date.getHours() +
+        "H" +
+        date.getMinutes() +
+        " )",
+    };
+
+    const templateParamsProprio = {
+      from_name: "HOUSING",
+      from_email: "housingatom@gmail.com",
+      subject: "Reservation de l'un de vos biens",
+      // message: "Salut",
+      to_name: inputPropertyNameUser,
+      to_email: inputPropertyEmailReserveur,
+      date:
+        date.getDate() +
+        "/" +
+        date.getMonth() +
+        1 +
+        "/" +
+        date.getFullYear() +
+        "( " +
+        date.getHours() +
+        "H" +
+        date.getMinutes() +
+        " )",
+      rendez_vous: inputDateRendezvous,
+    };
+
     const resp = await axios.post(
       "http://localhost:8000/api/reservation",
       formData
@@ -156,25 +226,92 @@ function ShowProperty() {
       );
 
       if (resp2.status == 200) {
-        // Envoi de l'email
-        // const transporter = emailjs.createTransport({
-        //   host: "smtp.emailjs.com",
-        //   port: 587,
-        //   secure: false,
-        //   user: "YOUR_EMAIL_ADDRESS",
-        //   password: "YOUR_EMAIL_PASSWORD",
-        // });
-        // document.location.href = `/property/${property[0].id}`;
+        // message du du reserveur
+        emailjs
+          .send(
+            "service_y2agyhj",
+            "template_0lvthas",
+            templateParamsReserveur,
+            "-B2khBw2yyOnOQ0kS"
+          )
+          .then(
+            (result) => {
+              console.log(result.text);
+            },
+            (error) => {
+              console.log(error.text);
+            }
+          );
+
+        //message email du proprio
+        emailjs
+          .send(
+            "service_y2agyhj",
+            "template_wcun4bp",
+            templateParamsProprio,
+            "-B2khBw2yyOnOQ0kS"
+          )
+          .then(
+            (result) => {
+              console.log(result.text);
+            },
+            (error) => {
+              console.log(error.text);
+            }
+          );
       }
     }
 
     console.log(formData);
   };
 
+  let i = 0;
+
+  //configuration du caroussel
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  const fourProperties = Properties.slice(0, 4);
+
+  // function handleSubmit(e) {
+  //   e.preventDefault();
+
+  //   const templateParams = {
+  //     from_name: "HOUSING",
+  //     from_email: "housingatom@gmail.com",
+  //     subject: "Reservation Reussie",
+  //     message: "Salut",
+  //     to_email: "atomabraham2004@gmail.com",
+  //   };
+
+  //   emailjs
+  //     .send(
+  //       "service_y2agyhj",
+  //       "template_0lvthas",
+  //       templateParams,
+  //       "-B2khBw2yyOnOQ0kS"
+  //     )
+  //     .then(
+  //       (result) => {
+  //         console.log(result.text);
+  //       },
+  //       (error) => {
+  //         console.log(error.text);
+  //       }
+  //     );
+  // }
+
   return (
     <>
       <Navbar />
-      <div className="container" onLoad={viewProperty}>
+      <div className="container blockShowProperty" onLoad={viewProperty}>
         {property.map((prop) => (
           <>
             {/* {console.log(prop.agrement)} */}
@@ -301,6 +438,21 @@ function ShowProperty() {
                     {moment(prop.created_at).fromNow()})
                   </p>
                 </div>
+
+                <Form.Control
+                  type="hidden"
+                  className="inputFormPost inputFormPostBetRoom"
+                  id="inputPropertyIdUser"
+                  placeholder="Entrer votre nom"
+                  value={prop.contactEmail}
+                />
+                <Form.Control
+                  type="hidden"
+                  className="inputFormPost inputFormPostBetRoom"
+                  id="inputPropertyNameUser"
+                  placeholder="Entrer votre nom"
+                  value={prop.contactName}
+                />
                 <div className="divInteresdToProperty">
                   {user ? (
                     <>
@@ -318,7 +470,7 @@ function ShowProperty() {
                       <Link
                         to="#"
                         onClick={handleShowSingIn}
-                        className="linkToHome"
+                        className="linkToHome  interesdToPropertyc"
                         id="interesdToProperty"
                       >
                         Je suis interessé
@@ -489,6 +641,7 @@ function ShowProperty() {
           )}
         </>
       </div>
+      <Footer />
     </>
   );
 }

@@ -18,27 +18,50 @@ section {
   text-align: center;
 }
 
+.opacityFirstBlockHome {
+  width: 100%;
+  height: 115vh;
+  background-color: black;
+  margin-top: 0;
+  position: absolute;
+}
+
+.textFrisBlockHome {
+  z-index: 3;
+}
+
+.opacityFirstBlock {
+  position: absolute;
+  width: 100%;
+  height: 115vh;
+  background-color: rgba(0, 0, 0, 0.438);
+  z-index: 2;
+}
+
 section .skewed {
   margin: 0;
   padding: 0;
   position: absolute;
-  bottom: -10%;
+  bottom: -12%;
   left: 0;
   width: 100%;
   height: 100px;
   background: #fff;
   transform: skewY(-3deg);
   transform-origin: top left;
+  z-index: 3;
 }
 
 section p {
   line-height: 0.5;
   color: white;
+  font-size: 30px;
 }
 
 .tiltleWelcomeHome {
   color: #f6b100;
   font-weight: bold;
+  font-size: 40px;
 }
 
 .opacityFirstBlockHome {
@@ -75,7 +98,7 @@ section p {
   padding-top: 10px;
   border: solid 2px #f6b100;
   text-decoration: none;
-  margin-top: 40px;
+  margin-top: 10%;
   margin-bottom: 20px;
   border-radius: 10px;
   font-weight: bold;
@@ -85,7 +108,7 @@ section p {
 
 /* block services */
 .blockServices {
-  margin-top: 15%;
+  margin-top: 10%;
   width: 100%;
   height: 70vh;
   background-image: url("../../Assets/Images/images\ \(4\).jpg");
@@ -171,13 +194,14 @@ section p {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 20%;
 }
 
 .aCategorieHome {
   width: 300px;
   height: 300px;
   border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .categorieApprtement {
@@ -228,7 +252,33 @@ section p {
   background-size: cover;
 }
 
-@media (width<=1000px) {
+.categorieStudio {
+  background-image: url("../../Assets/Images/images\ \(7\).jpg");
+  background-size: cover;
+}
+
+.categorieChambres {
+  background-image: url("../../Assets/Images/images\ \(8\).jpg");
+  background-size: cover;
+}
+
+/* nous contacter */
+.blockContactHome {
+  width: 100%;
+  height: 70vh;
+  background-image: url("../../Assets/Images/images\ \(7\).jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  margin-top: 100px;
+}
+
+.opacityBlockContactHome {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.409);
+}
+
+@media (width<=1200px) {
   .blockServices {
     height: auto;
   }

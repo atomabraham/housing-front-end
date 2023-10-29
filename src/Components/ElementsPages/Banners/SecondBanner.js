@@ -79,19 +79,14 @@ function SecondBanner() {
             placeholder="ville"
           />
 
-          <select
-            // type="select"
+          <input
+            type="text"
             className="inputFilter inputType"
             id="inputType"
             value={type}
             onChange={handleChangeType}
             placeholder="Type"
-          >
-            <option value="Appartement">Appartement</option>
-            <option value="Maison">Maison</option>
-            <option value="Villa">Villa</option>
-            <option value="Studio">Studio</option>
-          </select>
+          />
 
           <input
             type="text"

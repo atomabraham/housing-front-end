@@ -34,7 +34,7 @@ function App() {
           <Route path="/contactUs" element={<ContactUs />} />
           <Route path="/users/edit" element={<EditProfileUser />} />
           {/* <ProtectedRoute path="/users/edit" element={<EditProfileUser />} /> */}
-          <Route path="/MyProperties" element={<MyProperty />} />
+          <Route path="/MyProperties/:id" element={<MyProperty />} />
           <Route path="/ValidateProperty/:id" element={<ValidateProperty />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>

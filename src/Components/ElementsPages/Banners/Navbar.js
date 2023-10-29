@@ -223,9 +223,19 @@ const Navbar = () => {
               <a href="#" className="" id="linkMenuFavoris">
                 Mes favoris
               </a>
-              <Link to="/MyProperties" className="" id="linkMenuMyProperty">
-                Mes biens
-              </Link>
+              {user ? (
+                <>
+                  <Link
+                    to={`/MyProperties/${user.id}`}
+                    className=""
+                    id="linkMenuMyProperty"
+                  >
+                    Mes biens
+                  </Link>
+                </>
+              ) : (
+                <></>
+              )}
               <Link to="/Dashboard" className="" id="linkMenuAdmin">
                 ADMINISTRATEUR
               </Link>

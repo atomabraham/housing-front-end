@@ -23,6 +23,7 @@ import { FaBath, FaBed, FaExpand, FaMapMarkerAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { Carousel } from "react-bootstrap";
 import { AddThousandSeparator } from "../../Controllers/Config";
+import Footer from "../Footer/Footer";
 
 function FirstBlockHome() {
   //recuperation des propriete
@@ -91,17 +92,21 @@ function FirstBlockHome() {
               className="imageFirstBlockHome"
               alt="housing"
             /> */}
+
             <div className="textFrisBlockHome">
-              <h2 className="tiltleWelcomeHome">Bienvenue chez HOUSING</h2>
+              <h2 className="tiltleWelcomeHome">BIENVENUE CHEZ HOUSING</h2>
               <p>Trouvez votre bien immobilier idéal en quelques clics !</p>
               <p>
                 Inscrivez-vous dès aujourd'hui pour recevoir des notifications
                 sur les nouvelles annonces.
               </p>
             </div>
+            <div className="opacityFirstBlock"></div>
 
             <span className="skewed"></span>
           </section>
+
+          {/* <div className="opacityFirstBlockHome"></div> */}
 
           {/* les dernier biens poster */}
           <div className="blockLastProperty">
@@ -338,7 +343,7 @@ function FirstBlockHome() {
               correspondent
             </p>
             <div className="row blockListCategorie">
-              <div className="col-md-4">
+              <div className="col-md-4 my-3">
                 <Link
                   to={`/search?world=&status=&type=${"Appartement"}&city=`}
                   className="linkBuyHome"
@@ -352,7 +357,7 @@ function FirstBlockHome() {
                   </div>
                 </Link>
               </div>
-              <div className="col-md-4">
+              <div className="col-md-4 my-3">
                 <Link
                   to={`/search?world=&status=&type=${"Maison"}&city=`}
                   className="linkBuyHome"
@@ -366,7 +371,7 @@ function FirstBlockHome() {
                   </div>
                 </Link>
               </div>
-              <div className="col-md-4">
+              <div className="col-md-4 my-3">
                 <Link
                   to={`/search?world=&status=&type=${"Maison"}&city=`}
                   className="linkBuyHome"
@@ -380,8 +385,58 @@ function FirstBlockHome() {
                   </div>
                 </Link>
               </div>
+              <div className="col-md-4 my-3">
+                <Link
+                  to={`/search?world=&status=&type=${"Studio"}&city=`}
+                  className="linkBuyHome"
+                >
+                  <div className="aCategorieHome categorieStudio">
+                    <div className="opacityCategorie">
+                      <p className="quantityProperty">Propriétés</p>
+                      <p className="nameCategorie">Studio</p>
+                      <p className="seeCategorie">Afficher &raquo;</p>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+              <div className="col-md-4 my-3">
+                <Link
+                  to={`/search?world=&status=&type=${"Chambres"}&city=`}
+                  className="linkBuyHome"
+                >
+                  <div className="aCategorieHome categorieChambres">
+                    <div className="opacityCategorie">
+                      <p className="quantityProperty">Propriétés</p>
+                      <p className="nameCategorie">Chambres</p>
+                      <p className="seeCategorie">Afficher &raquo;</p>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+              <div className="col-md-4 my-3">
+                <Link
+                  to={`/search?world=&status=&type=${"Appartement"}&city=`}
+                  className="linkBuyHome"
+                >
+                  <div className="aCategorieHome categorieApprtement">
+                    <div className="opacityCategorie">
+                      <p className="quantityProperty">Propriétés</p>
+                      <p className="nameCategorie">Appartement</p>
+                      <p className="seeCategorie">Afficher &raquo;</p>
+                    </div>
+                  </div>
+                </Link>
+              </div>
             </div>
           </div>
+
+          {/* Nous contacter */}
+          <div className="blockContactHome">
+            <div className="opacityBlockContactHome"></div>
+          </div>
+
+          {/* <Footer */}
+          <Footer />
         </>
       ) : (
         <></>
