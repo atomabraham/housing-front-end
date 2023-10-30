@@ -16,6 +16,10 @@
   margin-top: 0px;
 }
 
+.noBox--Shadow {
+  box-shadow: transparent;
+}
+
 .navbar__logo img {
   height: 90px;
 }
@@ -72,14 +76,15 @@
 }
 
 .navbar__account-menu {
-  position: absolute;
-  top: 100%;
-  right: 0;
+  position: fixed;
+  top: 70px;
+  right: 20px;
   background-color: #f0f0f0;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.583);
   width: 200px;
   text-align: left;
+  z-index: 20;
 }
 
 .navbar__account-menu a {

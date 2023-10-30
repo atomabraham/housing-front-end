@@ -2,12 +2,8 @@ function LayoutUsersController() {
   let rowMenuOptionAdmin = document.getElementById("rowMenuOptionAdmin");
   let rowMenupropertyAdmin = document.getElementById("rowMenupropertyAdmin");
   let rowMenuUserAdmin = document.getElementById("rowMenuUserAdmin");
+  let MenuStatisticAdmin = document.getElementById("MenuStatisticAdmin");
 
-  let rowMenuStatistic = document.getElementById("rowMenuStatistic");
-  let rowMenuProperties = document.getElementById("rowMenuProperties");
-  let rowMenuOption = document.getElementById("rowMenuOption");
-  let rowMenuUsers = document.getElementById("rowMenuUsers");
-  let rowMenuTransaction = document.getElementById("rowMenuTransaction");
   let btnPropertieSideBarAdmin = document.getElementById(
     "btnPropertieSideBarAdmin"
   );
@@ -15,14 +11,17 @@ function LayoutUsersController() {
     "btnAgrementSideBarAdmin"
   );
   let btnUserSideBarAdmin = document.getElementById("btnUserSideBarAdmin");
+  let blockStatisticAdmin = document.getElementById("blockStatisticAdmin");
 
   rowMenuUserAdmin.style.display = "block";
   rowMenuOptionAdmin.style.display = "none";
   rowMenupropertyAdmin.style.display = "none";
+  MenuStatisticAdmin.style.display = "none";
 
   btnUserSideBarAdmin.style.backgroundColor = "#f6b100";
   btnPropertieSideBarAdmin.style.backgroundColor = "transparent";
   btnAgrementSideBarAdmin.style.backgroundColor = "transparent";
+  blockStatisticAdmin.style.backgroundColor = "transparent";
 }
 
 export default LayoutUsersController;

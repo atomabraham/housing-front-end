@@ -1,29 +1,27 @@
+function LayoutStatisticController() {
+  let rowMenuOptionAdmin = document.getElementById("rowMenuOptionAdmin");
+  let rowMenupropertyAdmin = document.getElementById("rowMenupropertyAdmin");
+  let rowMenuUserAdmin = document.getElementById("rowMenuUserAdmin");
+  let MenuStatisticAdmin = document.getElementById("MenuStatisticAdmin");
 
-// function LayoutStatisticController () {
-//     // content dashboard
-//     let rowMenuOptionAdmin = document.getElementById('rowMenuOptionAdmin')
+  let btnPropertieSideBarAdmin = document.getElementById(
+    "btnPropertieSideBarAdmin"
+  );
+  let btnAgrementSideBarAdmin = document.getElementById(
+    "btnAgrementSideBarAdmin"
+  );
+  let btnUserSideBarAdmin = document.getElementById("btnUserSideBarAdmin");
+  let blockStatisticAdmin = document.getElementById("blockStatisticAdmin");
 
-//     // content leftNavbar
-//     let rowMenuStatistic = document.getElementById('rowMenuStatistic')
-//     let rowMenuProperties = document.getElementById('rowMenuProperties')
-//     let rowMenuOption = document.getElementById('rowMenuOption')
-//     let rowMenuUsers = document.getElementById('rowMenuUsers')
-//     let rowMenuTransaction = document.getElementById('rowMenuTransaction')
+  MenuStatisticAdmin.style.display = "block";
+  rowMenupropertyAdmin.style.display = "none";
+  rowMenuOptionAdmin.style.display = "none";
+  rowMenuUserAdmin.style.display = "none";
 
-//     // if (rowMenuOptionAdmin.style.display == "none") {
-//         // content dashboard
-//         rowMenuOptionAdmin.style.display = "none" 
+  blockStatisticAdmin.style.backgroundColor = "#f6b100";
+  btnPropertieSideBarAdmin.style.backgroundColor = "transparent";
+  btnAgrementSideBarAdmin.style.backgroundColor = "transparent";
+  btnUserSideBarAdmin.style.backgroundColor = "transparent";
+}
 
-//         // content leftNavbar
-//         rowMenuStatistic.style.backgroundColor = "#f6b100"
-//         rowMenuOption.style.backgroundColor = "transparent"
-//         rowMenuProperties.style.backgroundColor = "transparent"
-//         rowMenuUsers.style.backgroundColor = "transparent"
-//         rowMenuTransaction.style.backgroundColor = "transparent"
-//     // } else {
-//     //     rowMenuOptionAdmin.style.display = "none" 
-//     //     rowMenuOption.style.backgroundColor = "transparent"
-//     // }
-// }
-
-// export default LayoutStatisticController
+export default LayoutStatisticController;

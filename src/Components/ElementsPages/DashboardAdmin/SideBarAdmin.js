@@ -12,6 +12,7 @@ import {
 import AgrementController from "../../Controllers/DahboardAdmin/AgrementController";
 import LayoutPropertiesController from "../../Controllers/DahboardAdmin/LayoutPropertiesController";
 import LayoutUsersController from "../../Controllers/DahboardAdmin/LayoutUsersController";
+import LayoutStatisticController from "../../Controllers/DahboardAdmin/LayoutStatisticController";
 
 function Sidebar({ isVisible, toggleSidebar, isSidebarVisible }) {
   const [user, setUser] = useState(null);
@@ -90,6 +91,7 @@ function Sidebar({ isVisible, toggleSidebar, isSidebarVisible }) {
               to="#statistics"
               className="btnSideBarAdmin"
               name="linkStatistic"
+              onClick={LayoutStatisticController}
             >
               <AutoGraph
                 className="iconSideBarAdmin"

@@ -4,12 +4,7 @@ function AgrementController() {
   let rowMenuOptionAdmin = document.getElementById("rowMenuOptionAdmin");
   let rowMenupropertyAdmin = document.getElementById("rowMenupropertyAdmin");
   let rowMenuUserAdmin = document.getElementById("rowMenuUserAdmin");
-
-  let rowMenuStatistic = document.getElementById("rowMenuStatistic");
-  let rowMenuProperties = document.getElementById("rowMenuProperties");
-  let rowMenuOption = document.getElementById("rowMenuOption");
-  let rowMenuUsers = document.getElementById("rowMenuUsers");
-  let rowMenuTransaction = document.getElementById("rowMenuTransaction");
+  let MenuStatisticAdmin = document.getElementById("MenuStatisticAdmin");
 
   let btnPropertieSideBarAdmin = document.getElementById(
     "btnPropertieSideBarAdmin"
@@ -18,14 +13,17 @@ function AgrementController() {
     "btnAgrementSideBarAdmin"
   );
   let btnUserSideBarAdmin = document.getElementById("btnUserSideBarAdmin");
+  let blockStatisticAdmin = document.getElementById("blockStatisticAdmin");
 
   rowMenuOptionAdmin.style.display = "block";
   rowMenupropertyAdmin.style.display = "none";
   rowMenuUserAdmin.style.display = "none";
+  MenuStatisticAdmin.style.display = "none";
 
-  btnPropertieSideBarAdmin.style.backgroundColor = "transparent";
   btnAgrementSideBarAdmin.style.backgroundColor = "#f6b100";
+  btnPropertieSideBarAdmin.style.backgroundColor = "transparent";
   btnUserSideBarAdmin.style.backgroundColor = "transparent";
+  blockStatisticAdmin.style.backgroundColor = "transparent";
 }
 
 export default AgrementController;

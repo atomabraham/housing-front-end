@@ -40,6 +40,41 @@ function FirstBlockHome() {
     fetchProperties();
   }, []);
 
+  //nbre appartement
+  let appartements = Properties.filter(function (property) {
+    return property.propertyType === "Appartement";
+  });
+
+  let nbrAppartements = appartements.length;
+
+  //nbre maison
+  let maisons = Properties.filter(function (property) {
+    return property.propertyType === "Maison";
+  });
+
+  let nbrMaisons = maisons.length;
+
+  //nbre maison
+  let villas = Properties.filter(function (property) {
+    return property.propertyType === "Villa";
+  });
+
+  let nbrVilla = villas.length;
+
+  //nbre studio
+  let studio = Properties.filter(function (property) {
+    return property.propertyType === "Studio";
+  });
+
+  let nbrStudio = studio.length;
+
+  //nbre chambre
+  let chambres = Properties.filter(function (property) {
+    return property.propertyType === "Chambre";
+  });
+
+  let nbrChambres = chambres.length;
+
   // mettre les premieres lettres des mots d'une phrase en majuscule
   function capitalizeWords(sentence) {
     const words = sentence.split(" ");
@@ -350,7 +385,9 @@ function FirstBlockHome() {
                 >
                   <div className="aCategorieHome categorieApprtement">
                     <div className="opacityCategorie">
-                      <p className="quantityProperty">Propriétés</p>
+                      <p className="quantityProperty">
+                        {addThousandSeparator(nbrAppartements)} Propriétés
+                      </p>
                       <p className="nameCategorie">Appartement</p>
                       <p className="seeCategorie">Afficher &raquo;</p>
                     </div>
@@ -364,7 +401,9 @@ function FirstBlockHome() {
                 >
                   <div className="aCategorieHome categorieMaison">
                     <div className="opacityCategorie">
-                      <p className="quantityProperty">Propriétés</p>
+                      <p className="quantityProperty">
+                        {addThousandSeparator(nbrMaisons)} Propriétés
+                      </p>
                       <p className="nameCategorie">Maison</p>
                       <p className="seeCategorie">Afficher &raquo;</p>
                     </div>
@@ -373,12 +412,14 @@ function FirstBlockHome() {
               </div>
               <div className="col-md-4 my-3">
                 <Link
-                  to={`/search?world=&status=&type=${"Maison"}&city=`}
+                  to={`/search?world=&status=&type=${"Villa"}&city=`}
                   className="linkBuyHome"
                 >
                   <div className="aCategorieHome categorieMaison">
                     <div className="opacityCategorie">
-                      <p className="quantityProperty">Propriétés</p>
+                      <p className="quantityProperty">
+                        {addThousandSeparator(nbrVilla)} Propriétés
+                      </p>
                       <p className="nameCategorie">Villa</p>
                       <p className="seeCategorie">Afficher &raquo;</p>
                     </div>
@@ -392,7 +433,9 @@ function FirstBlockHome() {
                 >
                   <div className="aCategorieHome categorieStudio">
                     <div className="opacityCategorie">
-                      <p className="quantityProperty">Propriétés</p>
+                      <p className="quantityProperty">
+                        {addThousandSeparator(nbrStudio)} Propriétés
+                      </p>
                       <p className="nameCategorie">Studio</p>
                       <p className="seeCategorie">Afficher &raquo;</p>
                     </div>
@@ -401,12 +444,14 @@ function FirstBlockHome() {
               </div>
               <div className="col-md-4 my-3">
                 <Link
-                  to={`/search?world=&status=&type=${"Chambres"}&city=`}
+                  to={`/search?world=&status=&type=${"Chambre"}&city=`}
                   className="linkBuyHome"
                 >
                   <div className="aCategorieHome categorieChambres">
                     <div className="opacityCategorie">
-                      <p className="quantityProperty">Propriétés</p>
+                      <p className="quantityProperty">
+                        {addThousandSeparator(nbrChambres)} Propriétés
+                      </p>
                       <p className="nameCategorie">Chambres</p>
                       <p className="seeCategorie">Afficher &raquo;</p>
                     </div>
@@ -420,7 +465,9 @@ function FirstBlockHome() {
                 >
                   <div className="aCategorieHome categorieApprtement">
                     <div className="opacityCategorie">
-                      <p className="quantityProperty">Propriétés</p>
+                      <p className="quantityProperty">
+                        {addThousandSeparator(nbrAppartements)} Propriétés
+                      </p>
                       <p className="nameCategorie">Appartement</p>
                       <p className="seeCategorie">Afficher &raquo;</p>
                     </div>

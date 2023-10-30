@@ -68,7 +68,7 @@ function MenuProperyAdmin() {
     fetchPropertiesVendu();
   }, []);
 
-  //affichage des produis en disponible
+  //affichage des produis  disponible
   function ProprieteDisponible() {
     // let espaceTableproperty = document.getElementById("espaceTableproperty")
     let rowpropertyList = document.getElementById("rowpropertyList");
@@ -202,7 +202,7 @@ function MenuProperyAdmin() {
 
   return (
     <>
-      {/* Menu */}
+    {/* menu */}
       <Row className="rowMenupropertyAdmin" id="rowMenupropertyAdmin">
         <div className="btnMenuProperty" id="btnMenuProperty">
           <button

@@ -37,6 +37,15 @@ const Navbar = () => {
   // Verifier si un utilisateur est connecter ou non au serveur
   useEffect(() => {
     (async () => {
+      // const currentRoute = window.location.pathname;
+      // let navbarBoxShadow = document.getElementById("navbarBoxShadow");
+
+      // if (currentRoute == "localhost:3000/") {
+      //   navbarBoxShadow.style.boxShadow = "transparent";
+      // } else {
+      //   navbarBoxShadow.style.boxShadow = "transparent";
+      // }
+
       try {
         const resp = await axios.get("http://localhost:8000/api/user");
         if (resp.status === 200 && resp.data.data.role === "User") {
@@ -110,6 +119,7 @@ const Navbar = () => {
 
   //afficher le box-shadow lorsqu'on commence a scroller
   const [hasScrolled, setHasScrolled] = useState(false);
+  const [hasScrolledHome, setHasScrolledHome] = useState(false);
 
   const handleScroll = () => {
     const scrollTop = window.pageYOffset;
@@ -128,145 +138,146 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`navbar ${hasScrolled ? "navbar--scrolled" : ""}`}>
-      <div className="navbar__logo">
-        {/* Insérez ici votre composant de logo */}
-        <Link to="/">
-          <img src={logo} alt="Logo" />
-        </Link>
-      </div>
-      <div className="navbar__links">
-        {user ? (
-          <Link to="/CreatePost" className="linkCreateProperty">
-            PUBLIER MA PROPRIETE
+    <>
+      <nav
+        className={`navbar ${hasScrolled ? "navbar--scrolled" : ""}
+      }`}
+        id="navbarBoxShadow"
+      >
+        <div className="navbar__logo">
+          {/* Insérez ici votre composant de logo */}
+          <Link to="/">
+            <img src={logo} alt="Logo" />
           </Link>
-        ) : (
-          <>
-            <Link
-              to="#login"
-              className="linkCreateProperty"
-              onClick={handleShow}
-            >
+        </div>
+        <div className="navbar__links">
+          {user ? (
+            <Link to="/CreatePost" className="linkCreateProperty">
               PUBLIER MA PROPRIETE
             </Link>
-            <button
-              type="button"
-              className="linkCreateProperty"
-              onClick={handleShow}
-            >
-              SE CONNECTER
-            </button>
-          </>
-        )}
-        <div className="navbar__account" ref={menuRef}>
-          <button className="navbar__account-icon" onClick={toggleMenu}>
-            {user ? (
-              <>
-                {user.picture ? (
-                  <img
-                    className="pictureProfile"
-                    src={`http://localhost:8000/storage/images/profilePicture/${user.picture}`}
-                    width="50px"
-                    height="50px"
-                    alt="profile"
-                  />
-                ) : (
-                  <>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="36"
-                      height="36"
-                      fill="currentColor"
-                      class="bi bi-person-circle"
-                      viewBox="0 0 16 16"
-                    >
-                      <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                      <path
-                        fill-rule="evenodd"
-                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
-                      />
-                    </svg>
-                  </>
-                )}
-              </>
-            ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="36"
-                height="36"
-                fill="currentColor"
-                class="bi bi-person-circle"
-                viewBox="0 0 16 16"
-              >
-                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                <path
-                  fill-rule="evenodd"
-                  d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
-                />
-              </svg>
-            )}
-          </button>
-          {menuOpen && (
-            <div className="navbar__account-menu">
+          ) : (
+            <>
               <Link
-                to={`/search?world=&status=${"A vendre"}&type=&city=`}
-                id="linkMenuBuy"
+                to="#login"
+                className="linkCreateProperty"
+                onClick={handleShow}
               >
-                Acheter
+                PUBLIER MA PROPRIETE
               </Link>
-              <Link
-                to={`/search?world=&status=${"A Louer"}&type=&city=`}
-                id="linkMenuLocation"
+              <button
+                type="button"
+                className="linkCreateProperty"
+                onClick={handleShow}
               >
-                Louer
-              </Link>
-              <a href="#" className="" id="linkMenuFavoris">
-                Mes favoris
-              </a>
+                SE CONNECTER
+              </button>
+            </>
+          )}
+          <div className="navbar__account" ref={menuRef}>
+            <button className="navbar__account-icon" onClick={toggleMenu}>
               {user ? (
                 <>
-                  <Link
-                    to={`/MyProperties/${user.id}`}
-                    className=""
-                    id="linkMenuMyProperty"
-                  >
-                    Mes biens
-                  </Link>
+                  {user.picture ? (
+                    <img
+                      className="pictureProfile"
+                      src={`http://localhost:8000/storage/images/profilePicture/${user.picture}`}
+                      width="50px"
+                      height="50px"
+                      alt="profile"
+                    />
+                  ) : (
+                    <>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="36"
+                        height="36"
+                        fill="currentColor"
+                        class="bi bi-person-circle"
+                        viewBox="0 0 16 16"
+                      >
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                        <path
+                          fill-rule="evenodd"
+                          d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
+                        />
+                      </svg>
+                    </>
+                  )}
                 </>
               ) : (
-                <></>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="36"
+                  height="36"
+                  fill="currentColor"
+                  class="bi bi-person-circle"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                  <path
+                    fill-rule="evenodd"
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
+                  />
+                </svg>
               )}
-              <Link to="/Dashboard" className="" id="linkMenuAdmin">
-                ADMINISTRATEUR
-              </Link>
-              <Link to="/users/edit" className="" id="linkMenuAccount">
-                Mon Compte
-              </Link>
-              <Link to="/contactUs" className="" id="linkMenuContactUs">
-                Nous contacter
-              </Link>
-              <Link to="/aboutUs">A propos de nous</Link>
-              <Link to="#signIn" onClick={handleShow} id="linkMenuSignIn">
-                Se connecter
-              </Link>
-              <Link
-                to="#"
-                className=""
-                onClick={handleLogout}
-                id="linkMenuLogout"
-              >
-                Se déconnecter
-              </Link>
-            </div>
-          )}
+            </button>
+          </div>
         </div>
-      </div>
-      {/* <Line/> */}
-      {/*modal connexion*/}
-      <Modal show={show} onHide={handleClose} id="login">
-        <SingIn />
-      </Modal>
-    </nav>
+        {/* <Line/> */}
+        {/*modal connexion*/}
+        <Modal show={show} onHide={handleClose} id="login">
+          <SingIn />
+        </Modal>
+      </nav>
+      {menuOpen && (
+        <div className="navbar__account-menu">
+          <Link
+            to={`/search?world=&status=${"A vendre"}&type=&city=`}
+            id="linkMenuBuy"
+          >
+            Acheter
+          </Link>
+          <Link
+            to={`/search?world=&status=${"A Louer"}&type=&city=`}
+            id="linkMenuLocation"
+          >
+            Louer
+          </Link>
+          <a href="#" className="" id="linkMenuFavoris">
+            Mes favoris
+          </a>
+          {user ? (
+            <>
+              <Link
+                to={`/MyProperties/${user.id}`}
+                className=""
+                id="linkMenuMyProperty"
+              >
+                Mes biens
+              </Link>
+            </>
+          ) : (
+            <></>
+          )}
+          <Link to="/Dashboard" className="" id="linkMenuAdmin">
+            ADMINISTRATEUR
+          </Link>
+          <Link to="/users/edit" className="" id="linkMenuAccount">
+            Mon Compte
+          </Link>
+          <Link to="/contactUs" className="" id="linkMenuContactUs">
+            Nous contacter
+          </Link>
+          <Link to="/aboutUs">A propos de nous</Link>
+          <Link to="#signIn" onClick={handleShow} id="linkMenuSignIn">
+            Se connecter
+          </Link>
+          <Link to="#" className="" onClick={handleLogout} id="linkMenuLogout">
+            Se déconnecter
+          </Link>
+        </div>
+      )}
+    </>
   );
 };
 

@@ -1,0 +1,45 @@
+.MenuStatisticAdmin {
+  margin-top: 90px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tilteStatistic {
+  text-align: left;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: lato;
+  color: #f6b100;
+  padding-left: 40px;
+}
+
+.stats-icon {
+  width: 60px;
+  height: 60px;
+  margin-left: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.iconStatistic {
+  color: white;
+}
+
+#iconAllUsersStatistic {
+  background-color: rgba(128, 0, 128, 0.503);
+}
+
+#iconActifUsersStatistic {
+  background-color: #f6b00088;
+}
+
+#iconAllPropertiessStatistic {
+  background-color: rgba(28, 28, 231, 0.429);
+}
+
+#iconSellPropertiessStatistic {
+  background-color: rgba(0, 128, 0, 0.359);
+}
