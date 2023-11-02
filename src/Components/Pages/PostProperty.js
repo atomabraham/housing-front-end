@@ -37,9 +37,7 @@ function PostProperty() {
           <Footer />
         </>
       ) : (
-        <>
-          <NotFound />
-        </>
+        <></>
       )}
     </>
   );

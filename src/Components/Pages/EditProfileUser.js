@@ -3,6 +3,7 @@ import "../../Styles/EditProfileUser.css";
 import Navbar from "../ElementsPages/Banners/Navbar";
 import axios from "../Authentification/axios";
 import avatar from "../../Assets/Images/man-avatar-icon-free-vector.jpg";
+import Footer from "../ElementsPages/Footer/Footer";
 
 function EditProfileUser() {
   const [user, setUser] = useState(null);
@@ -256,6 +257,7 @@ function EditProfileUser() {
               </form>
             </div>
           </div>
+          <Footer />
         </>
       ) : (
         <></>

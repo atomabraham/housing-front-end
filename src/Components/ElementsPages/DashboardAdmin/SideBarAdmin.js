@@ -90,6 +90,7 @@ function Sidebar({ isVisible, toggleSidebar, isSidebarVisible }) {
             <Link
               to="#statistics"
               className="btnSideBarAdmin"
+              id="blockStatisticAdmin"
               name="linkStatistic"
               onClick={LayoutStatisticController}
             >

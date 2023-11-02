@@ -1,5 +1,4 @@
 import "../../../Styles/Home/FirstBlockHome.css";
-import backgroundFirstBlock from "../../../Assets/Images/images (2).jpg";
 import { useEffect, useState } from "react";
 import axios from "../../Authentification/axios";
 import { Row } from "react-bootstrap";
@@ -122,19 +121,13 @@ function FirstBlockHome() {
           {/* premiere section */}
 
           <section className="FirstBlockHome">
-            {/* <img
-              src={backgroundFirstBlock}
-              className="imageFirstBlockHome"
-              alt="housing"
-            /> */}
-
             <div className="textFrisBlockHome">
               <h2 className="tiltleWelcomeHome">BIENVENUE CHEZ HOUSING</h2>
               <p>Trouvez votre bien immobilier idéal en quelques clics !</p>
-              <p>
-                Inscrivez-vous dès aujourd'hui pour recevoir des notifications
-                sur les nouvelles annonces.
-              </p>
+              {/* <p>
+                Inscrivez-vous dès aujourd'hui pour recevoir <br /> des
+                notifications sur les nouvelles annonces.
+              </p> */}
             </div>
             <div className="opacityFirstBlock"></div>
 

@@ -43,3 +43,15 @@
 #iconSellPropertiessStatistic {
   background-color: rgba(0, 128, 0, 0.359);
 }
+
+.rowDiagramStatistics {
+  height: 500px;
+}
+
+.blocDiagramPropertMonth {
+  height: 500px;
+}
+
+.DiagramPropertMonth {
+  height: 500px;
+}

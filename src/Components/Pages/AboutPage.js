@@ -3,6 +3,7 @@ import "../../Styles/AboutPage.css";
 import Navbar from "../ElementsPages/Banners/Navbar";
 import { Link } from "react-router-dom";
 import image1 from "../../Assets/Images/HPTO_2120-NW-97th-St-Seattle_PremierHP.jpg";
+import Footer from "../ElementsPages/Footer/Footer";
 
 function AboutUs() {
   return (
@@ -44,6 +45,7 @@ function AboutUs() {
           </div>
         </Row>
       </div>
+      <Footer />
     </>
   );
 }

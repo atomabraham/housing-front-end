@@ -26,6 +26,7 @@ function EditProperty() {
     fetchProperty();
   }, []);
 
+  // console.log(property.length);
   //Modification des proprietes
 
   let inputFormPostName = document.getElementById("inputFormPostName");
@@ -62,41 +63,31 @@ function EditProperty() {
   const [images, setImages] = useState([]);
   const [imagesData, setImageData] = useState();
 
-  // console.log(property[0].images)
-
-  // useEffect(() => {
-  //     setImageData((property[0].images))
-  // })
-
   //affichage des informations par defauts
-  property.map(
-    (prop) => (
-      // informations de bases
-      (inputFormPostName.value = prop.propertyName),
-      (inputFormPostType.value = prop.propertyType),
-      (inputFormPostStatus.value = prop.propertyStatus),
-      (inputFormPostBetRoom.value = prop.bedrooms),
-      (inputFormPostBadRoom.value = prop.bathrooms),
-      (inputFormPostSuperficie.value = prop.area),
-      (inputFormPostPrice.value = prop.price),
-      // localisation
-      (inputFormPostCountry.value = prop.country),
-      (inputFormPostCity.value = prop.city),
-      (inputFormAddress.value = prop.quartier),
-      (inputFormPostalCode.value = prop.postalcode),
-      //details
-      (inputFormPostDescription.value = prop.description),
-      // images
-
-      // setImages(prop.images),
-      // console.log(images),
-
-      //contact
-      (inputFormPostContactName.value = prop.contactName),
-      (inputFormPostContactEmail.value = prop.contactEmail),
-      (inputFormPostPhone.value = prop.contactPhone)
-    )
-  );
+  if (property.length == 1) {
+    property.map(
+      (prop) => (
+        // informations de bases
+        (inputFormPostName.value = prop.propertyName),
+        (inputFormPostType.value = prop.propertyType),
+        (inputFormPostStatus.value = prop.propertyStatus),
+        (inputFormPostBetRoom.value = prop.bedrooms),
+        (inputFormPostBadRoom.value = prop.bathrooms),
+        (inputFormPostSuperficie.value = prop.area),
+        (inputFormPostPrice.value = prop.price),
+        // localisation
+        (inputFormPostCountry.value = prop.country),
+        (inputFormPostCity.value = prop.city),
+        (inputFormAddress.value = prop.quartier),
+        (inputFormPostalCode.value = prop.postalcode),
+        //details
+        (inputFormPostDescription.value = prop.description)
+      )
+    );
+  } else {
+    // alert("ok");
+    console.log("test");
+  }
 
   // recuperation et envoi des mise a jours de propriete
 

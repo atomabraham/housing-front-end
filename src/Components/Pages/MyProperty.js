@@ -53,6 +53,7 @@ function MyProperty() {
       });
   };
 
+
   return (
     <>
       {user ? (
@@ -104,7 +105,10 @@ function MyProperty() {
                             <></>
                           ) : (
                             <>
-                              <Link to={``} className="confirmReservation">
+                              <Link
+                                to={`/ConfitmReservation/${property.id}`}
+                                className="confirmReservation"
+                              >
                                 Confirmer
                               </Link>
                             </>

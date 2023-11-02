@@ -16,6 +16,7 @@ import EditProfileUser from "./Pages/EditProfileUser";
 import ProtectedRoute from "./Controllers/ProtectedRoute";
 import MyProperty from "./Pages/MyProperty";
 import ValidateProperty from "./Pages/ValidateProperty";
+import ConfitmReservation from "./Pages/ConfitmReservation";
 
 function App() {
   return (
@@ -36,6 +37,10 @@ function App() {
           {/* <ProtectedRoute path="/users/edit" element={<EditProfileUser />} /> */}
           <Route path="/MyProperties/:id" element={<MyProperty />} />
           <Route path="/ValidateProperty/:id" element={<ValidateProperty />} />
+          <Route
+            path="/ConfitmReservation/:id"
+            element={<ConfitmReservation />}
+          />
           <Route path="/*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

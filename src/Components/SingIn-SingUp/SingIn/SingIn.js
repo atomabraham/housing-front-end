@@ -9,8 +9,8 @@ import logo2 from "../../../Assets/Images/logo 3.png";
 
 function SingIn() {
   //les constances du modal
-  const [setShow] = useState(false);
-  const handleClose = () => setShow(false);
+  // const [setShow] = useState(false);
+  // const handleClose = () => setShow();
 
   //les constances de l'authentification
   const { setUser, csrfToken } = useAuth();
@@ -93,12 +93,7 @@ function SingIn() {
           <button type="submit" className="submitSignIn" id="submitSignIn">
             Se connecter
           </button>
-          <Link
-            to="/SignUp"
-            onClick={handleClose}
-            className="createAccount"
-            id="createAccount"
-          >
+          <Link to="/SignUp" className="createAccount" id="createAccount">
             Je n'ai pas encore de compte ?
           </Link>
         </form>
