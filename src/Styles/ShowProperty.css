@@ -156,6 +156,10 @@ hr {
   }
 }
 
+#inputMessageInteressed {
+  width: 100%;
+}
+
 #inputContactMethodInteressed {
   width: 100%;
 }

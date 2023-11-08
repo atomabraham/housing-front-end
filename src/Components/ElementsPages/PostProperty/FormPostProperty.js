@@ -149,90 +149,102 @@ function FormPostProperty() {
     }
     const listeJsonTexte = JSON.stringify(listeJson);
 
-    // Basic informatiom
-    let inputFormPostName = document.getElementById("inputFormPostName").value;
-    let inputFormPostType = document.getElementById("inputFormPostType").value;
-    let inputFormPostStatus = document.getElementById(
-      "inputFormPostStatus"
-    ).value;
-    let inputFormPostBetRoom = document.getElementById(
-      "inputFormPostBetRoom"
-    ).value;
-    let inputFormPostBadRoom = document.getElementById(
-      "inputFormPostBadRoom"
-    ).value;
-    let inputFormPostSuperficie = document.getElementById(
-      "inputFormPostSuperficie"
-    ).value;
-    let inputFormPostPrice =
-      document.getElementById("inputFormPostPrice").value;
+    let acceptPolitic = document.getElementById("acceptPolitic");
+    let checkbox1 = document.getElementById("checkbox1");
 
-    // localisation
-    let inputFormPostCountry = document.getElementById(
-      "inputFormPostCountry"
-    ).value;
-    let inputFormPostCity = document.getElementById("inputFormPostCity").value;
-    let inputFormAddress = document.getElementById("inputFormAddress").value;
-    let inputFormPostalCode = document.getElementById(
-      "inputFormPostalCode"
-    ).value;
+    if (checkbox1.checked) {
+      acceptPolitic.style.display = "none";
+      // Basic informatiom
+      let inputFormPostName =
+        document.getElementById("inputFormPostName").value;
+      let inputFormPostType =
+        document.getElementById("inputFormPostType").value;
+      let inputFormPostStatus = document.getElementById(
+        "inputFormPostStatus"
+      ).value;
+      let inputFormPostBetRoom = document.getElementById(
+        "inputFormPostBetRoom"
+      ).value;
+      let inputFormPostBadRoom = document.getElementById(
+        "inputFormPostBadRoom"
+      ).value;
+      let inputFormPostSuperficie = document.getElementById(
+        "inputFormPostSuperficie"
+      ).value;
+      let inputFormPostPrice =
+        document.getElementById("inputFormPostPrice").value;
 
-    // Detail
-    let inputFormPostDescription = document.getElementById(
-      "inputFormPostDescription"
-    ).value;
+      // localisation
+      let inputFormPostCountry = document.getElementById(
+        "inputFormPostCountry"
+      ).value;
+      let inputFormPostCity =
+        document.getElementById("inputFormPostCity").value;
+      let inputFormAddress = document.getElementById("inputFormAddress").value;
+      let inputFormPostalCode = document.getElementById(
+        "inputFormPostalCode"
+      ).value;
 
-    // images
+      // Detail
+      let inputFormPostDescription = document.getElementById(
+        "inputFormPostDescription"
+      ).value;
 
-    // contact
-    let inputFormPostContactName = document.getElementById(
-      "inputFormPostContactName"
-    ).value;
-    let inputFormPostContactEmail = document.getElementById(
-      "inputFormPostContactEmail"
-    ).value;
-    let inputFormPostPhone =
-      document.getElementById("inputFormPostPhone").value;
+      // images
 
-    const formData = new FormData();
+      // contact
+      let inputFormPostContactName = document.getElementById(
+        "inputFormPostContactName"
+      ).value;
+      let inputFormPostContactEmail = document.getElementById(
+        "inputFormPostContactEmail"
+      ).value;
+      let inputFormPostPhone =
+        document.getElementById("inputFormPostPhone").value;
 
-    formData.append("id_user", parseInt(user.data.id));
-    formData.append("propertyName", inputFormPostName);
-    formData.append("propertyType", inputFormPostType);
-    formData.append("propertyStatus", inputFormPostStatus);
-    formData.append("bedrooms", inputFormPostBetRoom);
-    formData.append("bathrooms", inputFormPostBadRoom);
-    formData.append("area", inputFormPostSuperficie);
-    formData.append("price", inputFormPostPrice);
-    formData.append("country", inputFormPostCountry);
-    formData.append("city", inputFormPostCity);
-    formData.append("quartier", inputFormAddress);
-    formData.append("postalcode", inputFormPostalCode);
-    formData.append("description", inputFormPostDescription);
-    formData.append("agrement", listeJsonTexte);
-    // formData.append('images', formDataImg)
-    for (let i = 0; i < images.length; i++) {
-      formData.append("images[]", images[i]);
-    }
+      const formData = new FormData();
 
-    formData.append("contactName", inputFormPostContactName);
-    formData.append("contactEmail", inputFormPostContactEmail);
-    formData.append("contactPhone", inputFormPostPhone);
-    // console.log(JSON.stringify(selectedItems))
-
-    try {
-      // console.log(images)
-      const resp = await axios.post(
-        "http://localhost:8000/api/createProperties",
-        formData
-      );
-
-      if (resp.status === 200) {
-        document.location.href = "/";
-      } else {
-        alert("Save failed");
+      formData.append("id_user", parseInt(user.data.id));
+      formData.append("propertyName", inputFormPostName);
+      formData.append("propertyType", inputFormPostType);
+      formData.append("propertyStatus", inputFormPostStatus);
+      formData.append("bedrooms", inputFormPostBetRoom);
+      formData.append("bathrooms", inputFormPostBadRoom);
+      formData.append("area", inputFormPostSuperficie);
+      formData.append("price", inputFormPostPrice);
+      formData.append("country", inputFormPostCountry);
+      formData.append("city", inputFormPostCity);
+      formData.append("quartier", inputFormAddress);
+      formData.append("postalcode", inputFormPostalCode);
+      formData.append("description", inputFormPostDescription);
+      formData.append("agrement", listeJsonTexte);
+      // formData.append('images', formDataImg)
+      for (let i = 0; i < images.length; i++) {
+        formData.append("images[]", images[i]);
       }
-    } catch (error) {}
+
+      formData.append("contactName", inputFormPostContactName);
+      formData.append("contactEmail", inputFormPostContactEmail);
+      formData.append("contactPhone", inputFormPostPhone);
+      // console.log(JSON.stringify(selectedItems))
+
+      try {
+        // console.log(images)
+        const resp = await axios.post(
+          "http://localhost:8000/api/createProperties",
+          formData
+        );
+
+        if (resp.status === 200) {
+          document.location.href = "/";
+        } else {
+          alert("Save failed");
+        }
+      } catch (error) {}
+    } else {
+      acceptPolitic.style.display = "block";
+      console.log("none");
+    }
     // console.log(DetailsPost.getSelectedItems)
   };
   // console.log(tableJson)

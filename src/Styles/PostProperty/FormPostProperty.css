@@ -194,6 +194,12 @@
   justify-content: right;
 }
 
+#acceptPolitic {
+  text-align: left;
+  color: red;
+  display: none;
+}
+
 @media (width<=1500px) {
   .FormPostProperty {
     /* margin-top:  90vh; */

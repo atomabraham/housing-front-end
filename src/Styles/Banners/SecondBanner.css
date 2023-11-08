@@ -144,12 +144,12 @@
     width: 95%;
   }
 
-  .inputFilter {
+  /* .inputFilter {
     margin-left: 5px;
-  }
+  } */
 
   .submitSearch {
-    position: absolute;
-    margin-right: 15px;
+    position: relative;
+    margin-right: 8px;
   }
 }

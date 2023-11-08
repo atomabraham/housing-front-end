@@ -684,7 +684,7 @@ function ShowProperty() {
                     <div className="col-md-12">
                       <Form.Group className="mb-3">
                         <Form.Label
-                          className="labelBlockPost"
+                          className=" labelBlockPost"
                           id="labelBlockPostBadRooms"
                         >
                           Message ou commentaires (facultatif)

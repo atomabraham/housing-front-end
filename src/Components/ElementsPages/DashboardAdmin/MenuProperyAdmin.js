@@ -200,9 +200,10 @@ function MenuProperyAdmin() {
     btnPropertieVendu.style.color = "white";
   }
 
+  // console.log(Properties[0].images[0]);
   return (
     <>
-    {/* menu */}
+      {/* menu */}
       <Row className="rowMenupropertyAdmin" id="rowMenupropertyAdmin">
         <div className="btnMenuProperty" id="btnMenuProperty">
           <button
@@ -266,7 +267,7 @@ function MenuProperyAdmin() {
                     <img
                       width="40px"
                       height="40px"
-                      src={`http://localhost:8000/storage/images/properties/${property.image}`}
+                      src={`http://localhost:8000/storage/${property.images[0]}`}
                       alt=""
                     />
                   </td>
@@ -318,7 +319,7 @@ function MenuProperyAdmin() {
                     <img
                       width="40px"
                       height="40px"
-                      src={`http://localhost:8000/storage/images/properties/${property.image}`}
+                      src={`http://localhost:8000/storage/${property.images[0]}`}
                       alt=""
                     />
                   </td>
@@ -375,7 +376,7 @@ function MenuProperyAdmin() {
                     <img
                       width="40px"
                       height="40px"
-                      src={`http://localhost:8000/storage/images/properties/${property.image}`}
+                      src={`http://localhost:8000/Storage/${property.images[0]}`}
                       alt=""
                     />
                   </td>
@@ -423,7 +424,7 @@ function MenuProperyAdmin() {
                     <img
                       width="40px"
                       height="40px"
-                      src={`http://localhost:8000/storage/images/properties/${property.image}`}
+                      src={`http://localhost:8000/storage/${property.images[0]}`}
                       alt=""
                     />
                   </td>

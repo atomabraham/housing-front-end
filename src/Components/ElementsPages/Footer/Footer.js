@@ -52,7 +52,7 @@ function Footer() {
                 placeholder="Votre addresse mail"
               />
               <button type="button" className="submitNewsletter">
-                Soummettre
+                Soumettre
               </button>
             </div>
             <p className="textFooter">
